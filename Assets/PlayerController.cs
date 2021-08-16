@@ -40,11 +40,6 @@ public class PlayerController : MonoBehaviour
         move.y = 0;
         controller.Move(move * Time.deltaTime * playerSpeed);
 
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }
-
         // Changes the height position of the player..
         if (jumpAction.triggered && groundedPlayer)
         {
@@ -55,7 +50,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(playerVelocity * Time.deltaTime);
 
         // È¸Àü.
-        Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.rotation.eulerAngles.y, 0);
+        Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
     public float rotationSpeed = 5;
