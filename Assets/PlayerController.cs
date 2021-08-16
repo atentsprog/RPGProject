@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, Mathf.Infinity))
         {
             bulletController.target = hit.point;
+            bulletController.targetContactNormal = hit.normal;
             bulletController.hit = true;
         }
         else

@@ -8,6 +8,7 @@ public class BulletController : MonoBehaviour
     public float speed = 50f;
     float timeToDestroy = 3f;
     public Vector3 target;
+    public Vector3 targetContactNormal;
     public bool hit;
 
     private void OnEnable()
@@ -18,8 +19,11 @@ public class BulletController : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if (!hit && Vector3.Distance(transform.position, target) < 0.01f)
+        if ( Vector3.Distance(transform.position, target) < 0.01f)
         {
+            if(hit)
+                Instantiate(bulletDecal, target + targetContactNormal * 0.0001f, Quaternion.LookRotation(targetContactNormal));
+            
             Destroy(gameObject);
         }
     }
