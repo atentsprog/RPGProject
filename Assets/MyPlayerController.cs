@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class MyPlayerController : MonoBehaviour
 {
     public float _speed = 5;
     public Animator animator;
+    public NavMeshAgent agent;
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
     {
@@ -26,7 +31,10 @@ public class MyPlayerController : MonoBehaviour
             relateMove.y = 0;
             move = relateMove;
             move.Normalize(); // z : -1, x : 0
-            transform.Translate(move * _speed * Time.deltaTime, Space.World);
+            var pos = agent.nextPosition;
+            pos += move * _speed * Time.deltaTime;
+            agent.nextPosition = pos;
+
             float forwardDegree = transform.forward.VectorToDegree();
             float moveDegree = move.VectorToDegree();
             float dirRadian = (moveDegree - forwardDegree + 90) * Mathf.PI / 180; //라디안값
