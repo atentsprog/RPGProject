@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class ToggleVisibleCursor : MonoBehaviour
 {
-    public InputAction toggleAction;
+    public InputAction toggleAction = new InputAction("ToggleCursor", InputActionType.Button, "<Keyboard>/tab");
     void Start()
     {
         toggleAction.performed += ToggleVisible;

@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     InputAction jumpAction;
     InputAction shootAction;
+    public BulletController bulletPrefab;
+    public Transform barrelTransform;
+    public Transform bulletParent;
+    public float bulletHitMissDistance = 30;
 
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -25,9 +29,36 @@ public class PlayerController : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
         jumpAction = playerInput.actions["Jump"];
         moveAction = playerInput.actions["Move"];
+        shootAction = playerInput.actions["Shoot"];
         animator = GetComponentInChildren<Animator>();
     }
 
+    private void OnEnable()
+    {
+        shootAction.performed += ShootGun;
+    }
+    private void ShootGun(InputAction.CallbackContext obj)
+    {
+        animator.SetTrigger("StartFire");
+
+        BulletController bulletController = Instantiate(bulletPrefab, barrelTransform.transform.position, Quaternion.identity, bulletParent);
+    
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, Mathf.Infinity))
+        {
+            bulletController.target = hit.point;
+            bulletController.hit = true;
+        }
+        else
+        {
+            bulletController.target = cameraTransform.position + cameraTransform.forward * bulletHitMissDistance; ;
+            bulletController.hit = false;
+        }
+    }
+
+    private void OnDisable()
+    {
+        shootAction.performed -= ShootGun;
+    }
     void Update()
     {
         groundedPlayer = controller.isGrounded;
