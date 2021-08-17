@@ -2272,7 +2272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5564984908039441800, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0110555
+      value: -1.0276421
       objectReference: {fileID: 0}
     - target: {fileID: 5564984908039441800, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6211,7 +6211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6200655068166626422, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9512922
+      value: -0.9730295
       objectReference: {fileID: 0}
     - target: {fileID: 6200655068166626422, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7669,7 +7669,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9058183917397569829, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
   m_PrefabInstance: {fileID: 1385694703754242632}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1385694703754242633}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -15740,7 +15740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346707954}
   m_LocalRotation: {x: 0.32326594, y: 0, z: 0, w: 0.94630814}
-  m_LocalPosition: {x: -1.0110555, y: 4.838426, z: -2.9984155}
+  m_LocalPosition: {x: -1.0276421, y: 4.838426, z: -2.9984155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25951,3 +25951,36 @@ PrefabInstance:
       objectReference: {fileID: 1346707957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
+--- !u!1 &1385694703754242633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2740988631283153460, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
+  m_PrefabInstance: {fileID: 1385694703754242632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1385694703754242634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385694703754242633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2f306f197789944851afc1cf49fe21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleButton:
+    m_Name: toggleKey
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 95d2fcd5-7be8-4a59-bc09-48313d268d03
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9b3f42a5-669c-45e9-ad29-77be9fa6a762
+      m_Path: <Keyboard>/tab
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: toggleKey
+      m_Flags: 0
