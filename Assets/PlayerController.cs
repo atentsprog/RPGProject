@@ -36,7 +36,11 @@ public class PlayerController : MonoBehaviour
     private float bulletHitMissDistance = 25f;
     private void ShootAction_performed(InputAction.CallbackContext obj)
     {
-        GameObject bullet = Instantiate(bulletPrefab, barrelTransform.transform.position, Quaternion.identity, bulletParent);
+        animator.SetTrigger("StartFire");
+
+        GameObject bullet = Instantiate(bulletPrefab, barrelTransform.transform.position
+            , Quaternion.LookRotation(cameraTransform.forward), bulletParent);
+
         var bulletController = bullet.GetComponent<BulletController>();
 
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, Mathf.Infinity))
