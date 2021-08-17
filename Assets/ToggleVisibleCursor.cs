@@ -10,12 +10,12 @@ public class ToggleVisibleCursor : MonoBehaviour
     {
         toggleButton.performed += ToggleButton_performed;
         toggleButton.Enable();
-    }
 
-    private void ToggleButton_performed(InputAction.CallbackContext obj)
-    {
-        print("≈« ¥≠∑»¿Ω");
-        Cursor.visible = !Cursor.visible;
-        Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
+        ToggleButton_performed();
+    }
+     
+    private void ToggleButton_performed(InputAction.CallbackContext obj = default)
+    { 
+        Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
     }
 }
