@@ -41,13 +41,13 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, Mathf.Infinity))
         {
-            //bulletController.target = hit.point;
-            //bulletController.hit = true; 
+            bulletController.target = hit.point;
+            bulletController.hit = true;
         }
         else
         {
-            //bulletController.target = cameraTransform.position + cameraTransform.forward * bulletHitMissDistance; ;
-            //bulletController.hit = false;
+            bulletController.target = cameraTransform.position + cameraTransform.forward * bulletHitMissDistance; ;
+            bulletController.hit = false;
         }
     }
 
