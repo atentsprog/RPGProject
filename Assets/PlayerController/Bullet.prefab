@@ -47,9 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 3428594988975627513, guid: 5877a6295bd781743a79b6b4cf5cf08a, type: 3}
-  speed: 50
+  speed: 1000
   target: {x: 0, y: 0, z: 0}
   hit: 0
+  targetContactNormal: {x: 0, y: 0, z: 0}
 --- !u!135 &9173155777486685398
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &8552429585204650833
 GameObject:
   m_ObjectHideFlags: 0
