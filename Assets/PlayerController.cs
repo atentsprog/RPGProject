@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public string parameterAttack = "StartFire";
+    public string parameterSpeed = "Speed";
+    public string parameterIsMoving = "IsMoving";
     public PlayerInput playerInput;
     InputAction moveAction;
     InputAction jumpAction;
@@ -34,9 +37,10 @@ public class PlayerController : MonoBehaviour
     public GameObject barrelTransform;
     public Transform bulletParent;
     private float bulletHitMissDistance = 25f;
+    
     private void ShootAction_performed(InputAction.CallbackContext obj)
     {
-        animator.SetTrigger("StartFire");
+        animator.SetTrigger(parameterAttack);
 
         GameObject bullet = Instantiate(bulletPrefab, barrelTransform.transform.position
             , Quaternion.LookRotation(cameraTransform.forward), bulletParent);
@@ -46,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, Mathf.Infinity))
         {
             print($"여기에 레이 충돌함, {hit.point}, {hit.point.z}");
+            bullet.transform.LookAt(hit.point);
             bulletController.target = hit.point;
             bulletController.targetContactNormal = hit.normal;
             bulletController.hit = true;
@@ -98,7 +103,8 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("DirX", dir.x);
             animator.SetFloat("DirY", dir.z);
         }
-        animator.SetFloat("Speed", move.sqrMagnitude);
+        animator.SetFloat(parameterSpeed, move.sqrMagnitude);
+        animator.SetBool(parameterIsMoving, move.sqrMagnitude > 0);
     }
     public float rotationSpeed = 5;
 }
