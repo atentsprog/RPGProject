@@ -26,6 +26,29 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         jumpAction = playerInput.actions["Jump"];
         moveAction = playerInput.actions["Move"];
+        shootAction = playerInput.actions["Shoot"];
+        shootAction.performed += ShootAction_performed;
+    }
+
+    public GameObject bulletPrefab;
+    public GameObject barrelTransform;
+    public Transform bulletParent;
+    private float bulletHitMissDistance = 25f;
+    private void ShootAction_performed(InputAction.CallbackContext obj)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, barrelTransform.transform.position, Quaternion.identity, bulletParent);
+        var bulletController = bullet.GetComponent<BulletController>();
+
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, Mathf.Infinity))
+        {
+            //bulletController.target = hit.point;
+            //bulletController.hit = true; 
+        }
+        else
+        {
+            //bulletController.target = cameraTransform.position + cameraTransform.forward * bulletHitMissDistance; ;
+            //bulletController.hit = false;
+        }
     }
 
     void Update()
