@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: normalVirtualCamera
       value: 
       objectReference: {fileID: 6393015347145420173}
+    - target: {fileID: 6200655067952211417, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
+      propertyPath: m_HorizontalAxis.m_MaxSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 6200655068166626417, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
       propertyPath: m_CollideAgainst.m_Bits
       value: 64
@@ -416,6 +420,10 @@ PrefabInstance:
     - target: {fileID: 5564984907850167334, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_ScreenY
       value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564984907850167335, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
+      propertyPath: m_HorizontalAxis.Value
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5564984908039441800, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_RootOrder

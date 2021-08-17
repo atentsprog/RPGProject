@@ -27617,14 +27617,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 202190043584043033, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.5404832
-      objectReference: {fileID: 0}
-    - target: {fileID: 1871729848440726771, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.48587066
-      objectReference: {fileID: 0}
     - target: {fileID: 4200925591331001894, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
       propertyPath: m_Camera
       value: 
@@ -27632,10 +27624,6 @@ PrefabInstance:
     - target: {fileID: 7057280759941733687, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
       propertyPath: m_Name
       value: Soldier
-      objectReference: {fileID: 0}
-    - target: {fileID: 7057280759941733687, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7588095155695851718, guid: f9be878faa57e0e43afc4aa261ee1b99, type: 3}
       propertyPath: m_RootOrder
