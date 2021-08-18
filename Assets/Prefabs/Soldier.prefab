@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &613097643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202190043584043035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ded2253621bf24685dae0ab4bcb777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1258154996925289955
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,6 +72,18 @@ MonoBehaviour:
   m_Damping: 0
   m_DampingWhenOccluded: 0
   m_OptimalTargetDistance: 0
+--- !u!114 &1395826641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871729848440726769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ded2253621bf24685dae0ab4bcb777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5186332398862690021
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6107853249541918791}
+  - component: {fileID: 1843872160}
   m_Layer: 0
   m_Name: BulletParent
   m_TagString: Untagged
@@ -120,6 +145,18 @@ Transform:
   m_Father: {fileID: 7588095155695851718}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1843872160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107853249541918784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c13d97542feb994cb6070926f9fc9e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7057280759941733687
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4714797067209291235, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5564984907850167334, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_ScreenY
@@ -489,6 +526,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7588095155695851718}
     m_Modifications:
+    - target: {fileID: 2171480970607265240, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3229627264754460636, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
       propertyPath: playerInput
       value: 
@@ -501,6 +542,10 @@ PrefabInstance:
       propertyPath: normalVirtualCamera
       value: 
       objectReference: {fileID: 1871729848440726770}
+    - target: {fileID: 4869686857075231968, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6200655067952211417, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
       propertyPath: m_HorizontalAxis.m_MaxSpeed
       value: 0.02
@@ -571,6 +616,11 @@ PrefabInstance:
       objectReference: {fileID: 5186332398862690020}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
+--- !u!1 &202190043584043035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6200655068166626420, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
+  m_PrefabInstance: {fileID: 6107853249358759023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &202190043584043033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6200655068166626422, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
