@@ -60,7 +60,7 @@ public class ArrowController : MonoBehaviour, IProjectile
             return;
         }
         var contact = other.GetContact(0);
-        //print($"충돌해서 터짐, {contact.point}, {contact.point.z}");
+        //print($"충돌해서 터짐, {contact.point}, {contact.point.y}");
         Instantiate(bulletDecal, contact.point, previousRotation);
         GetComponent<Collider>().enabled = false;
         Destroy(gameObject);
