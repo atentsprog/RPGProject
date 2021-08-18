@@ -27536,6 +27536,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 484339415398252701, guid: 2e77b1e9994b7b74884505ca4825afd1, type: 3}
+      propertyPath: bulletCollideLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 2355746005408912456, guid: 2e77b1e9994b7b74884505ca4825afd1, type: 3}
       propertyPath: m_Name
       value: Archer
