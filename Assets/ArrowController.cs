@@ -35,12 +35,13 @@ public class ArrowController : MonoBehaviour, IProjectile
             return;
         }
 
-        transform.forward = rigidbody.velocity;
+        if(rigidbody.velocity != Vector3.zero)
+            transform.forward = rigidbody.velocity;
 
 
         if (Vector3.Distance(transform.position, target) < 0.01f)
         {
-            print("위치까이 와서 터짐" + transform.position.ToString());
+            //print("위치까이 와서 터짐" + transform.position.ToString());
             if (hit)
                 Instantiate(bulletDecal, target, previousRotation);
 
@@ -55,11 +56,11 @@ public class ArrowController : MonoBehaviour, IProjectile
     {
         if (isDestroyed)
         {
-            Debug.LogWarning("이미 충돌 해서 삭제 했는데 충돌함");
+            //Debug.LogWarning("이미 충돌 해서 삭제 했는데 충돌함");
             return;
         }
         var contact = other.GetContact(0);
-        print($"충돌해서 터짐, {contact.point}, {contact.point.z}");
+        //print($"충돌해서 터짐, {contact.point}, {contact.point.z}");
         Instantiate(bulletDecal, contact.point, previousRotation);
         GetComponent<Collider>().enabled = false;
         Destroy(gameObject);

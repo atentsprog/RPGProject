@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward
             , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
         {
-            print($"여기에 레이 충돌함, {hit.point}, {hit.point.z}");
+            //print($"여기에 레이 충돌함, {hit.point}, {hit.point.z}");
             bullet.transform.LookAt(hit.point);
             bulletController.Target = hit.point;
             bulletController.TargetContactNormal = hit.normal;
