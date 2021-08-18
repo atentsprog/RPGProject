@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
     public GameObject barrelTransform;
     public Transform bulletParent;
     private float bulletHitMissDistance = 25f;
-    
+
+    public LayerMask bulletColllisionDetact = int.MaxValue;
     private void ShootAction_performed(InputAction.CallbackContext obj)
     {
         animator.SetTrigger(parameterAttack);
@@ -47,7 +48,8 @@ public class PlayerController : MonoBehaviour
 
         var bulletController = bullet.GetComponent<BulletController>();
 
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, Mathf.Infinity))
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward
+            , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
         {
             print($"여기에 레이 충돌함, {hit.point}, {hit.point.z}");
             bullet.transform.LookAt(hit.point);
