@@ -2,15 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+interface IProjectile
 {
+    public Vector3 Target { get; set; }
+    public bool Hit { get; set; }
+    public Vector3 TargetContactNormal { get; set; }
+}
+
+public class BulletController : MonoBehaviour, IProjectile
+{
+    public Vector3 Target { get => target; set => target = value; }
+    public bool Hit { get => hit; set => hit = value; }
+    public Vector3 TargetContactNormal { get => targetContactNormal; set => targetContactNormal = value; }
+
+    Vector3 target;
+    bool hit;
+    Vector3 targetContactNormal;
+
     [SerializeField] GameObject bulletDecal = null;
     public float speed = 50f;
     float timeToDestroy = 3f;
 
-    [HideInInspector] public Vector3 target;
-    [HideInInspector] public bool hit;
-    [HideInInspector] public Vector3 targetContactNormal;
     private void OnEnable()
     {
         Destroy(gameObject, timeToDestroy);
@@ -23,18 +35,19 @@ public class BulletController : MonoBehaviour
             return;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, target) < 0.01f)
+        transform.position = Vector3.MoveTowards(transform.position, Target, speed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, Target) < 0.01f)
         {
             print("위치까이 와서 터짐" + transform.position.ToString());
-            if (hit)
-                Instantiate(bulletDecal, target, Quaternion.LookRotation(targetContactNormal));
+            if (Hit)
+                Instantiate(bulletDecal, Target, Quaternion.LookRotation(TargetContactNormal));
 
             Destroy(gameObject);
             isDestroyed = true;
         }
     }
     bool isDestroyed = false;
+
     private void OnCollisionEnter(Collision other)
     {
         if (isDestroyed)
