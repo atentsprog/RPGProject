@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6467014469328671952}
   - component: {fileID: 9173155777486685398}
   - component: {fileID: 2336518994483931244}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 3428594988975627513, guid: 5877a6295bd781743a79b6b4cf5cf08a, type: 3}
-  speed: 5
+  speed: 0.1
   target: {x: 0, y: 0, z: 0}
   hit: 0
   targetContactNormal: {x: 0, y: 0, z: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2443418876850588482}
   - component: {fileID: 6186100496218422630}
   - component: {fileID: 6547207675689691507}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
