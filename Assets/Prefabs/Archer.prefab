@@ -39,6 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1549873635435370808}
+  - component: {fileID: 73261566}
   m_Layer: 0
   m_Name: BulletParent
   m_TagString: Untagged
@@ -60,6 +61,18 @@ Transform:
   m_Father: {fileID: 2886633227146629561}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73261566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549873635435370815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c13d97542feb994cb6070926f9fc9e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2355746005408912456
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +332,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2886633227146629561}
     m_Modifications:
+    - target: {fileID: 2171480970607265240, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3229627264754460636, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
       propertyPath: playerInput
       value: 
@@ -353,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6200655068166626422, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5404832
+      value: 0.47085193
       objectReference: {fileID: 0}
     - target: {fileID: 6200655068166626422, guid: cc2bab8ff92d07e43bf0d7f13fab3f52, type: 3}
       propertyPath: m_LocalPosition.y
@@ -431,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5564984908039441800, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.48587066
+      value: 0.43273842
       objectReference: {fileID: 0}
     - target: {fileID: 5564984908039441800, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -439,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5564984908039441800, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.3609464
+      value: -3.3609462
       objectReference: {fileID: 0}
     - target: {fileID: 5564984908039441800, guid: 70b3cf3262265cc4598b586dbb241df3, type: 3}
       propertyPath: m_LocalRotation.w
