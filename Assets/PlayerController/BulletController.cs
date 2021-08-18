@@ -7,9 +7,10 @@ public class BulletController : MonoBehaviour
     [SerializeField] GameObject bulletDecal = null;
     public float speed = 50f;
     float timeToDestroy = 3f;
-    public Vector3 target;
-    public bool hit;
-    public Vector3 targetContactNormal;
+
+    [HideInInspector] public Vector3 target;
+    [HideInInspector] public bool hit;
+    [HideInInspector] public Vector3 targetContactNormal;
     private void OnEnable()
     {
         Destroy(gameObject, timeToDestroy);
