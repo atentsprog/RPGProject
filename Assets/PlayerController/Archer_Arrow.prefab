@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7406741180665847804}
   - component: {fileID: 303974603366075938}
   - component: {fileID: 4661297784648587796}
-  m_Layer: 12
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7821803238421292313}
   - component: {fileID: 5083712757143241577}
   - component: {fileID: -407919463433352078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Archer_Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 5745113636049049783, guid: f234d42a2aaa9ec47b9e354bc0f091d0, type: 3}
-  force: 10
+  force: 20
 --- !u!54 &-407919463433352078
 Rigidbody:
   m_ObjectHideFlags: 0
