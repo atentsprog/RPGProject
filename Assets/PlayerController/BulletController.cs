@@ -27,7 +27,7 @@ public class BulletController : MonoBehaviour
         {
             print("위치까이 와서 터짐" + transform.position.ToString());
             if (hit)
-                Instantiate(bulletDecal, target, Quaternion.LookRotation(targetContactNormal));
+                Instantiate(bulletDecal, target + targetContactNormal * 0.001f, Quaternion.LookRotation(targetContactNormal));
 
             Destroy(gameObject);
             isDestroyed = true;
@@ -43,7 +43,7 @@ public class BulletController : MonoBehaviour
         }
         var contact = other.GetContact(0);
         print($"충돌해서 터짐, {contact.point}, {contact.point.z}");
-        Instantiate(bulletDecal, contact.point, Quaternion.LookRotation(contact.normal));
+        Instantiate(bulletDecal, contact.point + contact.normal * 0.001f, Quaternion.LookRotation(contact.normal));
         GetComponent<Collider>().enabled = false;
         Destroy(gameObject);
         isDestroyed = true;

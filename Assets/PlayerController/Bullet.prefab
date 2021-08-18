@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 3428594988975627513, guid: 5877a6295bd781743a79b6b4cf5cf08a, type: 3}
-  speed: 5
+  speed: 1000
   target: {x: 0, y: 0, z: 0}
   hit: 0
   targetContactNormal: {x: 0, y: 0, z: 0}
