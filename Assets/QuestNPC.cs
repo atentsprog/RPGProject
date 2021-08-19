@@ -17,7 +17,7 @@ public class QuestNPC : MonoBehaviour
     {
         if (other.CompareTag("Player") == false)
             return;
-        print(other); 
+        //print(other); 
         questAcceptKey.Enable();
         TalkAlertUI.Instance.ShowText("¸ğÇèÀÚ¾ß ¸ØÃçºÁ!\nÇÒ¸»ÀÌ ÀÖ¾î(Q)");
     }
