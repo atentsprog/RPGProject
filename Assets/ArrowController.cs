@@ -8,6 +8,7 @@ public class ArrowController : MonoBehaviour, IProjectile
     public bool Hit { get => hit; set => hit = value; }
     public Vector3 TargetContactNormal { get => targetContactNormal; set => targetContactNormal = value; }
     public float CurrentAngle { get => currentAngle; set => currentAngle = value; }
+    public float Speed { get => force; set => force = value; }
 
     Vector3 target;
     bool hit;

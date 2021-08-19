@@ -158,10 +158,10 @@ RectTransform:
   m_Father: {fileID: 212378694}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 366.97, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -19, y: -163}
+  m_SizeDelta: {x: 771.94, y: 326}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &28734203
 MonoBehaviour:
@@ -475,7 +475,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 29.5, y: 326}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212378695
 MonoBehaviour:
@@ -721,6 +721,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 889453350, guid: 2e77b1e9994b7b74884505ca4825afd1, type: 3}
+      propertyPath: m_Positions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 889453350, guid: 2e77b1e9994b7b74884505ca4825afd1, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.05817604
+      objectReference: {fileID: 0}
     - target: {fileID: 2355746005408912456, guid: 2e77b1e9994b7b74884505ca4825afd1, type: 3}
       propertyPath: m_Name
       value: Archer
@@ -2169,10 +2177,10 @@ RectTransform:
   m_Father: {fileID: 28734202}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 691.94, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 385.97, y: -163}
+  m_SizeDelta: {x: 691.94, y: 246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &830955291
 MonoBehaviour:

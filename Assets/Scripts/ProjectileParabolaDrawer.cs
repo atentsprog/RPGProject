@@ -6,6 +6,17 @@ public class ProjectileParabolaDrawer : MonoBehaviour
 {
     public ProjectileParabola projectileArc;
     public Transform firePoint;
+    public float Speed
+    {
+        get { return speed; }
+        set {
+            if (speed == value)
+                return;
+            Debug.Log($"{speed} => {value}");
+
+            speed = value; 
+        }
+    }
     public float speed = 20;
 
 
@@ -39,7 +50,7 @@ public class ProjectileParabolaDrawer : MonoBehaviour
             targetPoint = cameraTransform.position + cameraTransform.forward * bulletHitMissDistance;
         }
 
-        SetTargetWithSpeed(targetPoint, speed);
+        SetTargetWithSpeed(targetPoint, Speed);
     }
 
     public GameObject grenadeGo;
