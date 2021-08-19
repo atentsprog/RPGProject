@@ -7,10 +7,12 @@ public class ArrowController : MonoBehaviour, IProjectile
     public Vector3 Target { get => target; set => target = value; }
     public bool Hit { get => hit; set => hit = value; }
     public Vector3 TargetContactNormal { get => targetContactNormal; set => targetContactNormal = value; }
+    public float CurrentAngle { get => currentAngle; set => currentAngle = value; }
 
     Vector3 target;
     bool hit;
     Vector3 targetContactNormal;
+    float currentAngle;
 
     [SerializeField] GameObject bulletDecal = null;
     public float force = 50f;
@@ -21,10 +23,28 @@ public class ArrowController : MonoBehaviour, IProjectile
     {
         Destroy(gameObject, timeToDestroy);
 
-        Vector3 toDirec = (target - transform.position).normalized;
-
         rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(toDirec * force, ForceMode.VelocityChange);
+
+        //이전 코드 직선으로 날아감.
+        //Vector3 toDirec = (target - transform.position).normalized;
+        //rigidbody.AddForce(toDirec * force, ForceMode.VelocityChange);
+
+
+        Vector3 direction = target - transform.position;
+        float yOffset = direction.y;
+        direction = ProjectileMath.ProjectVectorOnPlane(Vector3.up, direction);
+        float distance = direction.magnitude;
+
+        bool targetInRange = ProjectileMath.LaunchAngle(force, distance, yOffset
+            , Physics.gravity.magnitude, out float angle0, out float angle1);
+        if (targetInRange)
+            currentAngle = angle1;
+        rigidbody = GetComponent<Rigidbody>();
+
+        transform.forward = direction;
+        float degree = -currentAngle * Mathf.Rad2Deg;
+        transform.Rotate(degree, 0, degree);
+        rigidbody.velocity = rigidbody.transform.forward * force;
     }
 
     private void Update()

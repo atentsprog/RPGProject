@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
             , Quaternion.LookRotation(cameraTransform.forward), bulletParent);
 
         var bulletController = bullet.GetComponent<IProjectile>();
+        bulletController.CurrentAngle = projectileParabolaDrawer.currentAngle;
 
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward
             , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
