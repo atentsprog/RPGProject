@@ -7,14 +7,32 @@ public class ProjectileParabolaDrawer : MonoBehaviour
     public ProjectileParabola projectileArc;
     public Transform firePoint;
     public float speed = 20;
+
+
+    private float bulletHitMissDistance = 25f;
+    Transform cameraTransform;
+    public LayerMask bulletColllisionDetact = int.MaxValue;
+
     void Start()
     {
         projectileArc = GetComponent<ProjectileParabola>();
         firePoint = transform;
-    }
+        cameraTransform = Camera.main.transform;
+    } 
     void Update()
     {
-        //SetTargetWithSpeed(cursor.transform.position, speed);
+        Vector3 targetPoint;
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward
+            , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
+        {
+            targetPoint = hit.point;
+        }
+        else
+        {
+            targetPoint = cameraTransform.position + cameraTransform.forward * bulletHitMissDistance;
+        }
+
+        SetTargetWithSpeed(targetPoint, speed);
     }
 
     public GameObject grenadeGo;
