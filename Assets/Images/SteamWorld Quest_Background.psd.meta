@@ -32,6 +32,36 @@ TextureImporter:
   - first:
       213: 1119937030056520617
     second: PC Computer - SteamWorld Quest - Cutscene Backgrounds_9
+  - first:
+      213: -1615775712763458837
+    second: SteamWorld Quest_Background_0
+  - first:
+      213: 7932211472555619714
+    second: SteamWorld Quest_Background_1
+  - first:
+      213: -4260984005840455271
+    second: SteamWorld Quest_Background_2
+  - first:
+      213: 1753307464076201454
+    second: SteamWorld Quest_Background_3
+  - first:
+      213: 4895987247851803655
+    second: SteamWorld Quest_Background_4
+  - first:
+      213: -3438968435472828924
+    second: SteamWorld Quest_Background_5
+  - first:
+      213: -7083369893726874745
+    second: SteamWorld Quest_Background_6
+  - first:
+      213: 970773866299866495
+    second: SteamWorld Quest_Background_7
+  - first:
+      213: 6899556962864611457
+    second: SteamWorld Quest_Background_8
+  - first:
+      213: 3594850254552630806
+    second: SteamWorld Quest_Background_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,7 +125,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -107,7 +137,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -121,13 +151,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_0
+      name: SteamWorld Quest_Background_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1084.5
-        width: 1923.6
-        height: 1084.5
+        x: 3
+        y: 1086
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fcae344e8b11e400800000000000000
-      internalID: 351592543755873525
+      spriteID: beac70ccc8c9399e0800000000000000
+      internalID: -1615775712763458837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_1
+      name: SteamWorld Quest_Background_1
       rect:
         serializedVersion: 2
-        x: 1923
-        y: 1084.5
-        width: 1923.6
-        height: 1084.5
+        x: 1926
+        y: 1086
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ee3122078970ac80800000000000000
-      internalID: -8313511291362656542
+      spriteID: 285b4f0ce40e41e60800000000000000
+      internalID: 7932211472555619714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_2
+      name: SteamWorld Quest_Background_2
       rect:
         serializedVersion: 2
-        x: 3846
-        y: 1084.5
-        width: 1923.6
-        height: 1084.5
+        x: 3849
+        y: 1086
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36e853851c4553800800000000000000
-      internalID: 591472115454414435
+      spriteID: 99932425f91fdd4c0800000000000000
+      internalID: -4260984005840455271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_3
+      name: SteamWorld Quest_Background_3
       rect:
         serializedVersion: 2
-        x: 5769
-        y: 1084.5
-        width: 1923.6
-        height: 1084.5
+        x: 5772
+        y: 1086
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f923bab456e32b3a0800000000000000
-      internalID: -6651185094890671457
+      spriteID: eed8d4269dff45810800000000000000
+      internalID: 1753307464076201454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_4
+      name: SteamWorld Quest_Background_4
       rect:
         serializedVersion: 2
-        x: 7692
-        y: 1084.5
-        width: 1923.6
-        height: 1084.5
+        x: 7695
+        y: 1086
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3abe34dfb6eb83d20800000000000000
-      internalID: 3258563701422418851
+      spriteID: 7049c0d367a02f340800000000000000
+      internalID: 4895987247851803655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_5
+      name: SteamWorld Quest_Background_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0.5
-        width: 1923.6
-        height: 1084.5
+        x: 3
+        y: 3
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22c40a679cd7f7b80800000000000000
-      internalID: -8394852876163199966
+      spriteID: 4067cd9ad645640d0800000000000000
+      internalID: -3438968435472828924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_6
+      name: SteamWorld Quest_Background_6
       rect:
         serializedVersion: 2
-        x: 1923
-        y: 0.5
-        width: 1923.6
-        height: 1084.5
+        x: 1926
+        y: 3
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,20 +291,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a32b594e04bca61d0800000000000000
-      internalID: -3356647092677922246
+      spriteID: 78396b76c90d2bd90800000000000000
+      internalID: -7083369893726874745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_7
+      name: SteamWorld Quest_Background_7
       rect:
         serializedVersion: 2
-        x: 3846
-        y: 0.5
-        width: 1923.6
-        height: 1084.5
+        x: 3849
+        y: 3
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,20 +312,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59e40557cfdea42b0800000000000000
-      internalID: -5599401518126051691
+      spriteID: f7d390220b1e87d00800000000000000
+      internalID: 970773866299866495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_8
+      name: SteamWorld Quest_Background_8
       rect:
         serializedVersion: 2
-        x: 5769
-        y: 0.5
-        width: 1923.6
-        height: 1084.5
+        x: 5772
+        y: 3
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,20 +333,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ef325ecd89411fa0800000000000000
-      internalID: -5831799169067368479
+      spriteID: 1804e17908620cf50800000000000000
+      internalID: 6899556962864611457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - SteamWorld Quest - Cutscene Backgrounds_9
+      name: SteamWorld Quest_Background_9
       rect:
         serializedVersion: 2
-        x: 7692
-        y: 0.5
-        width: 1923.6
-        height: 1084.5
+        x: 7695
+        y: 3
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,8 +354,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ab235f8bc0da8f00800000000000000
-      internalID: 1119937030056520617
+      spriteID: 616055b924973e130800000000000000
+      internalID: 3594850254552630806
       vertices: []
       indices: 
       edges: []
