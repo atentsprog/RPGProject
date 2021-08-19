@@ -7,6 +7,9 @@ public class ArrowController : MonoBehaviour, IProjectile
     public Vector3 Target { get => target; set => target = value; }
     public bool Hit { get => hit; set => hit = value; }
     public Vector3 TargetContactNormal { get => targetContactNormal; set => targetContactNormal = value; }
+    public float Speed { get => force; set => force = value; }
+    public float CurrentAngle { get => currentAngle; set => currentAngle = value; }
+    float currentAngle;
 
     Vector3 target;
     bool hit;
@@ -24,11 +27,10 @@ public class ArrowController : MonoBehaviour, IProjectile
 
         Vector3 direction = target - transform.position;
         float yOffset = direction.y;
-        direction = ProjectVectorOnPlane(Vector3.up, direction);
+        direction = ProjectileMath.ProjectVectorOnPlane(Vector3.up, direction);
         float distance = direction.magnitude;
 
-        float currentAngle = 0;
-        bool targetInRange = LaunchAngle(force, distance, yOffset, Physics.gravity.magnitude, out float angle0, out float angle1);
+        bool targetInRange = ProjectileMath.LaunchAngle(force, distance, yOffset, Physics.gravity.magnitude, out float angle0, out float angle1);
         if (targetInRange)
             currentAngle = angle1;
 
@@ -38,31 +40,6 @@ public class ArrowController : MonoBehaviour, IProjectile
         float degree = -currentAngle * Mathf.Rad2Deg;
         transform.Rotate(degree, 0, degree);
         rigidbody.velocity = rigidbody.transform.forward * force;
-    }
-
-    public Vector3 ProjectVectorOnPlane(Vector3 planeNormal, Vector3 vector)
-    {
-        return vector - (Vector3.Dot(vector, planeNormal) * planeNormal);
-    }
-    bool LaunchAngle(float speed, float distance, float yOffset, float gravity, out float angle0, out float angle1)
-    {
-        angle0 = angle1 = 0;
-
-        float speedSquared = speed * speed;
-
-        float operandA = Mathf.Pow(speed, 4);
-        float operandB = gravity * (gravity * (distance * distance) + (2 * yOffset * speedSquared));
-
-        // Target is not in range
-        if (operandB > operandA)
-            return false;
-
-        float root = Mathf.Sqrt(operandA - operandB);
-
-        angle0 = Mathf.Atan((speedSquared + root) / (gravity * distance));
-        angle1 = Mathf.Atan((speedSquared - root) / (gravity * distance));
-
-        return true;
     }
 
     private void Update()

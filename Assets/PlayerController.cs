@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     InputAction moveAction;
     InputAction jumpAction;
     InputAction shootAction;
+    InputAction aimAction;
 
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -30,7 +31,23 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         moveAction = playerInput.actions["Move"];
         shootAction = playerInput.actions["Shoot"];
+        aimAction = playerInput.actions["Aim"];
         shootAction.performed += ShootAction_performed;
+
+        projectileArcDrawer = GetComponentInChildren<ProjectileArcDrawer>();
+        projectileArcDrawer.gameObject.SetActive(false);
+        SwitchVcam switchVcam = GetComponentInChildren<SwitchVcam>();
+        aimAction.performed += _ =>
+        {
+            projectileArcDrawer.gameObject.SetActive(true);
+        };
+
+        aimAction.canceled += _ =>
+        {
+            projectileArcDrawer.gameObject.SetActive(false);
+        };
+        var bulletController = bulletPrefab.GetComponent<IProjectile>();
+        projectileArcDrawer.speed = bulletController.Speed;
     }
 
     public GameObject bulletPrefab;
@@ -39,6 +56,7 @@ public class PlayerController : MonoBehaviour
     private float bulletHitMissDistance = 25f;
 
     public LayerMask bulletColllisionDetact = int.MaxValue;
+    ProjectileArcDrawer projectileArcDrawer;
     private void ShootAction_performed(InputAction.CallbackContext obj)
     {
         animator.SetTrigger(parameterAttack);
@@ -47,6 +65,8 @@ public class PlayerController : MonoBehaviour
             , Quaternion.LookRotation(cameraTransform.forward), bulletParent);
 
         var bulletController = bullet.GetComponent<IProjectile>();
+        projectileArcDrawer.speed = bulletController.Speed;
+        bulletController.CurrentAngle = projectileArcDrawer.currentAngle;
 
         Vector3 rayStartPoint = cameraTransform.position;
         Vector3 cameraPositionSameY = cameraTransform.position;

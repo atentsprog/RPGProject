@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 5745113636049049783, guid: f234d42a2aaa9ec47b9e354bc0f091d0, type: 3}
-  force: 20
+  force: 15
 --- !u!54 &-407919463433352078
 Rigidbody:
   m_ObjectHideFlags: 0

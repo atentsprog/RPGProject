@@ -7,6 +7,8 @@ interface IProjectile
     public Vector3 Target { get; set; }
     public bool Hit { get; set; }
     public Vector3 TargetContactNormal { get; set; }
+    public float Speed { get; set; }
+    public float CurrentAngle { get; set; }
 }
 
 public class BulletController : MonoBehaviour, IProjectile
@@ -14,6 +16,9 @@ public class BulletController : MonoBehaviour, IProjectile
     public Vector3 Target { get => target; set => target = value; }
     public bool Hit { get => hit; set => hit = value; }
     public Vector3 TargetContactNormal { get => targetContactNormal; set => targetContactNormal = value; }
+    public float Speed { get => speed; set => speed = value; }
+    public float CurrentAngle { get => currentAngle; set => currentAngle = value; }
+    float currentAngle;
 
     Vector3 target;
     bool hit;

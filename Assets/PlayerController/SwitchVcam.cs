@@ -11,7 +11,7 @@ public class SwitchVcam : MonoBehaviour
     private int priorityBoostAmount = 10;
     [SerializeField] private CinemachineVirtualCamera normalVirtualCamera;
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
-    private InputAction aimAction;
+    InputAction aimAction;
     [SerializeField] private Canvas normalCanvas;
     [SerializeField] private Canvas aimCanvas;
     void Awake()
@@ -37,6 +37,7 @@ public class SwitchVcam : MonoBehaviour
         normalCanvas.enabled = false;
         aimCanvas.enabled = true;
     } 
+
     void CancelAim(InputAction.CallbackContext obj)
     {
         //normalVirtualCamera.transform.position = aimVirtualCamera.transform.position;
