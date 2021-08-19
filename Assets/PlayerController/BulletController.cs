@@ -17,8 +17,7 @@ public class BulletController : MonoBehaviour, IProjectile
     public bool Hit { get => hit; set => hit = value; }
     public Vector3 TargetContactNormal { get => targetContactNormal; set => targetContactNormal = value; }
     public float Speed { get => speed; set => speed = value; }
-    public float CurrentAngle { get => currentAngle; set => currentAngle = value; }
-    float currentAngle;
+    public float CurrentAngle { get => 0; set { } }
 
     Vector3 target;
     bool hit;
