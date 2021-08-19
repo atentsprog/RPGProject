@@ -22,7 +22,14 @@ public class ProjectileParabolaDrawer : MonoBehaviour
     void Update()
     {
         Vector3 targetPoint;
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward
+
+        Vector3 rayStartPoint = cameraTransform.position;
+        Vector3 cameraPositionSameY = cameraTransform.position;
+        cameraPositionSameY.y = transform.position.y;
+        float playerDistance = Vector3.Distance(cameraPositionSameY, transform.position);
+        rayStartPoint += cameraTransform.forward * playerDistance;
+
+        if (Physics.Raycast(rayStartPoint, cameraTransform.forward
             , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
         {
             targetPoint = hit.point;
@@ -44,10 +51,11 @@ public class ProjectileParabolaDrawer : MonoBehaviour
         float yOffset = direction.y;
         direction = ProjectileMath.ProjectVectorOnPlane(Vector3.up, direction);
         float distance = direction.magnitude;
-        float angle0, angle1;
-        bool targetInRange = ProjectileMath.LaunchAngle(speed, distance, yOffset, Physics.gravity.magnitude, out angle0, out angle1);
+        //float angle0, angle1;
+        bool targetInRange = ProjectileMath.LaunchAngle(speed, distance, yOffset, Physics.gravity.magnitude
+            , out float angle0, out float angle1);
         if (targetInRange)
-            currentAngle = angle0;
+            currentAngle = angle1;
         projectileArc.UpdateArc(speed, distance, Physics.gravity.magnitude, currentAngle, direction, targetInRange);
     }
 }

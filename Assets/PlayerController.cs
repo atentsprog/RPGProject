@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     InputAction moveAction;
     InputAction jumpAction;
     InputAction shootAction;
+    InputAction aimAction;
 
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -22,15 +23,22 @@ public class PlayerController : MonoBehaviour
     private float gravityValue = -9.81f;
     Transform cameraTransform;
     Animator animator;
+    ProjectileParabolaDrawer projectileParabolaDrawer;
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
+        projectileParabolaDrawer = GetComponentInChildren<ProjectileParabolaDrawer>();
         jumpAction = playerInput.actions["Jump"];
         moveAction = playerInput.actions["Move"];
         shootAction = playerInput.actions["Shoot"];
+        aimAction = playerInput.actions["Aim"];
         shootAction.performed += ShootAction_performed;
+
+        projectileParabolaDrawer.gameObject.SetActive(false);
+        aimAction.performed += _ => projectileParabolaDrawer.gameObject.SetActive(true); // 궤적 보이게 하기
+        aimAction.canceled += _ => projectileParabolaDrawer.gameObject.SetActive(false); // 궤적 감추기
     }
 
     public GameObject bulletPrefab;
