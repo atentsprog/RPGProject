@@ -16,7 +16,6 @@ public class TalkAlertUI : Singleton<TalkAlertUI>
 
     public void ShowText(string _text, float visibleTime = 3)
     {
-        gameObject.SetActive(true);
         canvasGroup.alpha = 0;
         canvasGroup.DOFade(1, 0.5f);
 
