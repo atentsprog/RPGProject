@@ -48,7 +48,13 @@ public class PlayerController : MonoBehaviour
 
         var bulletController = bullet.GetComponent<IProjectile>();
 
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward
+        Vector3 rayStartPoint = cameraTransform.position;
+        Vector3 cameraPositionSameY = cameraTransform.position;
+        cameraPositionSameY.y = transform.position.y;
+        float playerDistance = Vector3.Distance(cameraPositionSameY, transform.position);
+        rayStartPoint += cameraTransform.forward * playerDistance;
+
+        if (Physics.Raycast(rayStartPoint, cameraTransform.forward
             , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
         {
             //print($"여기에 레이 충돌함, {hit.point}, {hit.point.z}");
