@@ -20,7 +20,8 @@ public class QuestNPC : MonoBehaviour
             return;
         print(other); 
         questAcceptKey.Enable();
-        TalkAlertUI.Instance.ShowText("모험자야 멈춰봐!\n할말이 있어(Q)");
+        //TalkAlertUI.Instance.ShowText("모험자야 멈춰봐!\n할말이 있어(Q)");
+        CharacterTextBoxUI.Instance.ShowText("모험자야 멈춰봐!\n할말이 있어(Q)");
     }
 
     private void OnTriggerExit(Collider other)
