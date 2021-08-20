@@ -8,7 +8,7 @@ public class QuestTitleBox : MonoBehaviour
 {
     public Text titleText; // 
 
-    public void Init()
+    public void LinkComponent()
     {
         titleText = transform.Find("Text").GetComponent<Text>();
     }

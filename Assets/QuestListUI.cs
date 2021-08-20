@@ -85,19 +85,43 @@ public class QuestListUI : Singleton<QuestListUI>
 
     Text selectedQuestTitle;
     Text goalExplain;
-    Text questExplain;
+    Text questExplain; 
+    
     void Start()
     {
         selectedQuestTitle = transform.Find("Right/QuestTitle/SelectedQuestTitle/SelectedQuestTitle").GetComponent<Text>();
         goalExplain = transform.Find("Right/Goal/GoalExplain").GetComponent<Text>();
         questExplain = transform.Find("Right/QuestExplain").GetComponent<Text>();
 
+
+        transform.Find("GameObject/Yes").GetComponent<Button>().onClick
+                .AddListener(() => AcceptQuest());
+        transform.Find("GameObject/No").GetComponent<Button>().onClick
+                .AddListener(() => RejectQuest());
+        transform.Find("CloseButton/Icon").GetComponent<Button>().onClick
+                .AddListener(() => CloseUI());
+
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
         baseQuestTitleBox = GetComponentInChildren<QuestTitleBox>();
         baseRewardBox = GetComponentInChildren<RewardBox>();
-        baseQuestTitleBox.Init();
-        baseRewardBox.Init();
+        baseQuestTitleBox.LinkComponent();
+        baseRewardBox.LinkComponent();
+    }
+
+    private void CloseUI()
+    {
+        canvasGroup.DOFade(0, 0.5f);
+    }
+
+    private void RejectQuest()
+    {
+        print($"{currentQuest.questTitle} 퀘스트 거절함");
+    }
+
+    private void AcceptQuest()
+    {
+        print($"{currentQuest.questTitle} 퀘스트 수락함");
     }
 
     public void ShowQuestList()
@@ -121,8 +145,11 @@ public class QuestListUI : Singleton<QuestListUI>
 
         OnClickTitleItem(quests[0]);
     }
+
+    QuestInfo currentQuest;
     private void OnClickTitleItem(QuestInfo item)
     {
+        currentQuest = item;
         selectedQuestTitle.text = item.questTitle;
         questExplain.text = item.detailExplain;
         goalExplain.text = item.GetGoalString();
