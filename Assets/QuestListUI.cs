@@ -87,18 +87,18 @@ public class QuestListUI : Singleton<QuestListUI>
 
     Text selectedQuestTitle;
     Text goalExplain;
-    Text questExplain; 
-    
+    Text questExplain;
+    Text accectQuestText;
     void Start()
     {
         selectedQuestTitle = transform.Find("Right/QuestTitle/SelectedQuestTitle/SelectedQuestTitle").GetComponent<Text>();
         goalExplain = transform.Find("Right/Goal/GoalExplain").GetComponent<Text>();
         questExplain = transform.Find("Right/QuestExplain").GetComponent<Text>();
+        accectQuestText = transform.Find("AccectQuest/AccectQuestText").GetComponent<Text>();
 
-
-        transform.Find("GameObject/Yes").GetComponent<Button>().onClick
+        transform.Find("AccectQuest/Yes").GetComponent<Button>().onClick
                 .AddListener(() => AcceptQuest());
-        transform.Find("GameObject/No").GetComponent<Button>().onClick
+        transform.Find("AccectQuest/No").GetComponent<Button>().onClick
                 .AddListener(() => RejectQuest());
         transform.Find("CloseButton/Icon").GetComponent<Button>().onClick
                 .AddListener(() => CloseUI());
@@ -179,12 +179,16 @@ public class QuestListUI : Singleton<QuestListUI>
 
         questTitleBoxs.ForEach(x => Destroy(x));
         questTitleBoxs.Clear();
+
+        baseQuestTitleBox.gameObject.SetActive(false);
+        baseRewardBox.gameObject.SetActive(false);
     }
 
     QuestInfo currentQuest;
     private void OnClickTitleItem(QuestInfo item)
     {
         currentQuest = item;
+        accectQuestText.text = $"{item.questTitle} 퀘스트를 수락 하시겠습니까?";
         selectedQuestTitle.text = item.questTitle;
         questExplain.text = item.detailExplain;
         goalExplain.text = item.GetGoalString();

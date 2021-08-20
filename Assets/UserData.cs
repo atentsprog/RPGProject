@@ -14,7 +14,7 @@ public class UserData : Singleton<UserData>
     public PlayerPrefsData<UserQuestData> questData;
     private void Awake()
     {
-        questData = new PlayerPrefsData<UserQuestData>("UserQuestData1");
+        questData = new PlayerPrefsData<UserQuestData>("UserQuestData4");
     }
 
     private void OnDestroy()
