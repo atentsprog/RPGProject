@@ -13,14 +13,16 @@ public class MonsterInfo
 [System.Serializable]
 public class DestinationInfo
 {
-    public string name;
     public int id;
+    public string name;
 }
 [System.Serializable]
 public class ItemInfo
 {
     public string name;
     public int id;
+    public string iconName;
+    public Sprite Sprite => Resources.Load<Sprite>($"Icons/{iconName}");
 }
 
 

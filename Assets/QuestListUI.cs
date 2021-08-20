@@ -80,6 +80,8 @@ public class QuestListUI : Singleton<QuestListUI>
     public List<QuestInfo> quests;
     QuestTitleBox baseQuestTitleBox;
     RewardBox baseRewardBox;
+    List<GameObject> questTitleBoxs = new List<GameObject>();
+    List<GameObject> rewardBoxs = new List<GameObject>();
 
     Text selectedQuestTitle;
     Text goalExplain;
@@ -103,6 +105,8 @@ public class QuestListUI : Singleton<QuestListUI>
         canvasGroup.alpha = 0;
         canvasGroup.DOFade(1, 0.5f);
 
+        questTitleBoxs.ForEach(x => Destroy(x));
+        questTitleBoxs.Clear();
         // 왼쪽에 있는 퀘스트 이름 리스트 초기화
         baseQuestTitleBox.gameObject.SetActive(true);
         foreach (var item in quests)
@@ -111,6 +115,7 @@ public class QuestListUI : Singleton<QuestListUI>
             titleItem.Init(item);
             titleItem.GetComponent<Button>().onClick
                 .AddListener(() => OnClickTitleItem(item));
+            questTitleBoxs.Add(titleItem.gameObject);
         }
         baseQuestTitleBox.gameObject.SetActive(false);
 
@@ -121,5 +126,18 @@ public class QuestListUI : Singleton<QuestListUI>
         selectedQuestTitle.text = item.questTitle;
         questExplain.text = item.detailExplain;
         goalExplain.text = item.GetGoalString();
+
+
+        // 보상리스트 초기화.
+        rewardBoxs.ForEach(x => Destroy(x));
+        rewardBoxs.Clear();
+        baseRewardBox.gameObject.SetActive(true);
+        foreach (var item in item.rewards)
+        {
+            var titleItem = Instantiate(baseRewardBox, baseRewardBox.transform.parent);
+            titleItem.Init(item);
+            rewardBoxs.Add(titleItem.gameObject);
+        }
+        baseRewardBox.gameObject.SetActive(false);
     }
 }
