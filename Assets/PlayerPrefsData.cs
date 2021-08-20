@@ -10,7 +10,7 @@ public class Data<T>
 
 
 [System.Serializable]
-public class PlayerPrefsData<T>
+public class PlayerPrefsData<T>  where T : new()
 {
     public T data = default(T);
     readonly string key;
@@ -29,6 +29,7 @@ public class PlayerPrefsData<T>
         if (data == null)
         {
             Log("record == null");
+            data = new T();
             return;
         }
 

@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class UserQuestData
 {
-    public List<int> acceptIds;
-    public List<int> rejectIds;
+    public List<int> acceptIds = new List<int>();
+    public List<int> rejectIds = new List<int>();
 }
 
 public class UserData : Singleton<UserData>
@@ -14,7 +14,7 @@ public class UserData : Singleton<UserData>
     public PlayerPrefsData<UserQuestData> questData;
     private void Awake()
     {
-        questData = new PlayerPrefsData<UserQuestData>("UserQuestData");
+        questData = new PlayerPrefsData<UserQuestData>("UserQuestData1");
     }
 
     private void OnDestroy()
