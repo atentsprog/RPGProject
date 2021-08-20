@@ -57,15 +57,30 @@ public class QuestListUI : Singleton<QuestListUI>
 {
     CanvasGroup canvasGroup;
     public List<QuestInfo> quests;
+    QuestTitleBox baseQuestTitleBox;
+    RewardBox baseRewardBox;
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
+        baseQuestTitleBox = GetComponentInChildren<QuestTitleBox>();
+        baseRewardBox = GetComponentInChildren<RewardBox>();
+        baseQuestTitleBox.Init();
+        baseRewardBox.Init();
     }
 
     public void ShowQuestList()
     {
         canvasGroup.alpha = 0;
         canvasGroup.DOFade(1, 0.5f);
+
+        // 왼쪽에 있는 퀘스트 이름 리스트 초기화
+        baseQuestTitleBox.gameObject.SetActive(true);
+        foreach (var item in quests)
+        {
+            var titleItem = Instantiate(baseQuestTitleBox, baseQuestTitleBox.transform);
+            titleItem.Init(item);
+        }
+        baseQuestTitleBox.gameObject.SetActive(false);
     }
 }
