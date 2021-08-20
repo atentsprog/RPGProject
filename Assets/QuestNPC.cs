@@ -14,6 +14,7 @@ public class QuestNPC : MonoBehaviour
         QuestListUI.Instance.ShowQuestList();
     }
 
+    Coroutine handle;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") == false)
@@ -21,7 +22,7 @@ public class QuestNPC : MonoBehaviour
         print(other); 
         questAcceptKey.Enable();
         //TalkAlertUI.Instance.ShowText("모험자야 멈춰봐!\n할말이 있어(Q)");
-        CharacterTextBoxUI.Instance.ShowText("모험자야 멈춰봐!\n할말이 있어(Q)");
+        handle = CharacterTextBoxUI.Instance.ShowText("모험자야 멈춰봐!\n할말이 있어(Q)");
     }
 
     private void OnTriggerExit(Collider other)
@@ -29,5 +30,6 @@ public class QuestNPC : MonoBehaviour
         if (other.CompareTag("Player") == false)
             return;
         questAcceptKey.Disable();
+        CharacterTextBoxUI.Instance.CloseUI(handle);
     }
 }
