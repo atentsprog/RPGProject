@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -8,16 +8,16 @@ using System;
 using System.Linq;
 
 /*
-Äù½ºÆ® ÀÌ¸§ : questTitle
-»ó¼¼³»¿ë : detailExplain
-¸ñÇ¥ Type : enum QuestType
- KillMonster,      // ¸ó½ºÅÍ Ã³Ä¡.
- GoToDestination,  // ¸ñÀûÁö µµÂø
- ItemCollection, // ¾ÆÀÌÅÛ ¼öÁı
+í€˜ìŠ¤íŠ¸ ì´ë¦„ : questTitle
+ìƒì„¸ë‚´ìš© : detailExplain
+ëª©í‘œ Type : enum QuestType
+ KillMonster,      // ëª¬ìŠ¤í„° ì²˜ì¹˜.
+ GoToDestination,  // ëª©ì ì§€ ë„ì°©
+ ItemCollection, // ì•„ì´í…œ ìˆ˜ì§‘
  
 GoalCount : 
-	¸ó½ºÅÍ Ã³Ä¡½Ã´Â ¸ó½ºÅÍ Ã³Ä¡¼ö
-	¾ÆÀÌÅÛ ¼öÁı½Ã´Â ¾ÆÀÌÅÛ ¼öÁı¼ö,
+	ëª¬ìŠ¤í„° ì²˜ì¹˜ì‹œëŠ” ëª¬ìŠ¤í„° ì²˜ì¹˜ìˆ˜
+	ì•„ì´í…œ ìˆ˜ì§‘ì‹œëŠ” ì•„ì´í…œ ìˆ˜ì§‘ìˆ˜,
 	
 class Reward
 {
@@ -25,61 +25,10 @@ ItemID
 Count 
 }*/
 
-public enum QuestType
-{
-    KillMonster,      // ¸ó½ºÅÍ Ã³Ä¡.
-    GoToDestination,  // ¸ñÀûÁö µµÂø
-    ItemCollection, // ¾ÆÀÌÅÛ ¼öÁı
-}
-[System.Serializable]
-public class RewardInfo
-{
-    public int itemID;
-    public int count;
-}
-
-[System.Serializable]
-public class QuestInfo
-{
-    public string questTitle;
-    public int id;
-    [TextArea]
-    public string detailExplain;
-    public QuestType questType;
-
-    /// <summary>
-    /// ¸ó½ºÅÍ Ã³Ä¡½Ã´Â ¸ó½ºÅÍ ID
-    /// ¾ÆÀÌÅÛ ¼öÁı½Ã´Â ¾ÆÀÌÅÛ ID,</summary>
-    public int goalId;
-    /// <summary>
-    /// ¸ó½ºÅÍ Ã³Ä¡½Ã´Â ¸ó½ºÅÍ Ã³Ä¡¼ö
-    /// ¾ÆÀÌÅÛ ¼öÁı½Ã´Â ¾ÆÀÌÅÛ ¼öÁı¼ö,</summary>
-    public int goalCount;
-
-    public List<RewardInfo> rewards;
-
-    internal string GetGoalString()
-    {
-        switch (questType)
-        {
-            case QuestType.KillMonster: // ½½¶óÀÓÀ» 5¸¶¸® Ã³Ä¡ÇÏ¼¼¿ä.
-                string monsterName = ItemDB.GetMosnterInfo(goalId).name;
-                return $"{monsterName}¸¦ {goalCount}¸¶¸® ÀâÀ¸¼¼¿ä";
-            case QuestType.GoToDestination: // ÃÌÀå´Ô´ìÀ¸·Î ÀÌµ¿ÇÏ¼¼¿ä.
-                string destinationName = ItemDB.GetDestinationInfo(goalId).name;
-                return $"{destinationName}¿¡ °¡¼¼¿ä";
-            case QuestType.ItemCollection: // º¸¼®À» 5°³ ¼öÁıÇÏ¼¼¿ä
-                string itemName = ItemDB.GetItemInfo(goalId).name;
-                return $"{itemName}¸¦ {goalCount}°³ ¼öÁıÇÏ¼¼¿ä";
-        }
-
-        return "ÀÓ½Ã ÀÛ¾÷ÇØ¾ßÇÔ";
-    }
-}
 public class QuestListUI : Singleton<QuestListUI>
 {
     CanvasGroup canvasGroup;
-    public List<QuestInfo> quests;
+    List<QuestInfo> quests;
     QuestTitleBox baseQuestTitleBox;
     RewardBox baseRewardBox;
     List<GameObject> questTitleBoxs = new List<GameObject>();
@@ -118,7 +67,7 @@ public class QuestListUI : Singleton<QuestListUI>
 
     private void RejectQuest()
     {
-        print($"{currentQuest.questTitle} Äù½ºÆ® °ÅÀıÇÔ");
+        print($"{currentQuest.questTitle} í€˜ìŠ¤íŠ¸ ê±°ì ˆí•¨");
         UserData.Instance.questData.data.rejectIds
             .Add(currentQuest.id);
 
@@ -127,21 +76,23 @@ public class QuestListUI : Singleton<QuestListUI>
 
     private void AcceptQuest()
     {
-        print($"{currentQuest.questTitle} Äù½ºÆ® ¼ö¶ôÇÔ");
+        print($"{currentQuest.questTitle} í€˜ìŠ¤íŠ¸ ìˆ˜ë½í•¨");
         UserData.Instance.questData.data.acceptIds
             .Add(currentQuest.id);
 
         ShowQuestList();
     }
 
-    public void ShowQuestList()
+    public void ShowQuestList(List<int> questIds = null)
     {
+        if(questIds != null)
+            quests = ItemDB.Instance.GetQuestInfo(questIds);// 
         canvasGroup.alpha = 0;
         canvasGroup.DOFade(1, 0.5f);
 
         questTitleBoxs.ForEach(x => Destroy(x));
         questTitleBoxs.Clear();
-        // ¿ŞÂÊ¿¡ ÀÖ´Â Äù½ºÆ® ÀÌ¸§ ¸®½ºÆ® ÃÊ±âÈ­
+        // ì™¼ìª½ì— ìˆëŠ” í€˜ìŠ¤íŠ¸ ì´ë¦„ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         baseQuestTitleBox.gameObject.SetActive(true);
 
         List<int> exceptIds = new List<int>();
@@ -173,7 +124,7 @@ public class QuestListUI : Singleton<QuestListUI>
         goalExplain.text = string.Empty;
 
 
-        // º¸»ó¸®½ºÆ® ÃÊ±âÈ­.
+        // ë³´ìƒë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”.
         rewardBoxs.ForEach(x => Destroy(x));
         rewardBoxs.Clear();
 
@@ -188,13 +139,13 @@ public class QuestListUI : Singleton<QuestListUI>
     private void OnClickTitleItem(QuestInfo item)
     {
         currentQuest = item;
-        accectQuestText.text = $"{item.questTitle} Äù½ºÆ®¸¦ ¼ö¶ô ÇÏ½Ã°Ú½À´Ï±î?";
+        accectQuestText.text = $"{item.questTitle} í€˜ìŠ¤íŠ¸ë¥¼ ìˆ˜ë½ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?";
         selectedQuestTitle.text = item.questTitle;
         questExplain.text = item.detailExplain;
         goalExplain.text = item.GetGoalString();
 
 
-        // º¸»ó¸®½ºÆ® ÃÊ±âÈ­.
+        // ë³´ìƒë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”.
         rewardBoxs.ForEach(x => Destroy(x));
         rewardBoxs.Clear();
         baseRewardBox.gameObject.SetActive(true);

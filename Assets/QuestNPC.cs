@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +13,8 @@ public class QuestNPC : MonoBehaviour
     private void Awake() =>questAcceptKey.performed += QuestAcceptKey_performed;
     private void QuestAcceptKey_performed(InputAction.CallbackContext obj)
     {
-        print("Äù½ºÆ® ¸ñ·Ï UIÇ©±â ÇÏÀÚ.");
-        QuestListUI.Instance.ShowQuestList();
+        print("í€˜ìŠ¤íŠ¸ ëª©ë¡ UIí‘¯ê¸° í•˜ì.");
+        QuestListUI.Instance.ShowQuestList(questIds);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,13 +23,13 @@ public class QuestNPC : MonoBehaviour
             return;
         print(other);
 
-        // À¯Àú¿¡°Ô º¸¿©ÁÙ Äù½ºÆ®°¡ ÀÖÀ»¶§¸¸ ÁøÇàÇÏÀÚ
-        // º¸¿©ÁÙ Äù½ºÆ® : ¼ö¶ô/¿Ï·á/°ÅÀıÇÑ Äù½ºÆ®¸¦ Á¦¿Ü
+        // ìœ ì €ì—ê²Œ ë³´ì—¬ì¤„ í€˜ìŠ¤íŠ¸ê°€ ìˆì„ë•Œë§Œ ì§„í–‰í•˜ì
+        // ë³´ì—¬ì¤„ í€˜ìŠ¤íŠ¸ : ìˆ˜ë½/ì™„ë£Œ/ê±°ì ˆí•œ í€˜ìŠ¤íŠ¸ë¥¼ ì œì™¸
         if (HaveUseableQuest() == false)
             return;
 
         questAcceptKey.Enable();
-        TalkAlertUI.Instance.ShowText("¸ğÇèÀÚ¾ß ¸ØÃçºÁ!\nÇÒ¸»ÀÌ ÀÖ¾î(Q)");
+        TalkAlertUI.Instance.ShowText("ëª¨í—˜ìì•¼ ë©ˆì¶°ë´!\ní• ë§ì´ ìˆì–´(Q)");
     }
 
     private bool HaveUseableQuest()

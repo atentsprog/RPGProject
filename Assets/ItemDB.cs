@@ -1,8 +1,60 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+
+public enum QuestType
+{
+    KillMonster,      // 몬스터 처치.
+    GoToDestination,  // 목적지 도착
+    ItemCollection, // 아이템 수집
+}
+[System.Serializable]
+public class RewardInfo
+{
+    public int itemID;
+    public int count;
+}
+
+[System.Serializable]
+public class QuestInfo
+{
+    public string questTitle;
+    public int id;
+    [TextArea]
+    public string detailExplain;
+    public QuestType questType;
+
+    /// <summary>
+    /// 몬스터 처치시는 몬스터 ID
+    /// 아이템 수집시는 아이템 ID,</summary>
+    public int goalId;
+    /// <summary>
+    /// 몬스터 처치시는 몬스터 처치수
+    /// 아이템 수집시는 아이템 수집수,</summary>
+    public int goalCount;
+
+    public List<RewardInfo> rewards;
+
+    internal string GetGoalString()
+    {
+        switch (questType)
+        {
+            case QuestType.KillMonster: // 슬라임을 5마리 처치하세요.
+                string monsterName = ItemDB.GetMosnterInfo(goalId).name;
+                return $"{monsterName}를 {goalCount}마리 잡으세요";
+            case QuestType.GoToDestination: // 촌장님댁으로 이동하세요.
+                string destinationName = ItemDB.GetDestinationInfo(goalId).name;
+                return $"{destinationName}에 가세요";
+            case QuestType.ItemCollection: // 보석을 5개 수집하세요
+                string itemName = ItemDB.GetItemInfo(goalId).name;
+                return $"{itemName}를 {goalCount}개 수집하세요";
+        }
+
+        return "임시 작업해야함";
+    }
+}
 
 [System.Serializable]
 public class MonsterInfo
@@ -36,37 +88,60 @@ public class ItemInfo
 
 public class ItemDB : Singleton<ItemDB>
 {
+    [SerializeField] List<QuestInfo> quests;
     [SerializeField] List<ItemInfo> items;
     [SerializeField] List<MonsterInfo> monsters;
     [SerializeField] List<DestinationInfo> destinations;
+    Dictionary<int, QuestInfo> questMap;
     Dictionary<int, ItemInfo> itemMap;
     Dictionary<int, MonsterInfo> monsterMap;
     Dictionary<int, DestinationInfo> destinationMap;
+
     private void Awake()
     {
         itemMap = items.ToDictionary(x => x.id);
         monsterMap = monsters.ToDictionary(x => x.id);
         destinationMap = destinations.ToDictionary(x => x.id);
+        questMap = quests.ToDictionary(x => x.id);
+    }
+
+    internal List<QuestInfo> GetQuestInfo(List<int> questIds)
+    {
+        List<QuestInfo> result = new List<QuestInfo>(questIds.Count);
+
+        foreach (var item in questIds)
+        {
+            result.Add(GetQuestInfo(item));
+        }
+        return result;
+        //return quests.Where(x => questIds.Contains(x.id)).ToList();
+    }
+
+    internal static QuestInfo GetQuestInfo(int questID)
+    {
+        if (Instance.questMap.TryGetValue(questID, out QuestInfo result) == false)
+            Debug.LogError($"{questID}가 없습니다");
+        return result;
     }
 
     internal static MonsterInfo GetMosnterInfo(int mosnterID)
     {
         if (Instance.monsterMap.TryGetValue(mosnterID, out MonsterInfo result) == false)
-            Debug.LogError($"{mosnterID}�� �����ϴ�");
+            Debug.LogError($"{mosnterID}가 없습니다");
         return result;
     }
 
     internal static ItemInfo GetItemInfo(int itemID)
     {
         if (Instance.itemMap.TryGetValue(itemID, out ItemInfo result) == false)
-            Debug.LogError($"{itemID}�� �����ϴ�");
+            Debug.LogError($"{itemID}가 없습니다");
         return result;
     }
 
     internal static DestinationInfo GetDestinationInfo(int destinationId)
     {
         if (Instance.destinationMap.TryGetValue(destinationId, out DestinationInfo result) == false)
-            Debug.LogError($"{destinationId}�� �����ϴ�");
+            Debug.LogError($"{destinationId}가 없습니다");
         return result;
     }
 }
