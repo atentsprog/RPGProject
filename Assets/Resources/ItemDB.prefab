@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6207276641931151451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4332449796208939468}
+  - component: {fileID: 6156835064037500207}
+  m_Layer: 0
+  m_Name: ItemDB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4332449796208939468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207276641931151451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52.435223, y: 2.0609033, z: 49.230885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6156835064037500207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207276641931151451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacd5d5a89401ee40baf6b236809abc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+  - itemName: "\uACE8\uB4DC"
+    iconName: Gold
+    itemType: 1
+    id: 1
+    sellPrice: 1
+    buyPrice: 1
+  - itemName: "\uBC18\uC9C0"
+    iconName: Ring1
+    itemType: 4
+    id: 11
+    sellPrice: 100
+    buyPrice: 200
+  - itemName: "\uBAA9\uAC78\uC774"
+    iconName: Necklace1
+    itemType: 4
+    id: 12
+    sellPrice: 100
+    buyPrice: 200
+  - itemName: "\uBB3C\uC57D"
+    iconName: HpPortion1
+    itemType: 5
+    id: 13
+    sellPrice: 10
+    buyPrice: 20
+  - itemName: "\uBC29\uD328"
+    iconName: Shield1
+    itemType: 6
+    id: 14
+    sellPrice: 100
+    buyPrice: 120
+  - itemName: "\uD06C\uB9AC\uC2A4\uD0C8 \uC6D0\uC11D"
+    iconName: Jewel1
+    itemType: 6
+    id: 15
+    sellPrice: 180
+    buyPrice: 200
+  monsterList:
+  - id: 1
+    iconName: Slime
+    monsterName: "\uC2AC\uB77C\uC784"
+  destinationList:
+  - id: 1
+    destinationName: "\uCD0C\uC7A5\uB2D8 \uC9D1"
