@@ -43,3 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacd5d5a89401ee40baf6b236809abc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items:
+  - name: "\uACE8\uB4DC"
+    id: 1
+  - name: "\uB098\uBB34\uAC80"
+    id: 11
+  - name: "\uC791\uC740\uD3EC\uC158"
+    id: 12
+  - name: "\uBC29\uD328"
+    id: 13
+  - name: "\uD06C\uB9AC\uC2A4\uD0C8 \uC6D0\uC11D"
+    id: 14
+  monsters:
+  - name: "\uC2AC\uB77C\uC784"
+    id: 1
+  destinations:
+  - name: "\uCD0C\uC7A5\uC9D1"
+    id: 1

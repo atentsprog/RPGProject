@@ -7,20 +7,20 @@ using UnityEngine;
 [System.Serializable]
 public class MonsterInfo
 {
-    public int id;
     public string name;
+    public int id;
 }
 [System.Serializable]
 public class DestinationInfo
 {
-    public int id;
     public string name;
+    public int id;
 }
 [System.Serializable]
 public class ItemInfo
 {
-    public int id;
     public string name;
+    public int id;
 }
 
 
