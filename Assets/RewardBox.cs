@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class RewardBox : MonoBehaviour
 {
-    Image icon;
-    Text count;
+    public Image icon;
+    public Text count;
 
     public void Init()
     {

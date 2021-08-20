@@ -132,10 +132,10 @@ public class QuestListUI : Singleton<QuestListUI>
         rewardBoxs.ForEach(x => Destroy(x));
         rewardBoxs.Clear();
         baseRewardBox.gameObject.SetActive(true);
-        foreach (var item in item.rewards)
+        foreach (var rewardItem in item.rewards)
         {
             var titleItem = Instantiate(baseRewardBox, baseRewardBox.transform.parent);
-            titleItem.Init(item);
+            titleItem.Init(rewardItem);
             rewardBoxs.Add(titleItem.gameObject);
         }
         baseRewardBox.gameObject.SetActive(false);

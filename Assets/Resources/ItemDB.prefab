@@ -46,17 +46,22 @@ MonoBehaviour:
   items:
   - name: "\uACE8\uB4DC"
     id: 1
-  - name: "\uB098\uBB34\uAC80"
+    iconName: Gold
+  - name: "\uCD08\uBCF4 \uC0AC\uB0E5\uAFBC\uC758 \uAC80"
     id: 11
+    iconName: Sword1
   - name: "\uC791\uC740\uD3EC\uC158"
     id: 12
+    iconName: HpPotion1
   - name: "\uBC29\uD328"
     id: 13
+    iconName: Shield1
   - name: "\uD06C\uB9AC\uC2A4\uD0C8 \uC6D0\uC11D"
     id: 14
+    iconName: Jewel1
   monsters:
   - name: "\uC2AC\uB77C\uC784"
     id: 1
   destinations:
-  - name: "\uCD0C\uC7A5\uC9D1"
-    id: 1
+  - id: 1
+    name: "\uCD0C\uC7A5\uC9D1"

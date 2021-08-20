@@ -23,6 +23,14 @@ public class ItemInfo
     public int id;
     public string iconName;
     public Sprite Sprite => Resources.Load<Sprite>($"Icons/{iconName}");
+    //{
+    //    get
+    //    {
+    //        var result = Resources.Load<Sprite>($"Icons/{iconName}");
+    //        return result;
+    //    }
+    //}
+
 }
 
 
