@@ -13,7 +13,7 @@ public class QuestNPC : MonoBehaviour
     private void Awake() =>questAcceptKey.performed += QuestAcceptKey_performed;
     private void QuestAcceptKey_performed(InputAction.CallbackContext obj)
     {
-        print("Äù½ºÆ® ¸ñ·Ï UIÇ©±â ÇÏÀÚ.");
+        print("í€˜ìŠ¤íŠ¸ ëª©ë¡ UIí‘œì‹œ í•˜ì.");
         QuestListUI.Instance.ShowQuestList();
     }
 
@@ -29,7 +29,7 @@ public class QuestNPC : MonoBehaviour
             return;
 
         questAcceptKey.Enable();
-        TalkAlertUI.Instance.ShowText("¸ğÇèÀÚ¾ß ¸ØÃçºÁ!\nÇÒ¸»ÀÌ ÀÖ¾î(Q)");
+        TalkAlertUI.Instance.ShowText("ì´ë³´ê²Œ ì—¬í–‰ìì—¬ ê¸°ë‹¤ë ¤ë³´ê²Œ\n ìë„¤ì—ê²Œ í• ë§ì´ ìˆë‹¤ë„¤..(Q)");
     }
 
     private bool HaveUseableQuest()
