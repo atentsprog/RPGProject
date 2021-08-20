@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
+using System.Linq;
 
 /*
 퀘스트 이름 : questTitle
@@ -41,6 +42,7 @@ public class RewardInfo
 public class QuestInfo
 {
     public string questTitle;
+    public int id;
     [TextArea]
     public string detailExplain;
     public QuestType questType;
@@ -117,11 +119,19 @@ public class QuestListUI : Singleton<QuestListUI>
     private void RejectQuest()
     {
         print($"{currentQuest.questTitle} 퀘스트 거절함");
+        UserData.Instance.questData.data.rejectIds
+            .Add(currentQuest.id);
+
+        ShowQuestList();
     }
 
     private void AcceptQuest()
     {
         print($"{currentQuest.questTitle} 퀘스트 수락함");
+        UserData.Instance.questData.data.acceptIds
+            .Add(currentQuest.id);
+
+        ShowQuestList();
     }
 
     public void ShowQuestList()
@@ -133,7 +143,13 @@ public class QuestListUI : Singleton<QuestListUI>
         questTitleBoxs.Clear();
         // 왼쪽에 있는 퀘스트 이름 리스트 초기화
         baseQuestTitleBox.gameObject.SetActive(true);
-        foreach (var item in quests)
+
+        List<int> exceptIds = new List<int>();
+        exceptIds.AddRange(UserData.Instance.questData.data.acceptIds);
+        exceptIds.AddRange(UserData.Instance.questData.data.rejectIds);
+        var useQuestList = quests.Where(x => exceptIds.Contains(x.id) == false).ToList();
+
+        foreach (var item in useQuestList)
         {
             var titleItem = Instantiate(baseQuestTitleBox, baseQuestTitleBox.transform.parent);
             titleItem.Init(item);
@@ -143,7 +159,26 @@ public class QuestListUI : Singleton<QuestListUI>
         }
         baseQuestTitleBox.gameObject.SetActive(false);
 
-        OnClickTitleItem(quests[0]);
+        if (useQuestList.Count > 0)
+            OnClickTitleItem(useQuestList[0]);
+        else
+            ClearUI();
+    }
+
+    private void ClearUI()
+    {
+        currentQuest = null;
+        selectedQuestTitle.text ="";
+        questExplain.text = string.Empty;
+        goalExplain.text = string.Empty;
+
+
+        // 보상리스트 초기화.
+        rewardBoxs.ForEach(x => Destroy(x));
+        rewardBoxs.Clear();
+
+        questTitleBoxs.ForEach(x => Destroy(x));
+        questTitleBoxs.Clear();
     }
 
     QuestInfo currentQuest;

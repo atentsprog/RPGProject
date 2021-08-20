@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class UserQuestData
+{
+    public List<int> acceptIds;
+    public List<int> rejectIds;
+}
+
+public class UserData : Singleton<UserData>
+{
+    public PlayerPrefsData<UserQuestData> questData;
+    private void Awake()
+    {
+        questData = new PlayerPrefsData<UserQuestData>("UserQuestData");
+    }
+
+    private void OnDestroy()
+    {
+        questData.SaveData();
+    }
+}
