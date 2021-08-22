@@ -95,6 +95,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2282685994485295554}
     m_Modifications:
+    - target: {fileID: 6413953656526433794, guid: 3fd32d3e20b0b44858911c94dd563515, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6413953656528433338, guid: 3fd32d3e20b0b44858911c94dd563515, type: 3}
       propertyPath: m_Name
       value: Trees1 (1)
