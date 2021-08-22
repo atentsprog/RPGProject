@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask bulletColllisionDetact = int.MaxValue;
     private void ShootAction_performed(InputAction.CallbackContext obj)
     {
-        if (StageManager.GameState != StageManager.GameStateType.Play)
+        if (StageManager.GameState == StageManager.GameStateType.Menu)
             return;
 
         animator.SetTrigger(parameterAttack);
