@@ -67,7 +67,9 @@ public class PlayerController : MonoBehaviour
         bulletController.CurrentAngle = projectileParabolaDrawer.currentAngle;
         projectileParabolaDrawer.Speed = bulletController.Speed;
 
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward
+        Vector3 rayStartPoint = ProjectileParabolaDrawer.GetRayCastStartPoint(cameraTransform, barrelTransform.transform);
+
+        if (Physics.Raycast(rayStartPoint, cameraTransform.forward
             , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
         {
             //print($"여기에 레이 충돌함, {hit.point}, {hit.point.z}");

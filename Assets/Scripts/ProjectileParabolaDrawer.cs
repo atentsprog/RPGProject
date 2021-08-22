@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,12 +33,7 @@ public class ProjectileParabolaDrawer : MonoBehaviour
     void Update()
     {
         Vector3 targetPoint;
-
-        Vector3 rayStartPoint = cameraTransform.position;
-        Vector3 cameraPositionSameY = cameraTransform.position;
-        cameraPositionSameY.y = transform.position.y;
-        float playerDistance = Vector3.Distance(cameraPositionSameY, transform.position);
-        rayStartPoint += cameraTransform.forward * playerDistance;
+        Vector3 rayStartPoint = GetRayCastStartPoint(cameraTransform, transform);
 
         if (Physics.Raycast(rayStartPoint, cameraTransform.forward
             , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
@@ -51,6 +46,17 @@ public class ProjectileParabolaDrawer : MonoBehaviour
         }
 
         SetTargetWithSpeed(targetPoint, Speed);
+    }
+
+    public static Vector3 GetRayCastStartPoint(Transform cameraTransform, Transform thisTransform)
+    {
+        Vector3 rayStartPoint = cameraTransform.position;
+        Vector3 cameraPositionSameY = cameraTransform.position;
+
+        cameraPositionSameY.y = thisTransform.position.y;
+        float playerDistance = Vector3.Distance(cameraPositionSameY, thisTransform.position);
+        rayStartPoint += cameraTransform.forward * (playerDistance + 1);
+        return rayStartPoint;
     }
 
     public GameObject grenadeGo;
