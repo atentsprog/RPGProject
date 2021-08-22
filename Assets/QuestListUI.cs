@@ -62,11 +62,17 @@ public class QuestListUI : Singleton<QuestListUI>
 
     private void CloseUI()
     {
-        canvasGroup.DOFade(0, 0.5f);
+        canvasGroup.DOFade(0, 0.5f)
+            .SetUpdate(true)
+            .OnComplete(()=>{ 
+            StageManager.GameState = StageManager.GameStateType.Play;
+        });
     }
 
     private void RejectQuest()
     {
+        if (currentQuest == null)
+            return;
         print($"{currentQuest.questTitle} 퀘스트 거절함");
         UserData.Instance.questData.data.rejectIds
             .Add(currentQuest.id);
@@ -76,6 +82,8 @@ public class QuestListUI : Singleton<QuestListUI>
 
     private void AcceptQuest()
     {
+        if (currentQuest == null)
+            return;
         print($"{currentQuest.questTitle} 퀘스트 수락함");
         UserData.Instance.questData.data.acceptIds
             .Add(currentQuest.id);
@@ -85,10 +93,12 @@ public class QuestListUI : Singleton<QuestListUI>
 
     public void ShowQuestList(List<int> questIds = null)
     {
-        if(questIds != null)
+        StageManager.GameState = StageManager.GameStateType.Menu;
+
+        if (questIds != null)
             quests = ItemDB.Instance.GetQuestInfo(questIds);// 
         canvasGroup.alpha = 0;
-        canvasGroup.DOFade(1, 0.5f);
+        canvasGroup.DOFade(1, 0.5f).SetUpdate(true);
 
         questTitleBoxs.ForEach(x => Destroy(x));
         questTitleBoxs.Clear();
