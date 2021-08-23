@@ -19,6 +19,7 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
+    public float talkSpeed = 20;
     public void ShowText(string _text, float visibleTime = 3, string _name = "NPC"
         , string portraitSpriteName = "NPC1")
     {
@@ -27,7 +28,8 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
         canvasGroup.DOKill();
         canvasGroup.DOFade(1, 0.5f);
 
-        contentsText.text = _text;
+        contentsText.text = "";
+        contentsText.DOText(_text, _text.VisibleTextLength() / talkSpeed).SetUpdate(true);
         nameText.text = _name;
         portrait.sprite = Resources.Load<Sprite>("NPC/" + portraitSpriteName);
         //portrait.sprite =(Sprite)Resources.Load("NPC/" + portraitSpriteName, typeof(Sprite));
