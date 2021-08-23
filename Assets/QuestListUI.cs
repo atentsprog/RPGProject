@@ -38,7 +38,7 @@ public class QuestListUI : Singleton<QuestListUI>
     Text goalExplain;
     Text questExplain;
     Text accectQuestText;
-    void Start()
+    void Awake()
     {
         selectedQuestTitle = transform.Find("Right/QuestTitle/SelectedQuestTitle/SelectedQuestTitle").GetComponent<Text>();
         goalExplain = transform.Find("Right/Goal/GoalExplain").GetComponent<Text>();
@@ -90,7 +90,7 @@ public class QuestListUI : Singleton<QuestListUI>
 
     public void ShowQuestList(List<int> questIds = null)
     {
-        if (canvasGroup.alpha > 0) //gameObject.activeInHierarchy
+        if (gameObject.activeSelf && canvasGroup.alpha > 0) //gameObject.activeInHierarchy
             return;
         gameObject.SetActive(true);
         StageManager.GameState = GameStateType.Menu;
