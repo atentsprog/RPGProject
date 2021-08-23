@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,16 +31,27 @@ public class TimeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (Time.timeScale == 1)
+            {
                 Time.timeScale = 0;
+                //씨네머신 버추얼 카메라도 멈추자.
+                cinemachineVirtualCameras = FindObjectsOfType<CinemachineVirtualCamera>();
+                foreach (var item in cinemachineVirtualCameras)
+                    item.gameObject.SetActive(false);
+            }
             else
+            {
                 Time.timeScale = 1;
+                foreach (var item in cinemachineVirtualCameras)
+                    item.gameObject.SetActive(true);
+            }
         }
 
         // F1키 누르면 재시작( 타임 콘트롤과 관련 없으므로 비슷한 기능 모였을때 다른 클래스로 빼자)
-        if(Input.GetKeyDown(KeyCode.F1))
+        if (Input.GetKeyDown(KeyCode.F1))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(
                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
     }
+    CinemachineVirtualCamera[] cinemachineVirtualCameras;
 }
