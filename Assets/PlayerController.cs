@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,12 +37,12 @@ public class PlayerController : MonoBehaviour
         shootAction.performed += ShootAction_performed;
 
         projectileParabolaDrawer.gameObject.SetActive(false);
-        aimAction.performed += _ => projectileParabolaDrawer.gameObject.SetActive(true); // ±ËÀû º¸ÀÌ°Ô ÇÏ±â
-        aimAction.canceled += _ => projectileParabolaDrawer.gameObject.SetActive(false); // ±ËÀû °¨Ãß
+        aimAction.performed += _ => projectileParabolaDrawer.gameObject.SetActive(true); // ê¶¤ì  ë³´ì´ê²Œ í•˜ê¸°
+        aimAction.canceled += _ => projectileParabolaDrawer.gameObject.SetActive(false); // ê¶¤ì  ê°ì¶”
 
         projectileParabolaDrawer.Speed = bulletPrefab.GetComponent<IProjectile>().Speed;
 
-        //¾Æ·¡Ã³·³µµ ÀÛ¼º°¡´ÉÇÏÁö¸¸ »ç¿ëÇÏÁö ¾Ê´Â ÆÄ¶ó¹ÌÅÍ ±»ÀÌ ÀûÀ» ÇÊ¿ä ¾øÀ¸´Ï±ñ À§¿¡¼­Ã³·³ Âª°Ô Ç¥Çö
+        //ì•„ë˜ì²˜ëŸ¼ë„ ì‘ì„±ê°€ëŠ¥í•˜ì§€ë§Œ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” íŒŒë¼ë¯¸í„° êµ³ì´ ì ì„ í•„ìš” ì—†ìœ¼ë‹ˆê¹ ìœ„ì—ì„œì²˜ëŸ¼ ì§§ê²Œ í‘œí˜„
         //aimAction.canceled += (InputAction.CallbackContext obj) => { projectileParabolaDrawer.gameObject.SetActive(false); }; 
     }
 
@@ -64,10 +64,11 @@ public class PlayerController : MonoBehaviour
         bulletController.CurrentAngle = projectileParabolaDrawer.currentAngle;
         projectileParabolaDrawer.Speed = bulletController.Speed;
 
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward
+        Vector3 rayStartPoint = ProjectileParabolaDrawer.GetRayStartPoint(cameraTransform, transform);
+        if (Physics.Raycast(rayStartPoint, cameraTransform.forward
             , out RaycastHit hit, Mathf.Infinity, bulletColllisionDetact))
         {
-            //print($"¿©±â¿¡ ·¹ÀÌ Ãæµ¹ÇÔ, {hit.point}, {hit.point.z}");
+            //print($"ì—¬ê¸°ì— ë ˆì´ ì¶©ëŒí•¨, {hit.point}, {hit.point.z}");
             bullet.transform.LookAt(hit.point);
             bulletController.Target = hit.point;
             bulletController.TargetContactNormal = hit.normal;
@@ -104,17 +105,17 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
-        // È¸Àü.
+        // íšŒì „.
         Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.rotation.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
 
-        // ¾Ö´Ï¸ŞÀÌ¼Ç
+        // ì• ë‹ˆë©”ì´ì…˜
         if (move.sqrMagnitude > 0)
         {
             float forwardDegree = transform.forward.VectorToDegree();
             float moveDegree = move.VectorToDegree();
-            float dirRadian = (moveDegree - forwardDegree + 90) * Mathf.PI / 180; //¶óµğ¾È°ª
+            float dirRadian = (moveDegree - forwardDegree + 90) * Mathf.PI / 180; //ë¼ë””ì•ˆê°’
             Vector3 dir;
             dir.x = Mathf.Cos(dirRadian);// 
             dir.z = Mathf.Sin(dirRadian);//

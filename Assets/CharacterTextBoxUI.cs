@@ -19,13 +19,20 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
+    public float speechSpeed = 20;
     public void ShowText(string _text, float visibleTime = 3, string _name = "NPC"
         , string portraitSpriteName = "NPC1")
     {
+        gameObject.SetActive(true);
+        canvasGroup.DOKill();
         canvasGroup.alpha = 0;
         canvasGroup.DOFade(1, 0.5f);
 
-        contentsText.text = _text;
+        //contentsText.text = _text;
+        //contentsText.DOText(_text, _text.Length / speechSpeed);
+        contentsText.DOKill();
+        contentsText.text = "";
+        contentsText.DOText(_text, _text.VisibleTextLength() / speechSpeed);
         nameText.text = _name;
         portrait.sprite = Resources.Load<Sprite>("NPC/" + portraitSpriteName);
         //portrait.sprite =(Sprite)Resources.Load("NPC/" + portraitSpriteName, typeof(Sprite));
@@ -35,6 +42,18 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
 
     internal void CloseUI()
     {
-        canvasGroup.DOFade(0, 0.5f);
+        canvasGroup.DOFade(0, 0.5f)
+            .OnComplete(() => gameObject.SetActive(false));
+
+        //canvasGroup.DOFade(0, 0.5f)
+        //    .OnComplete(() => { gameObject.SetActive(false); });
+
+        //canvasGroup.DOFade(0, 0.5f)
+        //    .OnComplete(OnComplete);
     }
+
+    //void OnComplete()
+    //{
+    //    gameObject.SetActive(false);
+    //}
 }
