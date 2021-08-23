@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -6,7 +6,7 @@ using System.IO;
 
 public class SpriteSaveToPng
 {
-    const string selectedSpriteSavePngMeshPath = "Assets/Create/2D/¼±ÅÃÇÑ ÀÌ¹ÌÁö ÀúÀå(PNG)";
+    const string selectedSpriteSavePngMeshPath = "Assets/Create/2D/ì„ íƒí•œ ì´ë¯¸ì§€ ì €ì¥(PNG)";
     [MenuItem(selectedSpriteSavePngMeshPath, true, 0)]
     private static bool ValidateMenuSavePng()
     {
@@ -42,7 +42,7 @@ public class SpriteSaveToPng
 
         foreach (var textureFilePath in textureFilePaths)
         {
-            //// ¼±ÅÃµÈ ÅØ½ºÃÄ°¡ ¾ĞÃàµÇ¾î ÀÖ´Ù¸é Ç®ÀÚ.
+            //// ì„ íƒëœ í…ìŠ¤ì³ê°€ ì••ì¶•ë˜ì–´ ìˆë‹¤ë©´ í’€ì.
             TextureImporterCompression originalCompress;
 
             TextureImporter importer = AssetImporter.GetAtPath(textureFilePath) as TextureImporter;
@@ -64,7 +64,7 @@ public class SpriteSaveToPng
             SaveTextureToFile(texture, importer, textureFilePath, selectedSprites);
             Debug.Log(desPath);
 
-            // ÅØ½ºÃÄ ¾ĞÃà ¿ø»ó º¹±¸
+            // í…ìŠ¤ì³ ì••ì¶• ì›ìƒ ë³µêµ¬
             importer.isReadable = false;
             importer.textureCompression = originalCompress;
             AssetDatabase.ImportAsset(textureFilePath);
