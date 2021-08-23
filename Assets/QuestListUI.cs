@@ -62,7 +62,12 @@ public class QuestListUI : Singleton<QuestListUI>
 
     private void CloseUI()
     {
-        canvasGroup.DOFade(0, 0.5f);
+        canvasGroup.DOFade(0, 0.5f).SetUpdate(true)
+            .OnComplete(() =>
+            {
+                StageManager.GameState = GameStateType.Play;
+                gameObject.SetActive(false);
+            });
     }
 
     private void RejectQuest()
@@ -85,10 +90,15 @@ public class QuestListUI : Singleton<QuestListUI>
 
     public void ShowQuestList(List<int> questIds = null)
     {
-        if(questIds != null)
+        if (canvasGroup.alpha > 0) //gameObject.activeInHierarchy
+            return;
+        gameObject.SetActive(true);
+        StageManager.GameState = GameStateType.Menu;
+
+        if (questIds != null)
             quests = ItemDB.Instance.GetQuestInfo(questIds);// 
         canvasGroup.alpha = 0;
-        canvasGroup.DOFade(1, 0.5f);
+        canvasGroup.DOFade(1, 0.5f).SetUpdate(true);
 
         questTitleBoxs.ForEach(x => Destroy(x));
         questTitleBoxs.Clear();

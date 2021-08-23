@@ -55,6 +55,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask bulletColllisionDetact = int.MaxValue;
     private void ShootAction_performed(InputAction.CallbackContext obj)
     {
+        if (StageManager.GameState != GameStateType.Play)
+            return;
+
         animator.SetTrigger(parameterAttack);
 
         GameObject bullet = Instantiate(bulletPrefab, barrelTransform.transform.position

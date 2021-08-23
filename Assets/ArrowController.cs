@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +26,7 @@ public class ArrowController : MonoBehaviour, IProjectile
 
         rigidbody = GetComponent<Rigidbody>();
 
-        //ÀÌÀü ÄÚµå Á÷¼±À¸·Î ³¯¾Æ°¨.
+        //ì´ì „ ì½”ë“œ ì§ì„ ìœ¼ë¡œ ë‚ ì•„ê°.
         //Vector3 toDirec = (target - transform.position).normalized;
         //rigidbody.AddForce(toDirec * force, ForceMode.VelocityChange);
 
@@ -52,7 +52,7 @@ public class ArrowController : MonoBehaviour, IProjectile
     {
         if (isDestroyed)
         {
-            Debug.LogWarning("ÀÌ¹Ì »èÁ¦ µÇ¾úÀ½, ¿©±ä Àı´ë ¾È¿Ã²¨¾ß!");
+            Debug.LogWarning("ì´ë¯¸ ì‚­ì œ ë˜ì—ˆìŒ, ì—¬ê¸´ ì ˆëŒ€ ì•ˆì˜¬êº¼ì•¼!");
             return;
         }
 
@@ -62,7 +62,7 @@ public class ArrowController : MonoBehaviour, IProjectile
 
         if (Vector3.Distance(transform.position, target) < 0.01f)
         {
-            //print("À§Ä¡±îÀÌ ¿Í¼­ ÅÍÁü" + transform.position.ToString());
+            //print("ìœ„ì¹˜ê¹Œì´ ì™€ì„œ í„°ì§" + transform.position.ToString());
             if (hit)
                 Instantiate(bulletDecal, target, previousRotation);
 
@@ -77,11 +77,11 @@ public class ArrowController : MonoBehaviour, IProjectile
     {
         if (isDestroyed)
         {
-            //Debug.LogWarning("ÀÌ¹Ì Ãæµ¹ ÇØ¼­ »èÁ¦ Çß´Âµ¥ Ãæµ¹ÇÔ");
+            //Debug.LogWarning("ì´ë¯¸ ì¶©ëŒ í•´ì„œ ì‚­ì œ í–ˆëŠ”ë° ì¶©ëŒí•¨");
             return;
         }
         var contact = other.GetContact(0);
-        //print($"Ãæµ¹ÇØ¼­ ÅÍÁü, {contact.point}, {contact.point.y}");
+        //print($"ì¶©ëŒí•´ì„œ í„°ì§, {contact.point}, {contact.point.y}");
         Instantiate(bulletDecal, contact.point, previousRotation);
         GetComponent<Collider>().enabled = false;
         Destroy(gameObject);
