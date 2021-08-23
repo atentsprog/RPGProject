@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShopNPC : NPC
 {
-
     protected override void ShowUI()
     {
         print("샵 ui표시)");

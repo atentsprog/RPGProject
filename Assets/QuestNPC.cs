@@ -5,9 +5,10 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class NPC : MonoBehaviour
+public abstract class NPC : MonoBehaviour
 {
-    public InputAction showUIKey = new InputAction("Key", InputActionType.Button, "<Keyboard>/q");
+    public InputAction showUIKey = new InputAction("Key"
+        , InputActionType.Button, "<Keyboard>/q");
     public string speechString = "모험자야 멈춰봐!\n할말이 있어(Q)";
     public string npcName = "상점 NPC";
     public string npcSpriteName = "NPC1";
@@ -16,24 +17,17 @@ public class NPC : MonoBehaviour
     private void QuestAcceptKey_performed(InputAction.CallbackContext obj)
     {
         print("UI표시 하자.");
-
         CharacterTextBoxUI.Instance.CloseUI();
         ShowUI();
     }
-
-    protected virtual void ShowUI()
-    {
-
-    }
-
+    //protected virtual void ShowUI() { }
+    protected abstract void ShowUI();
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") == false)
             return;
         print(other);
 
-        // 유저에게 보여줄 퀘스트가 있을때만 진행하자
-        // 보여줄 퀘스트 : 수락/완료/거절한 퀘스트를 제외
         if (IsUseableMenu() == false)
             return;
 
@@ -67,7 +61,6 @@ public class QuestNPC : NPC
 
         return questIds.Where(x => ignoreIds.Contains(x) == false).Count() > 0;
     }
-
 
     protected override void ShowUI()
     {
