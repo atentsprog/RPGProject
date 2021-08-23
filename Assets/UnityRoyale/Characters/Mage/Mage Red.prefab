@@ -1387,7 +1387,8 @@ GameObject:
   - component: {fileID: 1122871591}
   - component: {fileID: 590187671794222575}
   - component: {fileID: 5035176704641411430}
-  - component: {fileID: 7543106541568823222}
+  - component: {fileID: 1974732173}
+  - component: {fileID: 1974732172}
   m_Layer: 0
   m_Name: Mage Red
   m_TagString: Untagged
@@ -1440,7 +1441,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122871589}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -1454,7 +1455,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 0
 --- !u!82 &5035176704641411430
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1551,7 +1552,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7543106541568823222
+--- !u!135 &1974732173
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122871589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1974732172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1560,9 +1574,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1122871589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7c9302ed47465b4e8f47961ddc027a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 55995fd8de8f508498c089fa8bd248f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speechString: "\uAC70\uB798 \uD560\uB798?(Q)"
+  npcName: "\uC0C1\uC810 NPC"
+  npcPortrait: NPC1
+  questAcceptKey:
+    m_Name: Q Key
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 378e3b3a-bfd3-4f4e-b068-50c6a4d8e7eb
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c9d2560e-1ebb-4b0f-8474-c1756420da41
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Q Key
+      m_Flags: 0
 --- !u!1 &1135473222
 GameObject:
   m_ObjectHideFlags: 0

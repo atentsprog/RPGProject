@@ -5,18 +5,45 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class QuestNPC : MonoBehaviour
-{
-    public InputAction questAcceptKey;
+public class QuestNPC : NPC
+{ 
     public List<int> questIds = new List<int>();
 
-    private void Awake() =>questAcceptKey.performed += QuestAcceptKey_performed;
-    private void QuestAcceptKey_performed(InputAction.CallbackContext obj)
+    protected override void ShowUI()
     {
-        print("퀘스트 목록 UI푯기 하자.");
-        CharacterTextBoxUI.Instance.CloseUI();
         QuestListUI.Instance.ShowQuestList(questIds);
     }
+
+    protected override bool IsUseableMenu()
+    {
+        List<int> ignoreIds = new List<int>();
+        ignoreIds.AddRange(UserData.Instance.questData.data.acceptIds);
+        ignoreIds.AddRange(UserData.Instance.questData.data.rejectIds);
+
+        return questIds.Where(x => ignoreIds.Contains(x) == false).Count() > 0;
+    }
+}
+
+public abstract class NPC : MonoBehaviour
+{
+    [TextArea]
+    public string speechString = "모험자야 멈춰봐!\n할말이 있어(Q)";
+    public string npcName = "NPC";
+    public string npcPortrait = "NPC1";
+    public InputAction questAcceptKey = new InputAction(
+        "Q Key", InputActionType.Button, "<Keyboard>/q");
+
+    private void Awake() => questAcceptKey.performed += ShowUiKey_performed;
+    private void ShowUiKey_performed(InputAction.CallbackContext obj)
+    {
+        // 마우스 커서 보이게 하자.
+        Cursor.lockState = CursorLockMode.None;
+        print("UI표시 하자.");
+        CharacterTextBoxUI.Instance.CloseUI();
+        ShowUI();
+    }
+
+    abstract protected void ShowUI();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,21 +53,14 @@ public class QuestNPC : MonoBehaviour
 
         // 유저에게 보여줄 퀘스트가 있을때만 진행하자
         // 보여줄 퀘스트 : 수락/완료/거절한 퀘스트를 제외
-        if (HaveUseableQuest() == false)
+        if (IsUseableMenu() == false)
             return;
 
         questAcceptKey.Enable();
-        CharacterTextBoxUI.Instance.ShowText("모험자야 멈춰봐!\n할말이 있어(Q)");
+        CharacterTextBoxUI.Instance.ShowText(speechString, 3, npcName, npcPortrait);
     }
 
-    private bool HaveUseableQuest()
-    {
-        List<int> ignoreIds = new List<int>();
-        ignoreIds.AddRange(UserData.Instance.questData.data.acceptIds);
-        ignoreIds.AddRange(UserData.Instance.questData.data.rejectIds);
-
-        return questIds.Where(x => ignoreIds.Contains(x) == false).Count() > 0;
-    }
+    virtual protected bool IsUseableMenu() => true;
 
     private void OnTriggerExit(Collider other)
     {

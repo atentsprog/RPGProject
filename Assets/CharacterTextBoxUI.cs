@@ -22,7 +22,9 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
     public void ShowText(string _text, float visibleTime = 3, string _name = "NPC"
         , string portraitSpriteName = "NPC1")
     {
+        gameObject.SetActive(true);
         canvasGroup.alpha = 0;
+        canvasGroup.DOKill();
         canvasGroup.DOFade(1, 0.5f);
 
         contentsText.text = _text;

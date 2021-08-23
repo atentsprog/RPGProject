@@ -1,18 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!135 &129456754
-SphereCollider:
+--- !u!114 &1608548063482015913
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8584991783828831444}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9302ed47465b4e8f47961ddc027a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechString: "\uBAA8\uD5D8\uC790\uC57C \uBA48\uCDB0\uBD10!\n\uD560\uB9D0\uC774
+    \uC788\uC5B4(Q)"
+  npcName: "\uD018\uC2A4\uD2B8 NPC"
+  npcPortrait: NPC2
+  questAcceptKey:
+    m_Name: Q Key
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 09494d66-a4a3-40d0-b74d-b9eaca5528b4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: bf17bda1-6116-477c-9794-f367f4b788de
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Q Key
+      m_Flags: 0
+  questIds: 0100000002000000
 --- !u!1001 &8584991782711727601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bfbc8c919d7c12947aa8154e211a1296, type: 2}
     - target: {fileID: 1122871589, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_Name
-      value: Mage Blue
+      value: QuestNPC Blue
       objectReference: {fileID: 0}
     - target: {fileID: 1122871592, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_RootOrder
@@ -83,6 +103,10 @@ PrefabInstance:
     - target: {fileID: 1122871592, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974732172, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
+      propertyPath: speechString
+      value: "\uBAA8\uD5D8\uC790\uC57C \uBA48\uCDB0\uBD10!\\n\uD560\uB9D0\uC774 \uC788\uC5B4(Q)"
       objectReference: {fileID: 0}
     - target: {fileID: 2022460059, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_Layer
@@ -448,7 +472,12 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.4669811
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7543106541568823222, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
+      propertyPath: questAcceptKey.m_Id
+      value: d676f01f-b2e1-4b5e-97d6-7858c6ab4b02
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1974732172, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
 --- !u!4 &8584991783229962960 stripped
 Transform:
