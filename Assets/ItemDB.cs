@@ -75,14 +75,21 @@ public class ItemInfo
     public int id;
     public string iconName;
     public Sprite Sprite => Resources.Load<Sprite>($"Icons/{iconName}");
-    //{
-    //    get
-    //    {
-    //        var result = Resources.Load<Sprite>($"Icons/{iconName}");
-    //        return result;
-    //    }
-    //}
 
+    public int sellPrice; // 상점에 팔때
+    public int buyPrice; // 상점에서 구입할때 가격
+    public bool registShop;
+    public ItemType itemType;
+}
+public enum ItemType
+{
+    Money,      // 재화. 0 ~ 10
+    Weapon,     // 무기       1001
+    Armor,      // 방어구     2001 ~ 3000
+    Accesory,   // 악세사리.  3001
+    Consume,    // 소비아이템(포션,..) // 4001
+    Material,   // 재료       5001
+    Etc,        // 기타       6001
 }
 
 

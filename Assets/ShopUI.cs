@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+//
 public class ShopUI : Singleton<ShopUI>
 {
     CanvasGroup canvasGroup;
@@ -40,7 +40,7 @@ public class ShopUI : Singleton<ShopUI>
             commandList.Add(new Tuple<string, UnityAction>("Exit", CloseUI));
 
             categoryBaseBox.LinkComponent();
-
+            //
             categoryBaseBox.gameObject.SetActive(true);
             foreach (var item in commandList)
             {
@@ -66,9 +66,42 @@ public class ShopUI : Singleton<ShopUI>
 
     private void ShowBuyUI()
     {
-        throw new NotImplementedException();
+        shopMenuGo.SetActive(false);
+        subCategoryGo.SetActive(true);
+
+        // Buy, Sell, Craft, Exit
+        InitCategory();
+
+        void InitCategory()
+        {
+            categoryBaseBox = transform.Find("SubCategory/Left/Content/CotegoryBox")
+                .GetComponent<TextButtonBox>();
+
+            //"Buy", ShowBuyUI
+            List<Tuple<string, UnityAction>> commandList = new List<Tuple<string, UnityAction>>();
+            commandList.Add(new Tuple<string, UnityAction>("무기"         , () => ShowBuyList(ItemType.Weapon)));
+            commandList.Add(new Tuple<string, UnityAction>("방어구"       , () => ShowBuyList(ItemType.Armor)));
+            commandList.Add(new Tuple<string, UnityAction>("악세서리"     , () => ShowBuyList(ItemType.Accesory)));
+            commandList.Add(new Tuple<string, UnityAction>("소비 아이템"  , () => ShowBuyList(ItemType.Consume)));
+            commandList.Add(new Tuple<string, UnityAction>("재료"         , () => ShowBuyList(ItemType.Material)));
+
+            categoryBaseBox.LinkComponent();
+            categoryBaseBox.gameObject.SetActive(true);
+            foreach (var item in commandList)
+            {
+                var newButton = Instantiate(categoryBaseBox, categoryBaseBox.transform.parent);
+
+                newButton.text.text = item.Item1;
+                newButton.button.onClick.AddListener(item.Item2);
+            }
+            categoryBaseBox.gameObject.SetActive(false);
+        }
     }
 
+    private void ShowBuyList(ItemType itemType)
+    {
+        //print(itemType);
+    }
 
     private void OnEnable()
     {
@@ -89,6 +122,8 @@ public class ShopUI : Singleton<ShopUI>
         subCategoryGo.SetActive(false);
 
         SetGuideText("무엇을 하시겠습니까?");
+
+        ShowBuyUI();
     }
 
     private void SetGuideText(string showText)
