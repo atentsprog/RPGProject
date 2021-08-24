@@ -6,16 +6,19 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 //
-public class ShopUI : Singleton<ShopUI>
+public partial class ShopUI : Singleton<ShopUI>
 {
     CanvasGroup canvasGroup;
     GameObject shopMenuGo;
     GameObject subCategoryGo;
     Text guideText;
     
-    TextButtonBox categoryBaseBox;
+    TextButtonBox categoryBaseBox; 
+
     void Awake()
     {
+        InitBuyUI();
+        
         canvasGroup = GetComponent<CanvasGroup>();
         shopMenuGo = transform.Find("ShopMenu").gameObject;
         subCategoryGo = transform.Find("SubCategory").gameObject;
@@ -28,7 +31,7 @@ public class ShopUI : Singleton<ShopUI>
 
         // Buy, Sell, Craft, Exit
         InitCategory();
-         
+
         void InitCategory()
         {
             categoryBaseBox = transform.Find("ShopMenu/BookCover/Category/MenuCategoryBox")
@@ -55,7 +58,6 @@ public class ShopUI : Singleton<ShopUI>
         }
     }
 
-
     private void ShowCraftUI()
     {
         throw new NotImplementedException();
@@ -66,49 +68,6 @@ public class ShopUI : Singleton<ShopUI>
         throw new NotImplementedException();
     }
 
-    //List<GameObject> buyBaseBoxs = new List<GameObject>();
-    private void ShowBuyUI()
-    {
-        shopMenuGo.SetActive(false);
-        subCategoryGo.SetActive(true);
-
-        // Buy, Sell, Craft, Exit
-        InitCategory();
-
-        void InitCategory()
-        {
-            categoryBaseBox = transform.Find("SubCategory/Left/Content/CotegoryBox")
-                .GetComponent<TextButtonBox>();
-
-            //"Buy", ShowBuyUI
-            List<Tuple<string, UnityAction>> commandList = new List<Tuple<string, UnityAction>>();
-            commandList.Add(new Tuple<string, UnityAction>("무기"         , () => ShowBuyList(ItemType.Weapon)));
-            commandList.Add(new Tuple<string, UnityAction>("방어구"       , () => ShowBuyList(ItemType.Armor)));
-            commandList.Add(new Tuple<string, UnityAction>("악세서리"     , () => ShowBuyList(ItemType.Accesory)));
-            commandList.Add(new Tuple<string, UnityAction>("소비 아이템"  , () => ShowBuyList(ItemType.Consume)));
-            commandList.Add(new Tuple<string, UnityAction>("재료"         , () => ShowBuyList(ItemType.Material)));
-
-            //buyBaseBoxs.ForEach(x => Destroy(x));
-            //buyBaseBoxs.Clear();
-
-            categoryBaseBox.LinkComponent();
-            categoryBaseBox.gameObject.SetActive(true);
-            foreach (var item in commandList)
-            {
-                var newButton = Instantiate(categoryBaseBox, categoryBaseBox.transform.parent);
-
-                newButton.text.text = item.Item1;
-                newButton.button.onClick.AddListener(item.Item2);
-                //buyBaseBoxs.Add(newButton.gameObject);
-            }
-            categoryBaseBox.gameObject.SetActive(false);
-        }
-    }
-
-    private void ShowBuyList(ItemType itemType)
-    {
-        //print(itemType);
-    }
 
     private void OnEnable()
     {
