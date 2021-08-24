@@ -90,6 +90,8 @@ public partial class ShopUI : Singleton<ShopUI>
 
         shopMenuGo.SetActive(true);
         subCategoryGo.SetActive(false);
+        shopMenuGo.GetComponent<CanvasGroup>().alpha = 1;
+        subCategoryGo.GetComponent<CanvasGroup>().alpha = 0;
 
         SetGuideText("무엇을 하시겠습니까?");
     }

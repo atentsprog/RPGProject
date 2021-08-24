@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,11 +32,12 @@ public partial class ShopUI : Singleton<ShopUI>
             default: return "";
         }
     }
-    //List<GameObject> buyBaseBoxs = new List<GameObject>();
+
     private void ShowBuyUI()
     {
-        shopMenuGo.SetActive(false);
+        shopMenuGo.GetComponent<CanvasGroup>().DOFade(0, 0.5f).SetUpdate(true).OnComplete(() => shopMenuGo.SetActive(false));
         subCategoryGo.SetActive(true);
+        subCategoryGo.GetComponent<CanvasGroup>().DOFade(1, 0.5f).SetUpdate(true);
 
         // Buy, Sell, Craft, Exit
         InitCategory();
@@ -99,11 +101,6 @@ public partial class ShopUI : Singleton<ShopUI>
             SetGuideText($"{item.name}을 구입 하시겠습니까?",
                 () => {
                     print($"{item.name}을 구입하자.");
-                    //InventoryItemInfo newItem = new InventoryItemInfo();
-                    //newItem.id = item.id;
-                    //newItem.count = 1;
-                    //UserData.Instance.itemData.data.item.Add(newItem);
-
                     UserData.Instance.ProcessBuyItem(item, 1);
             });
         }
