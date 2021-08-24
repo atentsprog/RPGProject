@@ -20,16 +20,25 @@ public class StageManager : Singleton<StageManager>
         get => Instance.gameState;
         set
         {
+            if (Instance == null)
+                return;
+
             if (Instance.gameState == value)
                 return;
 
             var oldState = Instance.gameState;
             Instance.gameState = value;
 
-            if(value == GameStateType.Menu)
+            if (value == GameStateType.Menu)
+            {
                 Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.None;
+            }
             else
+            {
                 Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
 
             Debug.Log($"gameState:{oldState} =>{value} " +
                 $"timeScale:{Time.timeScale}");
