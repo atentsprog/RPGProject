@@ -103,6 +103,8 @@ public partial class ShopUI : Singleton<ShopUI>
                     //newItem.id = item.id;
                     //newItem.count = 1;
                     //UserData.Instance.itemData.data.item.Add(newItem);
+
+                    UserData.Instance.ProcessBuyItem(item, 1);
             });
         }
     }
