@@ -10,7 +10,7 @@ public partial class ShopUI : Singleton<ShopUI>
     Text selectedTitle;
     private void InitBuyUI()
     {
-        selectedTitle = transform.Find("Right/Title/SelectedTitle/SelectedTitle").GetComponent<Text>();
+        selectedTitle = transform.Find("SubCategory/Right/Title/SelectedTitle/SelectedTitle").GetComponent<Text>();
     }
 
     private string GetItemTypeString(ItemType itemType)
@@ -27,7 +27,7 @@ public partial class ShopUI : Singleton<ShopUI>
             default: return "";
         }
     }
-
+    //List<GameObject> buyBaseBoxs = new List<GameObject>();
     private void ShowBuyUI()
     {
         shopMenuGo.SetActive(false);
