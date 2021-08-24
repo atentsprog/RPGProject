@@ -13,12 +13,16 @@ public partial class ShopUI : Singleton<ShopUI>
     GameObject subCategoryGo;
     Text guideText;
     
-    TextButtonBox categoryBaseBox; 
+    TextButtonBox categoryBaseBox;
+    Button guildOkButton;
 
     void Awake()
     {
         InitBuyUI();
-        
+
+        guildOkButton = transform.Find("GuideUI/OkButton").GetComponent<Button>();
+        guildOkButton.gameObject.SetActive(false);
+
         canvasGroup = GetComponent<CanvasGroup>();
         shopMenuGo = transform.Find("ShopMenu").gameObject;
         subCategoryGo = transform.Find("SubCategory").gameObject;
@@ -90,12 +94,22 @@ public partial class ShopUI : Singleton<ShopUI>
         SetGuideText("무엇을 하시겠습니까?");
     }
 
-    private void SetGuideText(string showText)
+    private void SetGuideText(string showText, Action action = null)
     {
         guideText.text = "";
         guideText.DOKill();
         guideText.DOText(showText, showText.VisibleTextLength() / speechSpeed)
             .SetUpdate(true);
+
+
+        if (action == null)
+            guildOkButton.gameObject.SetActive(false);
+        else
+        {
+            guildOkButton.gameObject.SetActive(true);
+            guildOkButton.onClick.RemoveAllListeners();
+            guildOkButton.onClick.AddListener(()=> { action(); });
+        }
     }
 
     private void CloseUI()

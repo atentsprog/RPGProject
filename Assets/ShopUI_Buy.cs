@@ -55,22 +55,23 @@ public partial class ShopUI : Singleton<ShopUI>
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Consume), () => ShowBuyList(ItemType.Consume)));
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Material), () => ShowBuyList(ItemType.Material)));
 
-            //buyBaseBoxs.ForEach(x => Destroy(x));
-            //buyBaseBoxs.Clear();
+            categoryButtons.ForEach(x => Destroy(x));
+            categoryButtons.Clear();
 
             categoryBaseBox.LinkComponent();
             categoryBaseBox.gameObject.SetActive(true);
             foreach (var item in commandList)
             {
                 var newButton = Instantiate(categoryBaseBox, categoryBaseBox.transform.parent);
-
+                categoryButtons.Add(newButton.gameObject);
                 newButton.text.text = item.Item1;
                 newButton.button.onClick.AddListener(item.Item2);
-                //buyBaseBoxs.Add(newButton.gameObject);
             }
             categoryBaseBox.gameObject.SetActive(false);
         }
     }
+    List<GameObject> categoryButtons = new List<GameObject>();
+    List<GameObject> shopItems = new List<GameObject>();
     private void ShowBuyList(ItemType itemType)
     {
         selectedTitle.text = GetItemTypeString(itemType);
@@ -78,12 +79,27 @@ public partial class ShopUI : Singleton<ShopUI>
         // 리스트를 표시하자.
         List<ItemInfo> showItemList = ItemDB.Instance.GetItems(itemType);
 
+        shopItems.ForEach(x => Destroy(x));
+        shopItems.Clear();
+
         shopItemListBoxBase.gameObject.SetActive(true);
         foreach (var item in showItemList)
         {
             ShopItemListBox newBox = Instantiate(shopItemListBoxBase, shopItemListBoxBase.transform.parent);
             newBox.Init(item);
+            shopItems.Add(newBox.gameObject);
+
+            newBox.button.onClick.AddListener(() => OnClick(item));
         }
         shopItemListBoxBase.gameObject.SetActive(false);
+
+        void OnClick(ItemInfo item)
+        {
+            print(item.name);
+            SetGuideText($"{item.name}을 구입 하시겠습니까?",
+                () => {
+                    print($"{item.name}을 구입하자.");
+            });
+        }
     }
 }
