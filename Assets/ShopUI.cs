@@ -19,6 +19,8 @@ public class ShopUI : Singleton<ShopUI>
         canvasGroup = GetComponent<CanvasGroup>();
         shopMenuGo = transform.Find("ShopMenu").gameObject;
         subCategoryGo = transform.Find("SubCategory").gameObject;
+        shopMenuGo.SetActive(true);
+        subCategoryGo.SetActive(false);
 
         guideText = transform.Find("GuideUI/GuideText").GetComponent<Text>();
         transform.Find("CloseButton/CloseButtonIcon").GetComponent<Button>()
@@ -64,6 +66,7 @@ public class ShopUI : Singleton<ShopUI>
         throw new NotImplementedException();
     }
 
+    //List<GameObject> buyBaseBoxs = new List<GameObject>();
     private void ShowBuyUI()
     {
         shopMenuGo.SetActive(false);
@@ -85,6 +88,9 @@ public class ShopUI : Singleton<ShopUI>
             commandList.Add(new Tuple<string, UnityAction>("소비 아이템"  , () => ShowBuyList(ItemType.Consume)));
             commandList.Add(new Tuple<string, UnityAction>("재료"         , () => ShowBuyList(ItemType.Material)));
 
+            //buyBaseBoxs.ForEach(x => Destroy(x));
+            //buyBaseBoxs.Clear();
+
             categoryBaseBox.LinkComponent();
             categoryBaseBox.gameObject.SetActive(true);
             foreach (var item in commandList)
@@ -93,6 +99,7 @@ public class ShopUI : Singleton<ShopUI>
 
                 newButton.text.text = item.Item1;
                 newButton.button.onClick.AddListener(item.Item2);
+                //buyBaseBoxs.Add(newButton.gameObject);
             }
             categoryBaseBox.gameObject.SetActive(false);
         }
@@ -122,8 +129,6 @@ public class ShopUI : Singleton<ShopUI>
         subCategoryGo.SetActive(false);
 
         SetGuideText("무엇을 하시겠습니까?");
-
-        ShowBuyUI();
     }
 
     private void SetGuideText(string showText)
