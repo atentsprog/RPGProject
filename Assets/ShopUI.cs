@@ -12,6 +12,7 @@ public class ShopUI : Singleton<ShopUI>
     GameObject subCategoryGo;
     Text guideText;
 
+    TextButtonBox categoryBaseBox;
     void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -19,7 +20,15 @@ public class ShopUI : Singleton<ShopUI>
         subCategoryGo = transform.Find("SubCategory").gameObject;
 
         guideText = transform.Find("GuideUI/GuideText").GetComponent<Text>();
+        transform.Find("CloseButton/CloseButtonIcon").GetComponent<Button>()
+            .onClick.AddListener(CloseUI);
+
+        // Buy, Sell, Craft, Exit
+        categoryBaseBox = transform.Find("ShopMenu/BookCover/Category/MenuCategoryBox")
+            .GetComponent<TextButtonBox>();
+
     }
+
     private void OnEnable()
     {
         StageManager.GameState = GameStateType.Menu;

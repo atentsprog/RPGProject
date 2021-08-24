@@ -75,8 +75,7 @@ public class QuestListUI : Singleton<QuestListUI>
         print($"{currentQuest.questTitle} 퀘스트 거절함");
         UserData.Instance.questData.data.rejectIds
             .Add(currentQuest.id);
-
-        ShowQuestList();
+        RefreshQuestList();
     }
 
     private void AcceptQuest()
@@ -84,8 +83,7 @@ public class QuestListUI : Singleton<QuestListUI>
         print($"{currentQuest.questTitle} 퀘스트 수락함");
         UserData.Instance.questData.data.acceptIds
             .Add(currentQuest.id);
-
-        ShowQuestList();
+        RefreshQuestList();
     }
 
     public void ShowQuestList(List<int> questIds = null)
@@ -100,7 +98,11 @@ public class QuestListUI : Singleton<QuestListUI>
             quests = ItemDB.Instance.GetQuestInfo(questIds);// 
         canvasGroup.alpha = 0;
         canvasGroup.DOFade(1, 0.5f).SetUpdate(true);
+        RefreshQuestList();
+    }
 
+    private void RefreshQuestList()
+    {
         questTitleBoxs.ForEach(x => Destroy(x));
         questTitleBoxs.Clear();
         // 왼쪽에 있는 퀘스트 이름 리스트 초기화
