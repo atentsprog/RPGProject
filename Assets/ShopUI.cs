@@ -45,7 +45,8 @@ public class ShopUI : Singleton<ShopUI>
     {
         guideText.text = "";
         guideText.DOKill();
-        guideText.DOText(showText, showText.VisibleTextLength() / speechSpeed);
+        guideText.DOText(showText, showText.VisibleTextLength() / speechSpeed)
+            .SetUpdate(true);
     }
 
     private void CloseUI()
