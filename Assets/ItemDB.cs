@@ -80,7 +80,18 @@ public class ItemInfo
     public int buyPrice; // 상점에서 구입할때 가격
     public bool registShop;
     public ItemType itemType;
+
+    public int maxStackCount; // 1개까지 스택으로 쌓임.
 }
+
+[System.Serializable]
+public class InventoryItemInfo
+{
+    public int uid;
+    public int id;
+    public int count;
+}
+
 public enum ItemType
 {
     Money,      // 재화. 0 ~ 10
