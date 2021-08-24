@@ -87,7 +87,7 @@ public class QuestListUI : Singleton<QuestListUI>
 
         ShowQuestList();
     }
-    bool isActive = false;
+
     public void ShowQuestList(List<int> questIds = null)
     {
         if (gameObject.activeSelf) //gameObject.activeInHierarchy
