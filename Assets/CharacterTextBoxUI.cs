@@ -11,7 +11,7 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
     Text nameText;
     Text contentsText;
     CanvasGroup canvasGroup;
-    void Start()
+    void Awake()
     {
         portrait = transform.Find("Portrait").GetComponent<Image>();
         nameText = transform.Find("Name/NameText").GetComponent<Text>();

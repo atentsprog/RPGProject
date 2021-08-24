@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Inherit from this base class to create a singleton.
@@ -32,21 +32,37 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     // Search for existing instance.
                     m_Instance = (T)FindObjectOfType(typeof(T));
 
-                    // Create new instance if one doesn't already exist.
+                    if(m_Instance == null)
+                    {
+                        //gameObject가 비활성화 중인 것들에서도 찾자.
+                        m_Instance = (T)GetAllObjectsOnlyInScene<T>();
+                    }
+
                     if (m_Instance == null)
                     {
-                        Debug.LogError($"{typeof(T)} �̱��� Ŭ���� ����.");
-                        //// Need to create a new GameObject to attach the singleton to.
-                        //var singletonObject = new GameObject();
-                        //m_Instance = singletonObject.AddComponent<T>();
-                        //singletonObject.name = typeof(T).ToString() + " (Singleton)";
-
-                        //// Make instance persistent.
-                        //DontDestroyOnLoad(singletonObject);
+                        Debug.LogError($"{typeof(T)} 싱글턴 클래스 없음.");
                     }
                 }
-
                 return m_Instance;
+            }
+
+            Component GetAllObjectsOnlyInScene<T1>() where T1 : Component
+            {
+                var components = Resources.FindObjectsOfTypeAll(typeof(T1));
+                foreach (Object co in components)
+                {
+                    Component component = co as Component;
+                    GameObject go = component.gameObject;
+                    if (go.scene.name == null) // 씬에 있는 오브젝트가 아니므로 제외한다.
+                        continue;
+
+                    if (go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave || go.hideFlags == HideFlags.HideInHierarchy)
+                        continue;
+
+                    return component;
+                }
+
+                return null;
             }
         }
     }

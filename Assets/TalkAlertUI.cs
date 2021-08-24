@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +8,7 @@ public class TalkAlertUI : Singleton<TalkAlertUI>
 {
     Text text;
     CanvasGroup canvasGroup;
-    void Start()
+    void Awake()
     {
         text = transform.Find("BG/BG/Text").GetComponent<Text>();
         canvasGroup = GetComponent<CanvasGroup>();
