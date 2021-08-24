@@ -87,11 +87,12 @@ public class QuestListUI : Singleton<QuestListUI>
 
         ShowQuestList();
     }
-
+    bool isActive = false;
     public void ShowQuestList(List<int> questIds = null)
     {
-        //if (canvasGroup.alpha > 0) //gameObject.activeInHierarchy
-        //    return;
+        if (gameObject.activeSelf) //gameObject.activeInHierarchy
+            return;
+
         gameObject.SetActive(true);
         StageManager.GameState = GameStateType.Menu;
 
