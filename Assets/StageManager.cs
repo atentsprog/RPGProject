@@ -20,6 +20,9 @@ public class StageManager : Singleton<StageManager>
         get => Instance.gameState;
         set
         {
+            if (Instance == null)
+                return;
+
             if (Instance.gameState == value)
                 return;
 
