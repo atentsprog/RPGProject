@@ -6,11 +6,13 @@ using UnityEngine.Events;
 
 public enum ItemType
 {
-    Weapon,
-    Armor,
-    Accesory,
-    Consume,
-    Material,
+    None,
+    Money,
+    Weapon,     // 1001
+    Armor,      // 2001
+    Accesory,   // 3001
+    Consume,    // 4001
+    Material,   // 5001
 }
 
 public partial class ShopUI : Singleton<ShopUI>
@@ -58,5 +60,11 @@ public partial class ShopUI : Singleton<ShopUI>
     private void ShowBuyList(ItemType itemType)
     {
         print($"{itemType} 보여주자.");
+        List<ItemInfo> visibleItemList = ItemDB.Instance.GetItems(itemType);
+
+        foreach(var item in visibleItemList)
+        {
+            //new 
+        }
     }
 }

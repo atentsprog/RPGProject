@@ -82,13 +82,22 @@ public class ItemInfo
     //        return result;
     //    }
     //}
-
+    public int sellPrice;   // 상점에 판매시 가격
+    public int buyPrice;    // 상점에서 구입시 가격
+    public bool registShop;
+    public ItemType itemType;
 }
 
 
 public class ItemDB : Singleton<ItemDB>
 {
     [SerializeField] List<QuestInfo> quests;
+
+    internal List<ItemInfo> GetItems(ItemType itemType)
+    {
+        return items.Where(x => x.itemType == itemType).ToList();
+    }
+
     [SerializeField] List<ItemInfo> items;
     [SerializeField] List<MonsterInfo> monsters;
     [SerializeField] List<DestinationInfo> destinations;

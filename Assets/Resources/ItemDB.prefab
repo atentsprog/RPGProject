@@ -43,22 +43,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacd5d5a89401ee40baf6b236809abc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quests:
+  - questTitle: "\uC2AC\uB77C\uC784 \uCC98\uB9AC"
+    id: 1
+    detailExplain: "\uC2AC\uB77C\uC784\uC744 \uCC98\uCE58\uD574\uC8FC\uC138\uC694\n\uB3D9\uCABD
+      \uD544\uB4DC\uB85C \uAC00\uC8FC\uC138\uC694\n"
+    questType: 0
+    goalId: 1
+    goalCount: 5
+    rewards:
+    - itemID: 1
+      count: 500
+    - itemID: 11
+      count: 4
+  - questTitle: "\uB3CC \uC218\uC9D1"
+    id: 2
+    detailExplain: "\uD22C\uBA85\uD558\uAC8C \uBE5B\uB098\uB294 \uC791\uC740 \uB3CC\uC744
+      \uAC00\uC838\uC640\uC8FC\uC138\uC694"
+    questType: 2
+    goalId: 14
+    goalCount: 5
+    rewards:
+    - itemID: 1
+      count: 800
   items:
   - name: "\uACE8\uB4DC"
     id: 1
     iconName: Gold
+    sellPrice: 100
+    buyPrice: 100
+    registShop: 0
+    itemType: 1
   - name: "\uCD08\uBCF4 \uC0AC\uB0E5\uAFBC\uC758 \uAC80"
-    id: 11
+    id: 1001
     iconName: Sword1
-  - name: "\uC791\uC740\uD3EC\uC158"
-    id: 12
-    iconName: HpPotion1
+    sellPrice: 100
+    buyPrice: 100
+    registShop: 1
+    itemType: 2
   - name: "\uBC29\uD328"
-    id: 13
+    id: 2001
     iconName: Shield1
+    sellPrice: 50
+    buyPrice: 100
+    registShop: 1
+    itemType: 3
   - name: "\uD06C\uB9AC\uC2A4\uD0C8 \uC6D0\uC11D"
-    id: 14
+    id: 5001
     iconName: Jewel1
+    sellPrice: 50
+    buyPrice: 100
+    registShop: 1
+    itemType: 6
+  - name: "\uC791\uC740\uD3EC\uC158"
+    id: 4001
+    iconName: HpPotion1
+    sellPrice: 50
+    buyPrice: 100
+    registShop: 1
+    itemType: 5
+  - name: "\uC911\uD3EC\uC158"
+    id: 4002
+    iconName: HpPotion2
+    sellPrice: 100
+    buyPrice: 200
+    registShop: 1
+    itemType: 5
   monsters:
   - name: "\uC2AC\uB77C\uC784"
     id: 1
