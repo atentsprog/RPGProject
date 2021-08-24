@@ -8,9 +8,13 @@ using UnityEngine.UI;
 public partial class ShopUI : Singleton<ShopUI>
 {
     Text selectedTitle;
+    ShopItemListBox shopItemListBoxBase;
+
     private void InitBuyUI()
     {
         selectedTitle = transform.Find("SubCategory/Right/Title/SelectedTitle/SelectedTitle").GetComponent<Text>();
+        shopItemListBoxBase = transform.Find("SubCategory/Right/Scroll View/Viewport/Content/Item").GetComponent<ShopItemListBox>();
+        shopItemListBoxBase.LinkComponent();
     }
 
     private string GetItemTypeString(ItemType itemType)
@@ -72,5 +76,14 @@ public partial class ShopUI : Singleton<ShopUI>
         selectedTitle.text = GetItemTypeString(itemType);
 
         // 리스트를 표시하자.
+        List<ItemInfo> showItemList = ItemDB.Instance.GetItems(itemType);
+
+        shopItemListBoxBase.gameObject.SetActive(true);
+        foreach (var item in showItemList)
+        {
+            ShopItemListBox newBox = Instantiate(shopItemListBoxBase, shopItemListBoxBase.transform.parent);
+            newBox.Init(item);
+        }
+        shopItemListBoxBase.gameObject.SetActive(false);
     }
 }

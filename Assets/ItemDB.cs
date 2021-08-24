@@ -112,6 +112,11 @@ public class ItemDB : Singleton<ItemDB>
         questMap = quests.ToDictionary(x => x.id);
     }
 
+    internal List<ItemInfo> GetItems(ItemType itemType)
+    {
+        return items.Where(x => x.itemType == itemType).ToList();
+    }
+
     internal List<QuestInfo> GetQuestInfo(List<int> questIds)
     {
         List<QuestInfo> result = new List<QuestInfo>(questIds.Count);
