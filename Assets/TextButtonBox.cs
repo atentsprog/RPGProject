@@ -9,7 +9,7 @@ public class TextButtonBox : MonoBehaviour
 {
     public Button button;
     public Text text;
-    void Awake()
+    public void LinkComponent()
     {
         button = GetComponent<Button>();
         text = GetComponentInChildren<Text>();

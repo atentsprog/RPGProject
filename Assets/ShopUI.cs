@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ShopUI : Singleton<ShopUI>
@@ -11,7 +12,7 @@ public class ShopUI : Singleton<ShopUI>
     GameObject shopMenuGo;
     GameObject subCategoryGo;
     Text guideText;
-
+    
     TextButtonBox categoryBaseBox;
     void Awake()
     {
@@ -24,10 +25,50 @@ public class ShopUI : Singleton<ShopUI>
             .onClick.AddListener(CloseUI);
 
         // Buy, Sell, Craft, Exit
-        categoryBaseBox = transform.Find("ShopMenu/BookCover/Category/MenuCategoryBox")
-            .GetComponent<TextButtonBox>();
+        InitCategory();
+         
+        void InitCategory()
+        {
+            categoryBaseBox = transform.Find("ShopMenu/BookCover/Category/MenuCategoryBox")
+                .GetComponent<TextButtonBox>();
 
+            //"Buy", ShowBuyUI
+            List<Tuple<string, UnityAction>> commandList = new List<Tuple<string, UnityAction>>();
+            commandList.Add(new Tuple<string, UnityAction>("Buy", ShowBuyUI));
+            commandList.Add(new Tuple<string, UnityAction>("Sell", ShowSellUI));
+            commandList.Add(new Tuple<string, UnityAction>("Craft", ShowCraftUI));
+            commandList.Add(new Tuple<string, UnityAction>("Exit", CloseUI));
+
+            categoryBaseBox.LinkComponent();
+
+            categoryBaseBox.gameObject.SetActive(true);
+            foreach (var item in commandList)
+            {
+                var newButton = Instantiate(categoryBaseBox, categoryBaseBox.transform.parent);
+
+                newButton.text.text = item.Item1;
+                newButton.button.onClick.AddListener(item.Item2);
+            }
+            categoryBaseBox.gameObject.SetActive(false);
+        }
     }
+
+
+    private void ShowCraftUI()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void ShowSellUI()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void ShowBuyUI()
+    {
+        throw new NotImplementedException();
+    }
+
 
     private void OnEnable()
     {
