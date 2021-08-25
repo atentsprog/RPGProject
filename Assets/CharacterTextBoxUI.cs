@@ -37,12 +37,12 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
         portrait.sprite = Resources.Load<Sprite>("NPC/" + portraitSpriteName);
         //portrait.sprite =(Sprite)Resources.Load("NPC/" + portraitSpriteName, typeof(Sprite));
 
-        canvasGroup.DOFade(0, 0.5f).SetDelay(visibleTime);
+        CloseUI().SetDelay(visibleTime);
     }
 
-    internal void CloseUI()
+    internal Tweener CloseUI()
     {
-        canvasGroup.DOFade(0, 0.5f)
+        return canvasGroup.DOFade(0, 0.5f)
             .SetUpdate(true)
             .OnComplete(() => gameObject.SetActive(false));
 
