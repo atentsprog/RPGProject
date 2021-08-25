@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,8 +47,13 @@ public partial class ShopUI : Singleton<ShopUI>
     }
     private void ShowBuyAndSellUI(Action<ItemType> action)
     {
-        shopMenuGo.SetActive(false);
+        shopMenuGo.GetComponent<CanvasGroup>().DOFade(0, 0.5f)
+            .SetUpdate(true)
+            .OnComplete(() => shopMenuGo.SetActive(false));
         subCategoryGo.SetActive(true);
+        subCategoryGo.GetComponent<CanvasGroup>().alpha = 0;
+        subCategoryGo.GetComponent<CanvasGroup>().DOFade(1, 0.5f)
+            .SetUpdate(true);
 
         // Buy, Sell, Craft, Exit
         InitCategory();

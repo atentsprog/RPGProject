@@ -85,6 +85,7 @@ public partial class ShopUI : Singleton<ShopUI>
         canvasGroup.DOFade(1, 0.5f).SetUpdate(true);
 
         shopMenuGo.SetActive(true);
+        shopMenuGo.GetComponent<CanvasGroup>().alpha = 1;
         subCategoryGo.SetActive(false);
 
         SetGuideText("무엇을 하시겠습니까?");
