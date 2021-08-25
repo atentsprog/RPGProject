@@ -101,4 +101,30 @@ public class UserData : Singleton<UserData>
     {
         return accountData.data.gold >= needGold;
     }
+
+    internal List<InventoryItemInfo> GetItems(ItemType itemType)
+    {
+        return Instance.itemData.data.item
+            .Where(x => x.ItemInfo.itemType == itemType)
+            .ToList();
+    }
+
+    internal string ProcessSell(InventoryItemInfo item, int count)
+    {
+        int totalGold = item.ItemInfo.sellPrice * count;
+        // 아이템 삭제
+        RemoveItem(item, count);
+        
+        // 돈 추가
+        SubGold(totalGold);
+        return $"{item.ItemInfo.name} 판매 했습니다";
+    }
+
+    private void RemoveItem(InventoryItemInfo item, int deleteCount)
+    {
+        item.count -= deleteCount;
+        Debug.Assert(item.count >= 0, "0보다 작아질 수 없어");
+        if (item.count == 0)
+            itemData.data.item.Remove(item);
+    }
 }

@@ -90,6 +90,15 @@ public class InventoryItemInfo
     public int uid;
     public int id;
     public int count;
+
+    public ItemInfo ItemInfo => ItemDB.GetItemInfo(id);
+    //public ItemInfo ItemInfo {
+    //    get { return ItemDB.GetItemInfo(id); }
+    //}
+    //public ItemInfo GetItemInfo()
+    //{
+    //    return ItemDB.GetItemInfo(id);
+    //}
 }
 
 public enum ItemType
