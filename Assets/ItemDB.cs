@@ -166,7 +166,7 @@ public class ItemDB : Singleton<ItemDB>
     internal static ItemInfo GetItemInfo(int itemID)
     {
         if (Instance.itemMap.TryGetValue(itemID, out ItemInfo result) == false)
-            Debug.LogError($"{itemID}가 없습니다");
+            Debug.LogError($"Item ID {itemID}가 없습니다");
         return result;
     }
 

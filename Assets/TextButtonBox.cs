@@ -9,6 +9,7 @@ public class TextButtonBox : MonoBehaviour
 {
     public Button button;
     public Text text;
+    public GameObject activeGo;
     public void LinkComponent()
     {
         button = GetComponent<Button>();

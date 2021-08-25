@@ -73,16 +73,15 @@ public class QuestListUI : Singleton<QuestListUI>
     private void RejectQuest()
     {
         print($"{currentQuest.questTitle} 퀘스트 거절함");
-        UserData.Instance.questData.data.rejectIds
-            .Add(currentQuest.id);
+        UserData.Instance.questData.data.rejectIds.Add(currentQuest.id);
         RefreshQuestList();
     }
 
     private void AcceptQuest()
     {
         print($"{currentQuest.questTitle} 퀘스트 수락함");
-        UserData.Instance.questData.data.acceptIds
-            .Add(currentQuest.id);
+        UserData.Instance.questData.data.acceptIds.Add(currentQuest.id);
+        ActiveQuestUI.Instance.RefreshQuestList();
         RefreshQuestList();
     }
 
