@@ -114,9 +114,9 @@ public class UserData : Singleton<UserData>
         int totalGold = item.ItemInfo.sellPrice * count;
         // 아이템 삭제
         RemoveItem(item, count);
-        
+
         // 돈 추가
-        SubGold(totalGold);
+        AddGold(totalGold);
         return $"{item.ItemInfo.name} 판매 했습니다";
     }
 
