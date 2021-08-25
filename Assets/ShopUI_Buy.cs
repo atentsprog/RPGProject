@@ -99,6 +99,9 @@ public partial class ShopUI : Singleton<ShopUI>
             SetGuideText($"{item.name}을 구입 하시겠습니까?",
                 () => {
                     print($"{item.name}을 구입하자.");
+
+                    string result = UserData.Instance.ProcessBuy(item, 1);
+                    SetGuideText(result);
                     //InventoryItemInfo newItem = new InventoryItemInfo();
                     //newItem.id = item.id;
                     //newItem.count = 1;
