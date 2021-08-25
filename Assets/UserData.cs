@@ -44,6 +44,11 @@ public class UserData : Singleton<UserData>
 
     private void OnDestroy()
     {
+        SaveData();
+    }
+
+    private void SaveData()
+    {
         questData.SaveData();
         itemData.SaveData();
         accountData.SaveData();

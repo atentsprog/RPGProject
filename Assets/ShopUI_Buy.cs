@@ -9,9 +9,11 @@ public partial class ShopUI : Singleton<ShopUI>
 {
     Text selectedTitle;
     ShopItemListBox shopItemListBoxBase;
+    Text shopType;
 
     private void InitBuyUI()
     {
+        shopType = transform.Find("SubCategory/Left/ShopType").GetComponent<Text>();
         selectedTitle = transform.Find("SubCategory/Right/Title/SelectedTitle/SelectedTitle").GetComponent<Text>();
         shopItemListBoxBase = transform.Find("SubCategory/Right/Scroll View/Viewport/Content/Item").GetComponent<ShopItemListBox>();
         shopItemListBoxBase.LinkComponent();
@@ -84,6 +86,7 @@ public partial class ShopUI : Singleton<ShopUI>
     List<GameObject> shopItems = new List<GameObject>();
     private void ShowBuyList(ItemType itemType)
     {
+        shopType.text = "Buy";
         selectedTitle.text = GetItemTypeString(itemType);
 
         // 리스트를 표시하자.
@@ -117,6 +120,7 @@ public partial class ShopUI : Singleton<ShopUI>
     }
     private void ShowSellList(ItemType itemType)
     {
+        shopType.text = "Sell";
         selectedTitle.text = GetItemTypeString(itemType);
 
         // 리스트를 표시하자.
@@ -146,6 +150,7 @@ public partial class ShopUI : Singleton<ShopUI>
 
                     string result = UserData.Instance.ProcessSell(item, 1);
                     SetGuideText(result);
+                    ShowSellList(itemType);
                 });
         }
     }
