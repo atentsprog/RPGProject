@@ -7,18 +7,18 @@ using UnityEngine;
 
 public class EditorSceneLoad
 {
-    [MenuItem("Window/1. Title Scene Load")]
+    [MenuItem("Window/w. Map1 Load")]
     private static void TitleSceneLoad()
     {
-        LoadScene("Title");
+        LoadScene("Map1");
     }
 
 
-    [MenuItem("Window/2. Stage1 Scene Load")]
-    private static void Stage1SceneLoad()
-    {
-        LoadScene("Stage1");
-    }
+    //[MenuItem("Window/2. Stage1 Scene Load")]
+    //private static void Stage1SceneLoad()
+    //{
+    //    LoadScene("Stage1");
+    //}
     private static void LoadScene(string loadSceneName)
     {
         EditorSceneManager.OpenScene($"Assets/Scenes/{loadSceneName}.unity");
