@@ -12,7 +12,9 @@ public class InventoryUI : Singleton<InventoryUI>
         List<TextButtonBox> categoryBox = new List<TextButtonBox>();
         for (int i = 1; i <= 6; i++)
         {
-            categoryBox.Add(transform.Find($"Left/CategoryBox{i}").GetComponent<TextButtonBox>());
+            var button = transform.Find($"Left/CategoryBox{i}").GetComponent<TextButtonBox>();
+            button.LinkComponent();
+            categoryBox.Add(button);
         }
 
         categoryBox[0].button.onClick.AddListener(() => ShowItemCategory(ItemType.Weapon));
@@ -21,6 +23,8 @@ public class InventoryUI : Singleton<InventoryUI>
         categoryBox[3].button.onClick.AddListener(() => ShowItemCategory(ItemType.Consume));
         categoryBox[4].button.onClick.AddListener(() => ShowItemCategory(ItemType.Material));
         categoryBox[5].button.onClick.AddListener(() => ShowItemCategory(ItemType.Etc));
+     
+        baseBox = transform.Find("Middle/Scroll View/Viewport/Content/Item").GetComponent<ItemBox>();
     }
 
     List<GameObject> inventoryGos = new List<GameObject>();
@@ -28,6 +32,8 @@ public class InventoryUI : Singleton<InventoryUI>
     ItemBox baseBox;
     private void ShowItemCategory(ItemType itemType)
     {
+        gameObject.SetActive(true);
+
         // 리스트를 표시하자.
         List<InventoryItemInfo> showItemList = UserData.Instance.GetItems(itemType);
 
