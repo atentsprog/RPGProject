@@ -12,6 +12,9 @@ public class GoldUI : MonoBehaviour
     {
         text = GetComponentInChildren<Text>();
         UserData.Instance.onChangedGold += ChangedGold;
+    }
+    private void OnEnable()
+    {
         ChangedGold(0, UserData.Instance.accountData.data.gold);
     }
     private void ChangedGold(int oldValue, int newValue)
