@@ -18,7 +18,6 @@ public class GoldUI : MonoBehaviour
     {
         DOTween.To(() => oldValue, (x) =>
         {
-            print(x);
             text.text = x.ToString();
         }, newValue, animationDuration)
             .SetUpdate(true);
