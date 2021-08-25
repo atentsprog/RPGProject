@@ -32,6 +32,7 @@ public class UserData : Singleton<UserData>
     public PlayerPrefsData<UserQuestData> questData;
     public PlayerPrefsData<UserItemData> itemData;
     public PlayerPrefsData<AccountData> accountData;
+    internal Action<int, int> onChangedGold;
 
     //내가 구입한 아이템.
 
@@ -95,11 +96,15 @@ public class UserData : Singleton<UserData>
 
     private void SubGold(int subGold)
     {
+        int oldValue = accountData.data.gold;
         accountData.data.gold -= subGold;
+        onChangedGold?.Invoke(oldValue, accountData.data.gold);
     }
     private void AddGold(int subGold)
     {
-        accountData.data.gold += subGold;
+        int oldValue = accountData.data.gold;
+        accountData.data.gold += subGold; 
+        onChangedGold?.Invoke(oldValue, accountData.data.gold);
     }
 
     private bool IsEnoughGold(int needGold)

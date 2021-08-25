@@ -4940,7 +4940,7 @@ GameObject:
   - component: {fileID: 1019708478}
   - component: {fileID: 1019708477}
   m_Layer: 5
-  m_Name: CategoryTitle
+  m_Name: ShopType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5705,6 +5705,7 @@ GameObject:
   - component: {fileID: 1237594947}
   - component: {fileID: 1237594949}
   - component: {fileID: 1237594948}
+  - component: {fileID: 1237594950}
   m_Layer: 5
   m_Name: GoldUI
   m_TagString: Untagged
@@ -5785,6 +5786,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237594946}
   m_CullTransparentMesh: 1
+--- !u!114 &1237594950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237594946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41d305d1426d5143b958ea2d18cd014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 1
 --- !u!1 &1244929954
 GameObject:
   m_ObjectHideFlags: 0
@@ -7777,7 +7791,14 @@ MonoBehaviour:
     useDebug: 0
   itemData:
     data:
+      lastUID: 0
       item: []
+    useDebug: 0
+  accountData:
+    data:
+      gold: 0
+      crystal: 0
+      userName: 
     useDebug: 0
 --- !u!4 &1689472208
 Transform:
@@ -10046,6 +10067,18 @@ PrefabInstance:
     - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
       propertyPath: quests.Array.data[1].questTitle
       value: "\uB3CC \uC218\uC9D1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: items.Array.data[1].maxStackCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: items.Array.data[4].maxStackCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: items.Array.data[5].maxStackCount
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
       propertyPath: quests.Array.data[0].detailExplain
