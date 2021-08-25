@@ -46,19 +46,6 @@ public class UserData : Singleton<UserData>
         playerData.SaveData();
     }
 
-    internal void ProcessBuyItem(ItemInfo item, int count)
-    {
-        int totalPrice = item.buyPrice * count;
-        //돈이 있는지 확인하자.
-        if (IsEnoughMoney(totalPrice) == false)
-            Debug.LogError("돈이 충분하지 않습니다.");
-
-        for (int i = 0; i < count; i++)
-            AddItem(item);
-
-        SubGold(totalPrice); // sub = Subtract
-    }
-
     private void AddItem(ItemInfo item)
     {
         var existItem = itemData.data.item
@@ -76,6 +63,11 @@ public class UserData : Singleton<UserData>
             newItem.uid = ++itemData.data.lastUID;
             itemData.data.item.Add(newItem);
         }
+    }
+
+    private void RemoveItem(InventoryItemInfo item)
+    {
+        itemData.data.item.Remove(item);
     }
 
     private bool IsEnoughMoney(int needMoney)
@@ -101,4 +93,37 @@ public class UserData : Singleton<UserData>
         changedGold.Invoke(oldValue, newValue);
     }
 
+    internal List<InventoryItemInfo> GetItems(ItemType itemType)
+    {
+        return itemData.data.item
+            .Where(x => x.ItemInfo.itemType == itemType)
+            .ToList();
+    }
+
+    internal string ProcessBuyItem(ItemInfo item, int count)
+    {
+        int totalPrice = item.buyPrice * count;
+        //돈이 있는지 확인하자.
+        if (IsEnoughMoney(totalPrice) == false)
+            return "돈이 충분하지 않습니다.";
+
+        for (int i = 0; i < count; i++)
+            AddItem(item);
+
+        SubGold(totalPrice); // sub = Subtract
+
+        return $"{item.name} 구입 했습니다.";
+    }
+
+    internal string ProcessSellItem(InventoryItemInfo item, int count)
+    {
+        int totalPrice = item.ItemInfo.sellPrice * count;
+
+        for (int i = 0; i < count; i++)
+            RemoveItem(item);
+
+        AddGold(totalPrice); // sub = Subtract
+
+        return $"{item.ItemInfo.name} 판매 했습니다.";
+    }
 }

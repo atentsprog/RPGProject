@@ -10,9 +10,11 @@ public partial class ShopUI : Singleton<ShopUI>
 {
     Text selectedTitle;
     ShopItemListBox shopItemListBoxBase;
+    Text shopTypeText;
 
     private void InitBuyUI()
     {
+        shopTypeText = transform.Find("SubCategory/Left/ShopTypeText").GetComponent<Text>();
         selectedTitle = transform.Find("SubCategory/Right/Title/SelectedTitle/SelectedTitle").GetComponent<Text>();
         shopItemListBoxBase = transform.Find("SubCategory/Right/Scroll View/Viewport/Content/Item").GetComponent<ShopItemListBox>();
         shopItemListBoxBase.LinkComponent();
@@ -33,7 +35,19 @@ public partial class ShopUI : Singleton<ShopUI>
         }
     }
 
+    private void ShowSellUI()
+    {
+        ShowBuyAndSellUI(ShowSellList);
+
+        ShowSellList(ItemType.Weapon);
+    }
     private void ShowBuyUI()
+    {
+        ShowBuyAndSellUI(ShowBuyList);
+
+        ShowBuyList(ItemType.Weapon);
+    }
+    private void ShowBuyAndSellUI(Action<ItemType> action)
     {
         shopMenuGo.GetComponent<CanvasGroup>().DOFade(0, 0.5f).SetUpdate(true).OnComplete(() => shopMenuGo.SetActive(false));
         subCategoryGo.SetActive(true);
@@ -42,7 +56,6 @@ public partial class ShopUI : Singleton<ShopUI>
         // Buy, Sell, Craft, Exit
         InitCategory();
 
-        ShowBuyList(ItemType.Weapon);
 
         void InitCategory()
         {
@@ -51,11 +64,11 @@ public partial class ShopUI : Singleton<ShopUI>
 
             //"Buy", ShowBuyUI
             List<Tuple<string, UnityAction>> commandList = new List<Tuple<string, UnityAction>>();
-            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Weapon), () => ShowBuyList(ItemType.Weapon)));
-            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Armor), () => ShowBuyList(ItemType.Armor)));
-            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Accesory), () => ShowBuyList(ItemType.Accesory)));
-            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Consume), () => ShowBuyList(ItemType.Consume)));
-            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Material), () => ShowBuyList(ItemType.Material)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Weapon), () => action(ItemType.Weapon)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Armor), () => action(ItemType.Armor)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Accesory), () => action(ItemType.Accesory)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Consume), () => action(ItemType.Consume)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Material), () => action(ItemType.Material)));
 
             categoryButtons.ForEach(x => Destroy(x));
             categoryButtons.Clear();
@@ -76,6 +89,7 @@ public partial class ShopUI : Singleton<ShopUI>
     List<GameObject> shopItems = new List<GameObject>();
     private void ShowBuyList(ItemType itemType)
     {
+        shopTypeText.text = "Buy";
         selectedTitle.text = GetItemTypeString(itemType);
 
         // 리스트를 표시하자.
@@ -101,8 +115,45 @@ public partial class ShopUI : Singleton<ShopUI>
             SetGuideText($"{item.name}을 구입 하시겠습니까?",
                 () => {
                     print($"{item.name}을 구입하자.");
-                    UserData.Instance.ProcessBuyItem(item, 1);
+                    string result = UserData.Instance.ProcessBuyItem(item, 1);
+                    SetGuideText(result);
             });
+        }
+    }
+
+
+    private void ShowSellList(ItemType itemType)
+    {
+        shopTypeText.text = "Sell";
+        selectedTitle.text = GetItemTypeString(itemType);
+
+        // 리스트를 표시하자.
+        List<InventoryItemInfo> sellItemList = UserData.Instance.GetItems(itemType);
+
+        shopItems.ForEach(x => Destroy(x));
+        shopItems.Clear();
+
+        shopItemListBoxBase.gameObject.SetActive(true);
+        foreach (var item in sellItemList)
+        {
+            ShopItemListBox newBox = Instantiate(shopItemListBoxBase, shopItemListBoxBase.transform.parent);
+            newBox.Init(item.ItemInfo);
+            shopItems.Add(newBox.gameObject);
+
+            newBox.button.onClick.AddListener(() => OnClick(item));
+        }
+        shopItemListBoxBase.gameObject.SetActive(false);
+
+        void OnClick(InventoryItemInfo item)
+        {
+            string itemName = item.ItemInfo.name;
+            print(itemName);
+            SetGuideText($"{itemName}을 판매 하시겠습니까?",
+                () => {
+                    print($"{itemName}을 판매하자.");
+                    string result = UserData.Instance.ProcessSellItem(item, item.count);
+                    SetGuideText(result);
+                });
         }
     }
 }

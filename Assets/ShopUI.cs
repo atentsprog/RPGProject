@@ -67,10 +67,10 @@ public partial class ShopUI : Singleton<ShopUI>
         throw new NotImplementedException();
     }
 
-    private void ShowSellUI()
-    {
-        throw new NotImplementedException();
-    }
+    //private void ShowSellUI()
+    //{
+    //    throw new NotImplementedException();
+    //}
 
 
     private void OnEnable()
