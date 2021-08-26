@@ -9,6 +9,7 @@ public class UserQuestData
 {
     public List<int> acceptIds = new List<int>();
     public List<int> rejectIds = new List<int>();
+    public int activeQuestID;
 }
 
 [System.Serializable]
