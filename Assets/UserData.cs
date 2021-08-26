@@ -41,6 +41,8 @@ public class UserData : Singleton<UserData>
         questData = new PlayerPrefsData<UserQuestData>("UserQuestData");
         itemData = new PlayerPrefsData<UserItemData>("UserItemData");
         accountData = new PlayerPrefsData<AccountData>("AccountData");
+
+        onChangedGold?.Invoke(0, accountData.data.gold);
     }
 
     private void OnDestroy()
