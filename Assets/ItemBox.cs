@@ -25,7 +25,7 @@ public class ItemBox : MonoBehaviour
             count = GetComponentInChildren<Text>();
 
         if (activeGo == null)
-            activeGo = transform.Find("ActiveState").gameObject;
+            activeGo = transform.Find("ActiveState")?.gameObject;
     }
 
     internal void Init(InventoryItemInfo item)
