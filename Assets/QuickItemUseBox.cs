@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof(ShortcutButton))]
 public class QuickItemUseBox : MonoBehaviour, IDropHandler
 {
+    public Text coolTimeText;
+    public Image coolTimeFilled;
+
     public ItemBox itembox;
     public Text number;
     public void OnDrop(PointerEventData eventData)
@@ -39,6 +43,13 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     private void OnClick()
     {
         print(number.text);
+        if (itembox.inventoryItemInfo == null)
+            return;
+
+        if (endTime > Time.time)
+            return;
+
+        StartCoroutine(StartCoolTimeCo());
     }
 
     internal void LinkComponent()
@@ -46,5 +57,30 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         number = transform.Find("Number").GetComponent<Text>();
         itembox = GetComponent<ItemBox>();
         itembox.LinkComponent();
+        coolTimeText = transform.Find("CoolTimeText").GetComponent<Text>();
+        coolTimeFilled = transform.Find("CoolTimeFilled").GetComponent<Image>();
+    }
+
+
+    float endTime;
+    private IEnumerator StartCoolTimeCo()
+    {
+        float coolTimeSeconds = 3; 
+        endTime = Time.time + coolTimeSeconds;
+
+        while (endTime > Time.time)
+        {
+            float remainTime = endTime - Time.time;
+            //remainTimeText1.text = ((int)(remainTime + 1)).ToString();
+            //remainTimeText2.text = (remainTime + 1).ToString("0.0");
+            coolTimeText.text = remainTime.ToString("0.0");
+            float remainPercent = remainTime / coolTimeSeconds;   // 1.0 -> 0.0
+            coolTimeFilled.fillAmount = remainPercent;       // 1 -> 1
+            yield return null;
+        }
+        coolTimeText.text = "";
+        coolTimeFilled.fillAmount = 0;
+
+        transform.DOPunchScale(transform.localScale, 0.5f);
     }
 }
