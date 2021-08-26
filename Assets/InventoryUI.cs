@@ -44,7 +44,7 @@ public class InventoryUI : Singleton<InventoryUI>
         foreach (var item in showItemList)
         {
             ItemBox newBox = Instantiate(baseBox, baseBox.transform.parent);
-            newBox.Init(item);
+            newBox.Init(item, true);
             inventoryGos.Add(newBox.gameObject);
 
             newBox.button.onClick.AddListener(() => OnClick(item));
@@ -69,5 +69,9 @@ public class InventoryUI : Singleton<InventoryUI>
     public void ShowUI()
     {
         ShowItemCategory(ItemType.Weapon);
+    }
+    public void CloseUI()
+    {
+        gameObject.SetActive(false);
     }
 }

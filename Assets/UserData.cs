@@ -16,6 +16,15 @@ public class UserItemData
 {
     public int lastUID;
     public List<InventoryItemInfo> item = new List<InventoryItemInfo>();
+    public List<int> shortcutItemUIDs = new List<int>(10);
+    public InventoryItemInfo GetShortcutItem(int index)
+    {
+        if (shortcutItemUIDs.Count == 0)
+            shortcutItemUIDs.AddRange(new int[10]);
+
+        int uid = shortcutItemUIDs[index];
+        return item.Where(x => x.uid == uid).SingleOrDefault();
+    }
 }
 
 [System.Serializable]

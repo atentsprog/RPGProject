@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
+//[RequireComponent(typeof(Button))]
 public class ItemBox : MonoBehaviour
 {
     public Image icon;
@@ -25,12 +25,29 @@ public class ItemBox : MonoBehaviour
             count = GetComponentInChildren<Text>();
 
         if (activeGo == null)
-            activeGo = transform.Find("ActiveState").gameObject;
+            activeGo = transform.Find("ActiveState")?.gameObject;
     }
 
-    internal void Init(InventoryItemInfo item)
+    public InventoryItemInfo inventoryItemInfo;
+    internal void Init(InventoryItemInfo item, bool useDrag = false)
     {
-        icon.sprite = item.ItemInfo.Sprite;
-        count.text = item.count.ToString();
+        inventoryItemInfo = item;
+        if (item != null)
+        {
+            icon.enabled = true;
+            icon.sprite = item.ItemInfo.Sprite;
+            if (item.count > 1)
+                count.text = item.count.ToString();
+            else
+                count.text = "";
+        }
+        else
+        {
+            icon.enabled = false;
+            count.text = "";
+        }
+
+        if(useDrag)
+            gameObject.AddComponent<DragMe>().mImage = icon;
     }
 }

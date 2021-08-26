@@ -646,7 +646,7 @@ TextureImporter:
     second: UI_38
   - first:
       213: 568254257420953003
-    second: UI_StrechBox1
+    second: UI_39
   - first:
       213: 7823209138725740554
     second: UI_40
@@ -826,7 +826,7 @@ TextureImporter:
     second: UI_98
   - first:
       213: -3285086624128554779
-    second: UI_Selected
+    second: UI_99
   - first:
       213: 2206420229818448761
     second: UI_100
@@ -1960,7 +1960,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_StrechBox1
+      name: UI_39
       rect:
         serializedVersion: 2
         x: 420
@@ -1969,7 +1969,7 @@ TextureImporter:
         height: 397
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 22, y: 30, z: 30, w: 22}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -3186,8 +3186,8 @@ TextureImporter:
         width: 360
         height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 56, y: 0, z: 48, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -3220,7 +3220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_Selected
+      name: UI_99
       rect:
         serializedVersion: 2
         x: 12
@@ -3229,7 +3229,7 @@ TextureImporter:
         height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 20, z: 0, w: 24}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -3418,7 +3418,7 @@ TextureImporter:
         height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 56, y: 0, z: 48, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

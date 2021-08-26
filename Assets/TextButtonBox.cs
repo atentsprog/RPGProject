@@ -19,6 +19,6 @@ public class TextButtonBox : MonoBehaviour
             text = GetComponentInChildren<Text>();
 
         if (activeGo == null)
-            activeGo = transform.Find("ActiveState").gameObject;
+            activeGo = transform.Find("ActiveState")?.gameObject;
     }
 }
