@@ -13572,6 +13572,7 @@ MonoBehaviour:
       lastUID: 0
       item: []
       quickItemUIDs: 
+      equipItemUIDs: 
     useDebug: 0
   accountData:
     data:
@@ -18918,6 +18919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb6760545b11d84eb224f3a58e0dca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
+  itemBox: {fileID: 0}
 --- !u!114 &7139419070311731454
 MonoBehaviour:
   m_ObjectHideFlags: 0
