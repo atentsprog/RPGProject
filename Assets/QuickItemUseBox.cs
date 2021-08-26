@@ -14,6 +14,16 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         print(eventData);
         ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
         itembox.Init(fromItemBox.inventoryItemInfo);
+
+        int itemUid = fromItemBox.inventoryItemInfo.uid;
+        UserData.Instance.itemData.data.quickItemUIDs[index] = itemUid;
+    }
+
+    int index;
+    internal void Init(int _index, InventoryItemInfo inventoryItemInfo)
+    {
+        index = _index;
+        itembox.Init(inventoryItemInfo);
     }
 
     internal void LinkComponent()

@@ -32,7 +32,16 @@ public class ItemBox : MonoBehaviour
     internal void Init(InventoryItemInfo item)
     {
         inventoryItemInfo = item;
-        icon.sprite = item.ItemInfo.Sprite;
-        count.text = item.count.ToString();
+        if (item != null)
+        {
+            icon.enabled = true;
+            icon.sprite = item.ItemInfo.Sprite;
+            count.text = item.count.ToString();
+        }
+        else
+        {
+            icon.enabled = false;
+            count.text = "";
+        }
     }
 }

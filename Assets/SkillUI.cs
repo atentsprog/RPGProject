@@ -14,6 +14,9 @@ public class SkillUI : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             var newButton = Instantiate(baseBox, baseBox.transform.parent);
+            int itemUID = UserData.Instance.itemData.data.quickItemUIDs[i];
+            InventoryItemInfo inventoryItemInfo = UserData.Instance.GetItem(itemUID);
+            newButton.Init(i, inventoryItemInfo);
         }
         baseBox.gameObject.SetActive(false);
     }
