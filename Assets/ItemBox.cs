@@ -28,8 +28,10 @@ public class ItemBox : MonoBehaviour
             activeGo = transform.Find("ActiveState")?.gameObject;
     }
 
+    public InventoryItemInfo inventoryItemInfo;
     internal void Init(InventoryItemInfo item)
     {
+        inventoryItemInfo = item;
         icon.sprite = item.ItemInfo.Sprite;
         count.text = item.count.ToString();
     }

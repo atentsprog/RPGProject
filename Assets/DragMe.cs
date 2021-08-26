@@ -31,7 +31,7 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         m_DraggingIcon.transform.SetAsLastSibling();
 
         var image = m_DraggingIcon.AddComponent<Image>();
-
+        image.raycastTarget = false;
         image.sprite = icon.sprite;
         image.SetNativeSize();
 

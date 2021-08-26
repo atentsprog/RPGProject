@@ -7,11 +7,13 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(ItemBox))]
 public class QuickItemUseBox : MonoBehaviour, IDropHandler
 {
-    ItemBox itembox;
+    public ItemBox itembox;
 
     public void OnDrop(PointerEventData eventData)
     {
         print(eventData);
+        ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
+        itembox.Init(fromItemBox.inventoryItemInfo);
     }
 
     internal void LinkComponent()
