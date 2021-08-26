@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,10 @@ using UnityEngine.Events;
 
 public class InventoryUI : Singleton<InventoryUI>
 {
-    // Start is called before the first frame update
+    CanvasGroup canvasGroup;
     void Awake()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
         List<TextButtonBox> categoryBox = new List<TextButtonBox>();
         for (int i = 1; i <= 6; i++)
         {
@@ -27,12 +29,22 @@ public class InventoryUI : Singleton<InventoryUI>
         baseBox = transform.Find("Middle/Scroll View/Viewport/Content/Item").GetComponent<ItemBox>();
     }
 
+    private void OnEnable()
+    {
+        StageManager.GameState = GameStateType.Menu;
+    }
+    private void OnDisable()
+    {
+        StageManager.GameState = GameStateType.Play;
+    }
+
     List<GameObject> inventoryGos = new List<GameObject>();
 
     ItemBox baseBox;
     private void ShowItemCategory(ItemType itemType)
     {
         gameObject.SetActive(true);
+        UiUtil.FadeShowUI(canvasGroup);
 
         // 리스트를 표시하자.
         List<InventoryItemInfo> showItemList = UserData.Instance.GetItems(itemType);
@@ -70,8 +82,27 @@ public class InventoryUI : Singleton<InventoryUI>
     {
         ShowItemCategory(ItemType.Weapon);
     }
+
     public void CloseUI()
     {
-        gameObject.SetActive(false);
+        UiUtil.FadeCloseUI(canvasGroup);
+    }
+}
+
+public static class UiUtil
+{
+    public static void FadeCloseUI(CanvasGroup canvasGroup)
+    {
+        canvasGroup.DOFade(0, 0.5f).SetUpdate(true)
+            .OnComplete(() =>
+            {
+                canvasGroup.gameObject.SetActive(false);
+            });
+    }
+
+    public static void FadeShowUI(CanvasGroup canvasGroup)
+    {
+        canvasGroup.alpha = 0;
+        canvasGroup.DOFade(1, 0.5f).SetUpdate(true);
     }
 }
