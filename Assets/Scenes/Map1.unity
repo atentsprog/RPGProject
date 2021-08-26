@@ -2840,6 +2840,7 @@ GameObject:
   - component: {fileID: 230225321}
   - component: {fileID: 230225323}
   - component: {fileID: 230225322}
+  - component: {fileID: 230225324}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -2884,6 +2885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itembox: {fileID: 0}
+  number: {fileID: 0}
 --- !u!114 &230225322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2948,6 +2950,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &230225324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230225319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae13caf5221b9504ca7a92e282bc53b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shortcutKey:
+    m_Name: Shortcut Key
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 611dd11e-b419-47d7-9607-d957ed309aaa
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
 --- !u!1 &237888661
 GameObject:
   m_ObjectHideFlags: 0
@@ -12457,6 +12479,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d337a956297f8de49a7e519e3fc98bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyBinding:
+  - <Keyboard>/1
+  - <Keyboard>/2
+  - <Keyboard>/3
+  - <Keyboard>/4
+  - <Keyboard>/5
+  - <Keyboard>/6
+  - <Keyboard>/7
+  - <Keyboard>/8
+  - <Keyboard>/9
+  - <Keyboard>/0
 --- !u!1 &1377977137
 GameObject:
   m_ObjectHideFlags: 0
