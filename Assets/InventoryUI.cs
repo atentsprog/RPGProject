@@ -8,13 +8,15 @@ using UnityEngine.Events;
 public class InventoryUI : Singleton<InventoryUI>
 {
     CanvasGroup canvasGroup;
+    CanvasGroup middelCanvasGroup;
     void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        List<TextButtonBox> categoryBox = new List<TextButtonBox>();
+        middelCanvasGroup = transform.Find("Middle").GetComponent<CanvasGroup>();
+        List <TextButtonBox> categoryBox = new List<TextButtonBox>();
         for (int i = 1; i <= 6; i++)
         {
-            var button = transform.Find($"Left/CategoryBox{i}").GetComponent<TextButtonBox>();
+            var button = transform.Find($"Middle/Left/CategoryBox{i}").GetComponent<TextButtonBox>();
             button.LinkComponent();
             categoryBox.Add(button);
         }
@@ -43,8 +45,15 @@ public class InventoryUI : Singleton<InventoryUI>
     ItemBox baseBox;
     private void ShowItemCategory(ItemType itemType)
     {
-        gameObject.SetActive(true);
-        UiUtil.FadeShowUI(canvasGroup);
+        if (gameObject.activeSelf)
+        {
+            UiUtil.FadeShowUI(middelCanvasGroup);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+            UiUtil.FadeShowUI(canvasGroup);
+        }
 
         // 리스트를 표시하자.
         List<InventoryItemInfo> showItemList = UserData.Instance.GetItems(itemType);
