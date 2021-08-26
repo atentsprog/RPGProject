@@ -31,8 +31,8 @@ public class SignalIndicator : MonoBehaviour
             { 
                 if (terrainCollider.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    transform.position = hit.point + new Vector3(0, addHeight, 0);
-                    Instantiate(indicatorPrefab, transform.position, Quaternion.identity);
+                    var position = hit.point + new Vector3(0, addHeight, 0);
+                    Instantiate(indicatorPrefab, position, Quaternion.identity);
                 }
             }
         }
