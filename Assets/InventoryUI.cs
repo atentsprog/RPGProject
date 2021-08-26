@@ -75,4 +75,9 @@ public class InventoryUI : Singleton<InventoryUI>
     {
         ShowItemCategory(ItemType.Weapon);
     }
+
+    public void CloseUI()
+    {
+        gameObject.SetActive(false);
+    }
 }
