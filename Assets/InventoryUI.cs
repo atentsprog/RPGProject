@@ -14,15 +14,20 @@ public class InventoryUI : Singleton<InventoryUI>
         {
             var button = transform.Find($"Left/CategoryBox{i}").GetComponent<TextButtonBox>();
             button.LinkComponent();
+
+            //button.button.onClick.AddListener(() => ShowItemCategory((ItemType)i)); <-- 하면 안됨.
+            ItemType itemType = (ItemType)i;
+            button.button.onClick.AddListener(() =>ShowItemCategory(itemType)); // 값 복사 해서 사용 해야함(잘했음)
+
             categoryBox.Add(button);
         }
 
-        categoryBox[0].button.onClick.AddListener(() => ShowItemCategory(ItemType.Weapon));
-        categoryBox[1].button.onClick.AddListener(() => ShowItemCategory(ItemType.Armor));
-        categoryBox[2].button.onClick.AddListener(() => ShowItemCategory(ItemType.Accesory));
-        categoryBox[3].button.onClick.AddListener(() => ShowItemCategory(ItemType.Consume));
-        categoryBox[4].button.onClick.AddListener(() => ShowItemCategory(ItemType.Material));
-        categoryBox[5].button.onClick.AddListener(() => ShowItemCategory(ItemType.Etc));
+        //categoryBox[0].button.onClick.AddListener(() => ShowItemCategory(ItemType.Weapon));
+        //categoryBox[1].button.onClick.AddListener(() => ShowItemCategory(ItemType.Armor));
+        //categoryBox[2].button.onClick.AddListener(() => ShowItemCategory(ItemType.Accesory));
+        //categoryBox[3].button.onClick.AddListener(() => ShowItemCategory(ItemType.Consume));
+        //categoryBox[4].button.onClick.AddListener(() => ShowItemCategory(ItemType.Material));
+        //categoryBox[5].button.onClick.AddListener(() => ShowItemCategory(ItemType.Etc));
      
         baseBox = transform.Find("Middle/Scroll View/Viewport/Content/Item").GetComponent<ItemBox>();
     }
