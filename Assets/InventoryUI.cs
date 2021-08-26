@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class InventoryUI : Singleton<InventoryUI>
 {
-    // Start is called before the first frame update
     void Awake()
     {
         List<TextButtonBox> categoryBox = new List<TextButtonBox>();
@@ -22,13 +21,6 @@ public class InventoryUI : Singleton<InventoryUI>
             categoryBox.Add(button);
         }
 
-        //categoryBox[0].button.onClick.AddListener(() => ShowItemCategory(ItemType.Weapon));
-        //categoryBox[1].button.onClick.AddListener(() => ShowItemCategory(ItemType.Armor));
-        //categoryBox[2].button.onClick.AddListener(() => ShowItemCategory(ItemType.Accesory));
-        //categoryBox[3].button.onClick.AddListener(() => ShowItemCategory(ItemType.Consume));
-        //categoryBox[4].button.onClick.AddListener(() => ShowItemCategory(ItemType.Material));
-        //categoryBox[5].button.onClick.AddListener(() => ShowItemCategory(ItemType.Etc));
-     
         baseBox = transform.Find("Middle/Scroll View/Viewport/Content/Item").GetComponent<ItemBox>();
     }
 
@@ -69,6 +61,14 @@ public class InventoryUI : Singleton<InventoryUI>
             //        ShowSellList(itemType);
             //    });
         }
+    }
+    private void OnEnable()
+    {
+        StageManager.GameState = GameStateType.Menu;
+    }
+    private void OnDisable()
+    {
+        StageManager.GameState = GameStateType.Play;
     }
 
     public void ShowUI()
