@@ -26,28 +26,32 @@ public class QuickSlotUI : Singleton<QuickSlotUI>
         baseBox = GetComponentInChildren<QuickItemUseBox>();
         baseBox.LinkComponent();
         baseBox.gameObject.SetActive(true);
-
         for (int i = 0; i < keyBinding.Length; i++)
         {
             var newButton = Instantiate(baseBox, baseBox.transform.parent);
             int itemUID = UserData.Instance.itemData.data.quickItemUIDs[i];
             InventoryItemInfo inventoryItemInfo = UserData.Instance.GetItem(itemUID);
             newButton.Init(i, inventoryItemInfo, keyBinding[i]);
-
             quickSlots.Add(newButton);
         }
         baseBox.gameObject.SetActive(false);
     }
     internal void ClearSlot(int itemUid)
     {
-        //quickSlots.Find(x => x.itembox != null && x.itembox.inventoryItemInfo.uid == itemUid)
+        //quickSlots.Find(x => x.itembox.inventoryItemInfo != null && x.itembox.inventoryItemInfo.uid == itemUid)
         //    ?.itembox.Init(null);
-
         var list = quickSlots.FindAll(x => 
             x.itembox.inventoryItemInfo != null 
             && x.itembox.inventoryItemInfo.uid == itemUid);
 
         foreach(var item in list)
             item.itembox.Init(null);
+
+
+        // 위에 코드랑 동일한 결과.
+        //quickSlots.FindAll(x =>
+        //    x.itembox.inventoryItemInfo != null
+        //    && x.itembox.inventoryItemInfo.uid == itemUid)
+        //    .ForEach(x => x.itembox.Init(null));
     }
 }
