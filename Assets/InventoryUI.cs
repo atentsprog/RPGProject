@@ -41,10 +41,8 @@ public class InventoryUI : Singleton<InventoryUI>
         foreach (var item in showItemList)
         {
             ItemBox newBox = Instantiate(baseBox, baseBox.transform.parent);
-            newBox.Init(item);
+            newBox.Init(item, false, () => OnClick(item));
             inventoryGos.Add(newBox.gameObject);
-
-            newBox.button.onClick.AddListener(() => OnClick(item));
         }
         baseBox.gameObject.SetActive(false);
 
@@ -52,14 +50,8 @@ public class InventoryUI : Singleton<InventoryUI>
         {
             string itemName = item.ItemInfo.name;
             print(itemName);
-            //SetGuideText($"{itemName}을 판매 하시겠습니까?",
-            //    () => {
-            //        print($"{itemName}을 판매하자.");
 
-            //        string result = UserData.Instance.ProcessSell(item, 1);
-            //        SetGuideText(result);
-            //        ShowSellList(itemType);
-            //    });
+            ItemInfoUI.Instance.ShowUI(item);
         }
     }
     private void OnEnable()

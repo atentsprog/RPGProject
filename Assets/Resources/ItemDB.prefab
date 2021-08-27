@@ -67,6 +67,7 @@ MonoBehaviour:
   items:
   - name: "\uACE8\uB4DC"
     id: 1
+    description: "\uAE30\uBCF8\uC7AC\uD654"
     iconName: Gold
     sellPrice: 0
     buyPrice: 0
@@ -75,6 +76,8 @@ MonoBehaviour:
     maxStackCount: 0
   - name: "\uCD08\uBCF4 \uC0AC\uB0E5\uAFBC\uC758 \uAC80"
     id: 1001
+    description: "\uAE30\uBCF8 \uC7AC\uACF5 \uC2F8\uAD6C\uB824 \uAC80\n\uC5C6\uB294\uAC83\uBCF4\uB2E4
+      \uB0AB\uB2E4"
     iconName: Sword1
     sellPrice: 50
     buyPrice: 100
@@ -83,14 +86,17 @@ MonoBehaviour:
     maxStackCount: 1
   - name: "\uBC29\uD328"
     id: 2001
+    description: "\uB098\uBB34\uB85C \uB9CC\uB4E0 \uBC29\uD328\n\uD0C0\uC774\uC5B4
+      \uBCF4\uB2E4 \uC2F8\uB2E4!\n"
     iconName: Shield1
-    sellPrice: 60
-    buyPrice: 120
+    sellPrice: 10
+    buyPrice: 20
     registShop: 1
     itemType: 2
     maxStackCount: 0
   - name: "\uD06C\uB9AC\uC2A4\uD0C8 \uC6D0\uC11D"
     id: 5001
+    description: 
     iconName: Jewel1
     sellPrice: 20
     buyPrice: 30
@@ -99,6 +105,7 @@ MonoBehaviour:
     maxStackCount: 0
   - name: "\uC791\uC740\uD3EC\uC158"
     id: 4001
+    description: "20HP \uD68C"
     iconName: HpPotion1
     sellPrice: 20
     buyPrice: 40
@@ -107,6 +114,7 @@ MonoBehaviour:
     maxStackCount: 100
   - name: "\uC911\uD3EC\uC158"
     id: 4002
+    description: "50HP\uD68C"
     iconName: HpPotion2
     sellPrice: 30
     buyPrice: 60

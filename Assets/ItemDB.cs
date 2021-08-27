@@ -73,6 +73,8 @@ public class ItemInfo
 {
     public string name;
     public int id;
+    [TextArea]
+    public string description;
     public string iconName;
     public Sprite Sprite => Resources.Load<Sprite>($"Icons/{iconName}");
 
