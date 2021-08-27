@@ -69,7 +69,7 @@ public class InventoryUI : Singleton<InventoryUI>
         void OnClick(InventoryItemInfo item)
         {
             string itemName = item.ItemInfo.name;
-            print(itemName);
+            //print(itemName);
             ItemInfoUI.Instance.ShowUI(item);
             //SetGuideText($"{itemName}을 판매 하시겠습니까?",
             //    () => {
