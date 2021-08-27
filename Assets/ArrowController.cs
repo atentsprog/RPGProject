@@ -17,7 +17,7 @@ public class ArrowController : MonoBehaviour, IProjectile
 
     [SerializeField] GameObject bulletDecal = null;
     public float force = 50f;
-    float timeToDestroy = 3f;
+    float timeToDestroy = 10f;
 
     new Rigidbody rigidbody;
     private void Start()
