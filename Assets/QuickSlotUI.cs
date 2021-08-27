@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillUI : MonoBehaviour
+public class QuickSlotUI : Singleton<QuickSlotUI>
 {
     QuickItemUseBox baseBox;
 
@@ -18,6 +19,8 @@ public class SkillUI : MonoBehaviour
         "<Keyboard>/9",
         "<Keyboard>/0"
         };
+
+    List<QuickItemUseBox> quickSlots = new List<QuickItemUseBox>(10);
     void Awake()
     {
         baseBox = GetComponentInChildren<QuickItemUseBox>();
@@ -30,7 +33,21 @@ public class SkillUI : MonoBehaviour
             int itemUID = UserData.Instance.itemData.data.quickItemUIDs[i];
             InventoryItemInfo inventoryItemInfo = UserData.Instance.GetItem(itemUID);
             newButton.Init(i, inventoryItemInfo, keyBinding[i]);
+
+            quickSlots.Add(newButton);
         }
         baseBox.gameObject.SetActive(false);
+    }
+    internal void ClearSlot(int itemUid)
+    {
+        //quickSlots.Find(x => x.itembox != null && x.itembox.inventoryItemInfo.uid == itemUid)
+        //    ?.itembox.Init(null);
+
+        var list = quickSlots.FindAll(x => 
+            x.itembox.inventoryItemInfo != null 
+            && x.itembox.inventoryItemInfo.uid == itemUid);
+
+        foreach(var item in list)
+            item.itembox.Init(null);
     }
 }
