@@ -35,5 +35,6 @@ public class EquipUI : MonoBehaviour
     private void OnClick(EquipItemBox newBox)
     {
         print(newBox.index);
+        ItemInfoUI.Instance.ShowUI(newBox.itemBox.inventoryItemInfo);
     }
 }
