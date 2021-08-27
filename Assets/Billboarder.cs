@@ -9,6 +9,7 @@ public class Billboarder : MonoBehaviour
     void Start()
     {
         cameraTr = Camera.main.transform;
+        Update();
     }
 
     void Update()
@@ -23,5 +24,5 @@ public class Billboarder : MonoBehaviour
         }
         else
             transform.forward = cameraTr.forward;
-    }
+    } 
 }

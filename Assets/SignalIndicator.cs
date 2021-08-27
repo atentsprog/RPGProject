@@ -5,18 +5,37 @@ using UnityEngine;
 public class SignalIndicator : MonoBehaviour
 {
     Collider terrainCollider;
+    public GameObject indicatePrefab;
+    public LayerMask indicatorLayer;
     private void Awake()
     {
         terrainCollider = Terrain.activeTerrain.GetComponent<Collider>();
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && Input.GetKey(KeyCode.LeftAlt))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Input.GetKey(KeyCode.LeftAlt))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if(terrainCollider.Raycast(ray, out RaycastHit hit, float.MaxValue))
+
+            bool hitIndicator = false;
+            if (Physics.Raycast(ray, out RaycastHit hit1, float.MaxValue, indicatorLayer))
             {
-                transform.position = hit.point;
+                if(hit1.transform.CompareTag("Indicator"))
+                {
+                    hitIndicator = true;
+
+                    Destroy(hit1.transform.gameObject); // 기존 인디케이터 삭제로직.
+                }
+            }
+
+            if (hitIndicator == false)
+            {
+                if (terrainCollider.Raycast(ray, out RaycastHit hit2, float.MaxValue))
+                {
+                    Instantiate(indicatePrefab
+                        , hit2.point + new Vector3(0, 0.5f, 0)
+                        , Quaternion.identity);
+                }
             }
         }
     }
