@@ -28,7 +28,7 @@ public partial class ShopUI : Singleton<ShopUI>
             case ItemType.Weapon: return "무기";
             case ItemType.Armor: return "방어구";
             case ItemType.Accesory: return "악세사리";
-            case ItemType.Consume: return "소비 아이템";
+            case ItemType.Consumable: return "소비 아이템";
             case ItemType.Material: return "재료";
             case ItemType.Etc: return "기타";
             default: return "";
@@ -68,7 +68,7 @@ public partial class ShopUI : Singleton<ShopUI>
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Weapon), () => action(ItemType.Weapon)));
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Armor), () => action(ItemType.Armor)));
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Accesory), () => action(ItemType.Accesory)));
-            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Consume), () => action(ItemType.Consume)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Consumable), () => action(ItemType.Consumable)));
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Material), () => action(ItemType.Material)));
 
             categoryButtons.ForEach(x => Destroy(x));

@@ -20,10 +20,17 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     {
         print(eventData);
         ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
-        itembox.Init(fromItemBox.inventoryItemInfo);
-
         int itemUid = fromItemBox.inventoryItemInfo.uid;
+
+        // 존 박스 제거
+        SkillUI.Instance.ClearBox(itemUid);
+
+        // 박스에 아이템 표시
+        itembox.Init(fromItemBox.inventoryItemInfo);
         UserData.Instance.itemData.data.quickItemUIDs[index] = itemUid;
+
+        // 기존에 퀵 슬롯에 등록 되어 있던게 있었다면 해제 하자. <- 꼭 해야하나? <- 버그라고 느끼는 사람도 있다 하자!
+        
     }
 
     int index;

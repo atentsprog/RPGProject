@@ -108,10 +108,13 @@ public enum ItemType
     Money,      // 재화. 0 ~ 10
     Weapon,     // 무기       1001
     Armor,      // 방어구     2001 ~ 3000
-    Accesory,   // 악세사리.  3001
-    Consume,    // 소비아이템(포션,..) // 4001
-    Material,   // 재료       5001
-    Etc,        // 기타       6001
+    Shield,     // 방패       3001
+    Earring,    // 귀걸이     4001
+    Ring,       // 반지       5001
+    Necklace,   // 목걸이     6001
+    Consumable, // 소비아이템(포션,..) // 7001
+    Material,   // 재료       8001
+    Etc,        // 기타       9001
 }
 
 

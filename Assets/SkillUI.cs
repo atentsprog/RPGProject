@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class SkillUI : MonoBehaviour
+public class SkillUI : Singleton<SkillUI>
 {
     QuickItemUseBox baseBox;
 
@@ -18,6 +20,8 @@ public class SkillUI : MonoBehaviour
         "<Keyboard>/9",
         "<Keyboard>/0"
         };
+
+    List<QuickItemUseBox> itemBoxes = new List<QuickItemUseBox>(10);
     void Awake()
     {
         baseBox = GetComponentInChildren<QuickItemUseBox>();
@@ -32,5 +36,15 @@ public class SkillUI : MonoBehaviour
             newButton.Init(i, inventoryItemInfo, keyBinding[i]);
         }
         baseBox.gameObject.SetActive(false);
+    }
+
+    internal void ClearBox(int itemUid)
+    {
+        itemBoxes.Find(x => x.itembox.inventoryItemInfo != null && x.itembox.inventoryItemInfo.uid == itemUid)
+            ?.itembox.Init(null);
+
+        //Linq로 표현 위와 같은 결과.
+        //itemBoxes.Where(x => x.itembox.inventoryItemInfo != null && x.itembox.inventoryItemInfo.uid == itemUid)
+        //    .FirstOrDefault()?.itembox.Init(null);
     }
 }
