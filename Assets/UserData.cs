@@ -93,6 +93,7 @@ public class UserData : Singleton<UserData>
         if (existItem != null)
         {
             existItem.count++;
+            QuickSlotUI.Instance.UpdateItemInfo(existItem);
         }
         else
         {

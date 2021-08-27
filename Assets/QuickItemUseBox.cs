@@ -45,11 +45,11 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
 
     private void OnClick()
     {
-        print(number.text);
+        //print(number.text);
         if (itembox.inventoryItemInfo == null)
             return;
 
-        if (endTime > Time.time)
+        if (endTime > Time.realtimeSinceStartup)
             return;
 
         StartCoroutine(StartCoolTimeCo());
@@ -69,11 +69,11 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     private IEnumerator StartCoolTimeCo()
     {
         float coolTimeSeconds = 3; 
-        endTime = Time.time + coolTimeSeconds;
+        endTime = Time.realtimeSinceStartup + coolTimeSeconds;
 
-        while (endTime > Time.time)
+        while (endTime > Time.realtimeSinceStartup)
         {
-            float remainTime = endTime - Time.time;
+            float remainTime = endTime - Time.realtimeSinceStartup;
             //remainTimeText1.text = ((int)(remainTime + 1)).ToString();
             //remainTimeText2.text = (remainTime + 1).ToString("0.0");
             coolTimeText.text = remainTime.ToString("0.0");

@@ -18,7 +18,7 @@ public class ShortcutButton : MonoBehaviour
 
     private void ShortcutKey_performed(InputAction.CallbackContext obj)
     {
-        print("clicked" + shortcutKey.bindings[0]);
+        //print("clicked" + shortcutKey.bindings[0]);
         button.onClick.Invoke();
     }
 }

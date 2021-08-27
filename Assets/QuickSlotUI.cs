@@ -54,4 +54,11 @@ public class QuickSlotUI : Singleton<QuickSlotUI>
         //    && x.itembox.inventoryItemInfo.uid == itemUid)
         //    .ForEach(x => x.itembox.Init(null));
     }
+
+    internal void UpdateItemInfo(InventoryItemInfo existItem)
+    {
+        quickSlots.Find(x => x.itembox.inventoryItemInfo != null
+            && x.itembox.inventoryItemInfo.uid == existItem.uid)
+            ?.itembox.Init(existItem);
+    }
 }

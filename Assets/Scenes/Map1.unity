@@ -17873,6 +17873,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemDB
       objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: items.Array.data[1].description
+      value: "\uD0C0\uC774\uC5B4\uBCF4\uB2E4 \uC2F8\uB2E4! \uCD08\uBCF4\uC6A9 \uAC80!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: items.Array.data[4].maxStackCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
 --- !u!222 &6578612567182722361
