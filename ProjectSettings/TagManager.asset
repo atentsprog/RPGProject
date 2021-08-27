@@ -15,8 +15,8 @@ TagManager:
   - Bullet
   - Player
   - NPC
-  - 
-  - 
+  - MinimapOnly
+  - WorldOnly
   - 
   - 
   - 
