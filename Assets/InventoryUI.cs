@@ -32,6 +32,16 @@ public class InventoryUI : Singleton<InventoryUI>
         baseBox = transform.Find("Middle/Scroll View/Viewport/Content/Item").GetComponent<ItemBox>();
     }
 
+
+    private void OnEnable()
+    {
+        StageManager.GameState = GameStateType.Menu;
+    }
+    private void OnDisable()
+    {
+        StageManager.GameState = GameStateType.Play;
+    }
+
     List<GameObject> inventoryGos = new List<GameObject>();
 
     ItemBox baseBox;
@@ -60,6 +70,7 @@ public class InventoryUI : Singleton<InventoryUI>
         {
             string itemName = item.ItemInfo.name;
             print(itemName);
+            ItemInfoUI.Instance.ShowUI(item);
             //SetGuideText($"{itemName}을 판매 하시겠습니까?",
             //    () => {
             //        print($"{itemName}을 판매하자.");
