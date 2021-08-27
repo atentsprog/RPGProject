@@ -27,7 +27,9 @@ public partial class ShopUI : Singleton<ShopUI>
             case ItemType.Money: return "재화";
             case ItemType.Weapon: return "무기";
             case ItemType.Armor: return "방어구";
-            case ItemType.Accesory: return "악세사리";
+            case ItemType.Earring: return "귀걸이";
+            case ItemType.Ring: return "반지";
+            case ItemType.Necklace: return "목걸이";
             case ItemType.Consumable: return "소비 아이템";
             case ItemType.Material: return "재료";
             case ItemType.Etc: return "기타";
@@ -67,7 +69,9 @@ public partial class ShopUI : Singleton<ShopUI>
             List<Tuple<string, UnityAction>> commandList = new List<Tuple<string, UnityAction>>();
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Weapon), () => action(ItemType.Weapon)));
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Armor), () => action(ItemType.Armor)));
-            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Accesory), () => action(ItemType.Accesory)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Earring), () => action(ItemType.Earring)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Ring), () => action(ItemType.Ring)));
+            commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Necklace), () => action(ItemType.Necklace)));
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Consumable), () => action(ItemType.Consumable)));
             commandList.Add(new Tuple<string, UnityAction>(GetItemTypeString(ItemType.Material), () => action(ItemType.Material)));
 
