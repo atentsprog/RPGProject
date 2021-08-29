@@ -157,6 +157,7 @@ public partial class ShopUI : Singleton<ShopUI>
                     string result = UserData.Instance.ProcessSell(item, 1);
                     SetGuideText(result);
                     ShowSellList(itemType);
+                    QuickSlotUI.Instance.ClearSlot(item.uid);
                 });
         }
     }
