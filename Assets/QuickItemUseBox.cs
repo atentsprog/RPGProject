@@ -29,7 +29,7 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         UserData.Instance.itemData.data.quickItemUIDs[index] = itemUid;
     }
 
-    int index;
+    public int index;
     internal void Init(int _index, InventoryItemInfo inventoryItemInfo
         , string keybindingString)
     {
