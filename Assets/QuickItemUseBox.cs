@@ -119,6 +119,8 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
             itembox.inventoryItemInfo.count -= 1;
             if(itembox.inventoryItemInfo.count <= 0)
             {
+                // UserData에서도 삭제하자. 
+                UserData.Instance.RemoveItem(itembox.inventoryItemInfo, 1);
                 itembox.inventoryItemInfo = null;
             }
 
