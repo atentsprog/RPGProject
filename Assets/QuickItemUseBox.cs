@@ -116,11 +116,10 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         bool isConsumable = itembox.inventoryItemInfo.ItemInfo.itemType == ItemType.Consume; 
         if(isConsumable)
         {
-            itembox.inventoryItemInfo.count -= 1;
-            if(itembox.inventoryItemInfo.count <= 0)
+            UserData.Instance.RemoveItem(itembox.inventoryItemInfo, 1);
+            if (itembox.inventoryItemInfo.count <= 0)
             {
                 // UserData에서도 삭제하자. 
-                UserData.Instance.RemoveItem(itembox.inventoryItemInfo, 1);
                 itembox.inventoryItemInfo = null;
             }
 
