@@ -110,5 +110,19 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
 
         transform.DOPunchScale(Vector3.one * 0.15f, 0.5f)
             .SetUpdate(true);
+
+        // 소비 아이템인경우 수량을 줄이자.
+        // 소비 아이템이냐?
+        bool isConsumable = itembox.inventoryItemInfo.ItemInfo.itemType == ItemType.Consume; 
+        if(isConsumable)
+        {
+            itembox.inventoryItemInfo.count -= 1;
+            if(itembox.inventoryItemInfo.count <= 0)
+            {
+                itembox.inventoryItemInfo = null;
+            }
+
+            itembox.Init(itembox.inventoryItemInfo);
+        }
     }
 }
