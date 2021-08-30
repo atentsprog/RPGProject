@@ -32,13 +32,20 @@ public class UserItemData
 }
 
 [System.Serializable]
-public class AccountData
+public class AccountData : ISerializationCallbackReceiver
 {
     public int gold;
     public int crystal;
     public string userName;
     public int level;
     public int exp;
+
+    public void OnAfterDeserialize()
+    {
+        level = Math.Max(1, level);
+    }
+
+    public void OnBeforeSerialize() {    }
 }
 
 [System.Serializable]
