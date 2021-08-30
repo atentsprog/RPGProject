@@ -64,46 +64,46 @@ public class SingletonBase : HistoryUI
 /// Close() : UI 닫는 함수
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class BaseUI<T> : SingletonMonoBehavior<T>, IHistoryUI
-where T : SingletonBase
-{
-    protected bool AllowBackAction => true;
+//public class BaseUI<T> : SingletonMonoBehavior<T>, IHistoryUI
+//where T : SingletonBase
+//{
+//    protected bool AllowBackAction => true;
 
 
-    public override string HierarchyPath
-    {
-        get
-        {
-            string canvasName = "Canvas";
-            if (SortOrder > 0)
-            {
-                canvasName += SortOrder;
-            }
+//    public override string HierarchyPath
+//    {
+//        get
+//        {
+//            string canvasName = "Canvas";
+//            if (SortOrder > 0)
+//            {
+//                canvasName += SortOrder;
+//            }
 
-            return $"{canvasName}/" + GetType().ShortName();
-        }
-    }
+//            return $"{canvasName}/" + GetType().ShortName();
+//        }
+//    }
 
-    public void ShowRestoreUI()
-    {
-        Show();
-    }
+//    public void ShowRestoreUI()
+//    {
+//        Show();
+//    }
 
-    protected void OnEnable()
-    {
-        OnShow();
-        UIStackManager.PushUiStack(transform, CloseCallback);
-    }
+//    protected void OnEnable()
+//    {
+//        OnShow();
+//        UIStackManager.PushUiStack(transform, CloseCallback);
+//    }
 
-    override protected void OnDisable()
-    {
-        base.OnDisable();
+//    override protected void OnDisable()
+//    {
+//        base.OnDisable();
 
-        UIStackManager.PopUiStack(CacheGameObject.GetInstanceID());
+//        UIStackManager.PopUiStack(CacheGameObject.GetInstanceID());
 
-        AddHistory(this);
-    }
-}
+//        AddHistory(this);
+//    }
+//}
 
 /// <summary>
 /// 싱글턴, 동적 로드 가능
