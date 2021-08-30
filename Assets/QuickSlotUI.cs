@@ -44,8 +44,11 @@ public class QuickSlotUI : Singleton<QuickSlotUI>
             x.itembox.inventoryItemInfo != null 
             && x.itembox.inventoryItemInfo.uid == itemUid);
 
-        foreach(var item in list)
+        foreach (var item in list)
+        {
             item.itembox.Init(null);
+            UserData.Instance.itemData.data.quickItemUIDs[item.index] = 0;
+        }
 
 
         // 위에 코드랑 동일한 결과.

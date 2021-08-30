@@ -149,7 +149,7 @@ public partial class ShopUI : Singleton<ShopUI>
         void OnClick(InventoryItemInfo item)
         {
             string itemName = item.ItemInfo.name;
-            print(itemName);
+            //print(itemName);
             SetGuideText($"{itemName}을 판매 하시겠습니까?",
                 () => {
                     print($"{itemName}을 판매하자.");

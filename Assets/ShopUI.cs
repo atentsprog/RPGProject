@@ -93,6 +93,7 @@ public partial class ShopUI : Singleton<ShopUI>
 
     private void SetGuideText(string showText, Action action = null)
     {
+        print(showText);
         guideText.text = "";
         guideText.DOKill();
         guideText.DOText(showText, showText.VisibleTextLength() / speechSpeed)

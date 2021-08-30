@@ -138,6 +138,12 @@ public class UserData : Singleton<UserData>
 
         // 돈 추가
         AddGold(totalGold);
+
+        // 퀵슬롯 UI에서 삭제.
+        QuickSlotUI.Instance.ClearSlot(item.uid);
+        // <- 이로직 실행해도 껐다 켜면 저장안되어 있음
+        // ClearSlot 실행시 퀵슬롯 정보 저장하게 수정해야함
+
         return $"{item.ItemInfo.name} 판매 했습니다";
     }
 
