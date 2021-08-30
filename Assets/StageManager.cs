@@ -37,8 +37,11 @@ public class StageManager : Singleton<StageManager>
             else
                 Time.timeScale = 1;
 
-            Debug.Log($"gameState:{oldState} =>{value} " +
-                $"timeScale:{Time.timeScale}");
+            if (EditorOption.Options[OptionType.게임상태변환])
+            {
+                Debug.Log($"gameState:{oldState} =>{value} " +
+                    $"timeScale:{Time.timeScale}");
+            }
         } 
     }
     private void Awake()
