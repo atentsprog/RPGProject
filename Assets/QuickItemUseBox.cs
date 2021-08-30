@@ -18,15 +18,39 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     public Text number;
     public void OnDrop(PointerEventData eventData)
     {
-        print(eventData);
-        ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
-        int itemUid = fromItemBox.inventoryItemInfo.uid;
+        //print(eventData);
+        QuickItemUseBox fromQuickItemUseBox = eventData.pointerDrag.GetComponent<QuickItemUseBox>();
+        if (fromQuickItemUseBox != null)
+        {
+            // 스왑 바꾸자. 
+            // 기존에 있던거랑 fromQuickItemUseBox랑 정보를 바꾸자.
 
-        // 기존에 같은 uid가 들어가 있었으면 해제하자.
-        QuickSlotUI.Instance.ClearSlot(itemUid);
+            var thisInventoryItemInfo = itembox.inventoryItemInfo;
+            // 기존(this)걸 바꾸자.
+            SetIconAndSaveQuickSlotData(fromQuickItemUseBox.itembox.inventoryItemInfo,fromQuickItemUseBox.itembox.inventoryItemInfo.uid
+                , itembox, index);
+             
+            // from에 있는걸 바꾸자.
+            SetIconAndSaveQuickSlotData(thisInventoryItemInfo, thisInventoryItemInfo.uid
+                , fromQuickItemUseBox.itembox, fromQuickItemUseBox.index);
+        }
+        else
+        {
+            ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
+            int itemUid = fromItemBox.inventoryItemInfo.uid;
 
-        itembox.Init(fromItemBox.inventoryItemInfo);
-        UserData.Instance.itemData.data.quickItemUIDs[index] = itemUid;
+            // 기존에 같은 uid가 들어가 있었으면 해제하자.
+            QuickSlotUI.Instance.ClearSlot(itemUid);
+
+            SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);
+        }
+    }
+
+    private void SetIconAndSaveQuickSlotData(InventoryItemInfo setInventoryItemInfo, int saveItemUid
+        , ItemBox itembox, int index)
+    {
+        itembox.Init(setInventoryItemInfo);
+        UserData.Instance.itemData.data.quickItemUIDs[index] = saveItemUid;
     }
 
     public int index;
