@@ -35,6 +35,7 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
         contentsText.DOText(_text, _text.VisibleTextLength() / speechSpeed);
         nameText.text = _name;
         portrait.sprite = Resources.Load<Sprite>("NPC/" + portraitSpriteName);
+        portrait.SetNativeSize();
         //portrait.sprite =(Sprite)Resources.Load("NPC/" + portraitSpriteName, typeof(Sprite));
 
         CloseUI().SetDelay(visibleTime);

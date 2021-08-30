@@ -22,5 +22,6 @@ public class ShopItemListBox : MonoBehaviour
         price.text = item.buyPrice.ToString();
         itemName.text = item.name;
         icon.sprite = item.Sprite;
+        icon.SetNativeSize();
     }
 }

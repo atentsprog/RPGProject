@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +18,7 @@ public class RewardBox : MonoBehaviour
     internal void Init(RewardInfo item)
     {
         icon.sprite = ItemDB.GetItemInfo(item.itemID).Sprite;
+        icon.SetNativeSize();
         count.text = item.count.ToString();
     }
 }

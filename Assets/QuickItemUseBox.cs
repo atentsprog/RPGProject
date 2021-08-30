@@ -84,6 +84,7 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         coolTimeText.text = "";
         coolTimeFilled.fillAmount = 0;
 
-        transform.DOPunchScale(Vector3.one * 0.15f, 0.5f);
+        transform.DOPunchScale(Vector3.one * 0.15f, 0.5f)
+            .SetUpdate(true);
     }
 }

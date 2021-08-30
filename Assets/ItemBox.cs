@@ -36,6 +36,7 @@ public class ItemBox : MonoBehaviour
         {
             icon.enabled = true;
             icon.sprite = item.ItemInfo.Sprite;
+            icon.SetNativeSize();
             count.text = item.count.ToString();
         }
         else
