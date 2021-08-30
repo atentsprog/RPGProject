@@ -19,11 +19,12 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         print(eventData);
-        InventoryItemInfo existInventoryItemInfo = null;
         QuickItemUseBox fromQuickItemUseBox = eventData.pointerDrag.GetComponent<QuickItemUseBox>();
         bool fromQuickSlot = fromQuickItemUseBox != null;
         if (fromQuickSlot)
         {
+            InventoryItemInfo existInventoryItemInfo = null;
+            InventoryItemInfo fromInventoryItemInfo = fromQuickItemUseBox.itembox.inventoryItemInfo;
             // 드랍된곳에 아이템이 이미 있었다면 정보를 바꾸자.
             if (itembox.inventoryItemInfo != null)
                 existInventoryItemInfo = itembox.inventoryItemInfo;
@@ -32,7 +33,7 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
             UserData.Instance.itemData.data.quickItemUIDs[fromQuickItemUseBox.index] = existInventoryItemInfo.uid;
 
             fromQuickItemUseBox.itembox.Init(existInventoryItemInfo);
-            UserData.Instance.itemData.data.quickItemUIDs[index] = fromQuickItemUseBox.itembox.inventoryItemInfo.uid;
+            UserData.Instance.itemData.data.quickItemUIDs[index] = fromInventoryItemInfo.uid;
         }
         else
         {
