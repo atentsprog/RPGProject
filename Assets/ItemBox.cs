@@ -41,6 +41,7 @@ public class ItemBox : MonoBehaviour
         }
         else
         {
+            icon.sprite = null;
             icon.enabled = false;
             count.text = "";
         }

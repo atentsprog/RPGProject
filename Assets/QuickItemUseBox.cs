@@ -24,24 +24,24 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         {
             // 스왑 바꾸자. 
             // 기존에 있던거랑 fromQuickItemUseBox랑 정보를 바꾸자.
-
             var thisInventoryItemInfo = itembox.inventoryItemInfo;
+            var fromInventoryItemInfo = fromQuickItemUseBox.itembox.inventoryItemInfo;
             // 기존(this)걸 바꾸자.
-            SetIconAndSaveQuickSlotData(fromQuickItemUseBox.itembox.inventoryItemInfo,fromQuickItemUseBox.itembox.inventoryItemInfo.uid
+            SetIconAndSaveQuickSlotData(fromInventoryItemInfo
+                , fromInventoryItemInfo != null ? fromInventoryItemInfo.uid : 0
                 , itembox, index);
              
             // from에 있는걸 바꾸자.
-            SetIconAndSaveQuickSlotData(thisInventoryItemInfo, thisInventoryItemInfo.uid
+            SetIconAndSaveQuickSlotData(thisInventoryItemInfo
+                , thisInventoryItemInfo != null ? thisInventoryItemInfo.uid : 0
                 , fromQuickItemUseBox.itembox, fromQuickItemUseBox.index);
         }
         else
         {
             ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
             int itemUid = fromItemBox.inventoryItemInfo.uid;
-
             // 기존에 같은 uid가 들어가 있었으면 해제하자.
             QuickSlotUI.Instance.ClearSlot(itemUid);
-
             SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);
         }
     }
