@@ -19,14 +19,32 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         print(eventData);
-        ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
-        int itemUid = fromItemBox.inventoryItemInfo.uid;
+        InventoryItemInfo existInventoryItemInfo = null;
+        QuickItemUseBox fromQuickItemUseBox = eventData.pointerDrag.GetComponent<QuickItemUseBox>();
+        bool fromQuickSlot = fromQuickItemUseBox != null;
+        if (fromQuickSlot)
+        {
+            // 드랍된곳에 아이템이 이미 있었다면 정보를 바꾸자.
+            if (itembox.inventoryItemInfo != null)
+                existInventoryItemInfo = itembox.inventoryItemInfo;
 
-        // 기존에 같은 uid가 들어가 있었으면 해제하자.
-        QuickSlotUI.Instance.ClearSlot(itemUid);
+            itembox.Init(fromQuickItemUseBox.itembox.inventoryItemInfo);
+            UserData.Instance.itemData.data.quickItemUIDs[fromQuickItemUseBox.index] = existInventoryItemInfo.uid;
 
-        itembox.Init(fromItemBox.inventoryItemInfo);
-        UserData.Instance.itemData.data.quickItemUIDs[index] = itemUid;
+            fromQuickItemUseBox.itembox.Init(existInventoryItemInfo);
+            UserData.Instance.itemData.data.quickItemUIDs[index] = fromQuickItemUseBox.itembox.inventoryItemInfo.uid;
+        }
+        else
+        {
+            ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
+            int itemUid = fromItemBox.inventoryItemInfo.uid;
+
+            // 기존에 같은 uid가 들어가 있었으면 해제하자.
+            QuickSlotUI.Instance.ClearSlot(itemUid);
+
+            itembox.Init(fromItemBox.inventoryItemInfo);
+            UserData.Instance.itemData.data.quickItemUIDs[index] = itemUid;
+        }
     }
 
     public int index;

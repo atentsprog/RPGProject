@@ -74,16 +74,6 @@ MonoBehaviour:
     registShop: 0
     itemType: 0
     maxStackCount: 0
-  - name: "\uCD08\uBCF4 \uC0AC\uB0E5\uAFBC\uC758 \uAC80"
-    id: 1001
-    description: "\uD0C0\uC774\uC5B4\uBCF4\uB2E4 \uC0AC\uB2E4 \uCD08\uBCF4\uC6A9
-      \uAC80"
-    iconName: Sword1
-    sellPrice: 50
-    buyPrice: 100
-    registShop: 1
-    itemType: 1
-    maxStackCount: 1
   - name: "\uBC29\uD328"
     id: 2001
     description: "\uBB34\uC5C7\uB3C4 \uB9C9\uC744 \uC218 \uC5C6\uB294 \uBC29"
@@ -111,7 +101,7 @@ MonoBehaviour:
     buyPrice: 40
     registShop: 1
     itemType: 4
-    maxStackCount: 100
+    maxStackCount: 5
   - name: "\uC911\uD3EC\uC158"
     id: 4002
     description: 
@@ -121,6 +111,34 @@ MonoBehaviour:
     registShop: 1
     itemType: 4
     maxStackCount: 100
+  - name: "\uCD08\uBCF4 \uC0AC\uB0E5\uAFBC\uC758 \uAC80"
+    id: 1001
+    description: "\uD0C0\uC774\uC5B4\uBCF4\uB2E4 \uC2F8\uB2E4! \uCD08\uBCF4\uC6A9
+      \uAC80!"
+    iconName: Sword1
+    sellPrice: 50
+    buyPrice: 100
+    registShop: 1
+    itemType: 1
+    maxStackCount: 1
+  - name: "\uD3C9\uBC94\uD55C \uC0AC\uB0E5\uAFBC\uC758 \uAC80"
+    id: 1002
+    description: "\uC88B\uC740\uAC80\uC774\uC57C, \uD3C9\uBC94\uD55C \uAC80!"
+    iconName: Sword2
+    sellPrice: 70
+    buyPrice: 140
+    registShop: 1
+    itemType: 1
+    maxStackCount: 1
+  - name: "\uAC15\uD55C \uC0AC\uB0E5\uAFBC\uC758 \uAC80"
+    id: 1003
+    description: "\uC774\uAC74 \uAC15\uD558\uB2E4, \uC88B\uC740\uCE7C!"
+    iconName: Sword3
+    sellPrice: 100
+    buyPrice: 200
+    registShop: 1
+    itemType: 1
+    maxStackCount: 1
   monsters:
   - name: "\uC2AC\uB77C\uC784"
     id: 1
