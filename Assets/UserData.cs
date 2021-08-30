@@ -13,6 +13,16 @@ public class UserQuestData
 }
 
 [System.Serializable]
+public class InventoryItemInfo
+{
+    public int uid;
+    public int id;
+    public int count;
+
+    public ItemInfo ItemInfo => ItemDB.GetItemInfo(id);
+}
+
+[System.Serializable]
 public class UserItemData
 {
     public int lastUID;
@@ -31,6 +41,20 @@ public class AccountData
     public int exp;
 }
 
+[System.Serializable]
+public class UserSKillInfo
+{
+    public int id;
+    public int level;
+    public SkillInfo SkillInfo => ItemDB.GetSkillInfo(id);
+}
+
+[System.Serializable]
+public class SkillData
+{
+    public List<UserSKillInfo> skills = new List<UserSKillInfo>();
+}
+
 
 public class UserData : Singleton<UserData>
 {
@@ -38,6 +62,7 @@ public class UserData : Singleton<UserData>
     public PlayerPrefsData<UserItemData> itemData;
     public PlayerPrefsData<AccountData> accountData;
     internal Action<int, int> onChangedGold;
+    public PlayerPrefsData<AccountData> skillData;
 
     //내가 구입한 아이템.
 

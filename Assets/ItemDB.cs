@@ -65,9 +65,21 @@ public class MonsterInfo
 [System.Serializable]
 public class DestinationInfo
 {
-    public int id;
     public string name;
+    public int id;
 }
+
+[System.Serializable]
+public class SkillInfo
+{
+    public string name;
+    public int id;
+    [TextArea]
+    public string description;
+    public string icon;
+}
+
+
 [System.Serializable]
 public class ItemInfo
 {
@@ -86,22 +98,6 @@ public class ItemInfo
     public int maxStackCount; // 1개까지 스택으로 쌓임.
 }
 
-[System.Serializable]
-public class InventoryItemInfo
-{
-    public int uid;
-    public int id;
-    public int count;
-
-    public ItemInfo ItemInfo => ItemDB.GetItemInfo(id);
-    //public ItemInfo ItemInfo {
-    //    get { return ItemDB.GetItemInfo(id); }
-    //}
-    //public ItemInfo GetItemInfo()
-    //{
-    //    return ItemDB.GetItemInfo(id);
-    //}
-}
 
 public enum ItemType
 {
@@ -121,10 +117,12 @@ public class ItemDB : Singleton<ItemDB>
     [SerializeField] List<ItemInfo> items;
     [SerializeField] List<MonsterInfo> monsters;
     [SerializeField] List<DestinationInfo> destinations;
+    public List<SkillInfo> skills;
     Dictionary<int, QuestInfo> questMap;
     Dictionary<int, ItemInfo> itemMap;
     Dictionary<int, MonsterInfo> monsterMap;
     Dictionary<int, DestinationInfo> destinationMap;
+    Dictionary<int, SkillInfo> skillMap;
 
     private void Awake()
     {
@@ -176,6 +174,13 @@ public class ItemDB : Singleton<ItemDB>
     {
         if (Instance.destinationMap.TryGetValue(destinationId, out DestinationInfo result) == false)
             Debug.LogError($"{destinationId}가 없습니다");
+        return result;
+    }
+
+    internal static SkillInfo GetSkillInfo(int id)
+    {
+        if (Instance.skillMap.TryGetValue(id, out SkillInfo result) == false)
+            Debug.LogError($"Skill ID {id}가 없습니다");
         return result;
     }
 }
