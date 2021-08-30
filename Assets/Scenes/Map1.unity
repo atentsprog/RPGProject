@@ -8692,6 +8692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1024623808}
   - component: {fileID: 1024623809}
+  - component: {fileID: 1024623810}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -8730,6 +8731,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024623807}
   m_CullTransparentMesh: 1
+--- !u!114 &1024623810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024623807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf5eb1b54130634d9ab5df4be4d94b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableSprite: {fileID: -5841733499960621340, guid: f0085bb50183cdc4fb0b170d900aa3f0, type: 3}
+  disableSprite: {fileID: 9094600903545770030, guid: 02fa0e82673465e47a5748fe29507a79, type: 3}
 --- !u!1 &1030295833
 GameObject:
   m_ObjectHideFlags: 0
@@ -14967,6 +14982,8 @@ MonoBehaviour:
       gold: 0
       crystal: 0
       userName: 
+      level: 0
+      exp: 0
     useDebug: 0
 --- !u!4 &1689472208
 Transform:

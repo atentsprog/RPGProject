@@ -27,6 +27,8 @@ public class AccountData
     public int gold;
     public int crystal;
     public string userName;
+    public int level;
+    public int exp;
 }
 
 
