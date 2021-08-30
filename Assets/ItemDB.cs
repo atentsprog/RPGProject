@@ -74,9 +74,11 @@ public class SkillInfo
 {
     public string name;
     public int id;
+    public int mana;
     [TextArea]
     public string description;
     public string icon;
+    public Sprite Sprite => Resources.Load<Sprite>($"Icons/{icon}");
 }
 
 
