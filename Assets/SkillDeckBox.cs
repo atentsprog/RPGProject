@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class SkillDeckBox : MonoBehaviour, IDropHandler
 {
+    [SerializeField] Sprite normalSprite;
     [SerializeField] Sprite enableSprite;
     [SerializeField] Sprite disableSprite;
 
@@ -21,6 +22,7 @@ public class SkillDeckBox : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         skillInfo = eventData.pointerDrag.GetComponent<SkillListBox>().skillInfo;
+        UserData.Instance.skillData.data.deckIDs[index] = skillInfo.id;
         SetUI(skillInfo);
     }
     private void SetUI(SkillInfo skillInfo)
@@ -28,21 +30,23 @@ public class SkillDeckBox : MonoBehaviour, IDropHandler
         icon.sprite = skillInfo.Sprite;
         skillName.text = skillInfo.name;
 
-        int nLevel = 0;
         UserSKillInfo userSKillInfo = UserData.Instance.skillData
             .data.skills.Find(x => x.id == skillInfo.id);
         if (userSKillInfo != null)
-            nLevel = userSKillInfo.level;
-        print(nLevel);
-        this.level.text = nLevel.ToString();
+            level.text = $"Lv{userSKillInfo.level}";
+        else
+            level.text = "미획득";
+        bgImage.sprite = normalSprite;
         SetActiveUi(true);
     }
     private void SetActiveUi(bool state)
     {
         skillName.enabled = level.enabled = icon.enabled = state;
     }
-    internal void Init(DeckStateType _deckState)
+    int index;
+    internal void Init(int _index, DeckStateType _deckState)
     {
+        index = _index;
         bgImage = transform.Find("Bg").GetComponent<Image>();
         skillName = transform.Find("SkillName").GetComponent<Text>();
         level = transform.Find("Level").GetComponent<Text>();

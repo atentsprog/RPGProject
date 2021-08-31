@@ -63,13 +63,21 @@ public class UserSKillInfo
 {
     public int id;
     public int level;
+
     public SkillInfo SkillInfo => ItemDB.GetSkillInfo(id);
 }
 
 [System.Serializable]
-public class SkillData
+public class SkillData : ISerializationCallbackReceiver
 {
+    public List<int> deckIDs = new List<int>(8);
     public List<UserSKillInfo> skills = new List<UserSKillInfo>();
+
+    public void OnAfterDeserialize()
+    {
+        deckIDs.AddRange(new int[8]);
+    }
+    public void OnBeforeSerialize() { }
 }
 
 
@@ -88,6 +96,7 @@ public class UserData : Singleton<UserData>
         questData = new PlayerPrefsData<UserQuestData>("UserQuestData");
         itemData = new PlayerPrefsData<UserItemData>("UserItemData");
         accountData = new PlayerPrefsData<AccountData>("AccountData");
+        skillData = new PlayerPrefsData<SkillData>("skillData");
 
         onChangedGold?.Invoke(0, accountData.data.gold);
     }
@@ -102,6 +111,7 @@ public class UserData : Singleton<UserData>
         questData.SaveData();
         itemData.SaveData();
         accountData.SaveData();
+        skillData.SaveData();
     }
 
     internal string ProcessBuy(ItemInfo item, int count)
