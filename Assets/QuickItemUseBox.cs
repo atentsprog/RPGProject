@@ -44,7 +44,7 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         {
             InventoryItemInfo inventoryItemInfo = skillDeckBox.skillInfo.GetInventoryItemInfo();
             QuickSlotUI.Instance.ClearSlot(QuickSlotType.Skill, inventoryItemInfo.id);
-            //SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);
+            SetIconAndSaveQuickSlotData(inventoryItemInfo, inventoryItemInfo.uid, itembox, index);
             return;
         }
 

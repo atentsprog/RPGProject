@@ -40,11 +40,13 @@ public class ItemBox : MonoBehaviour
                 icon.sprite = item.ItemInfo.Sprite;
                 icon.SetNativeSize();
                 count.text = item.count.ToString();
+                icon.transform.localScale = Vector3.one;
             }
             else
             {
                 icon.sprite = item.SkillInfo.Sprite;
                 icon.SetNativeSize();
+                icon.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 count.text = "";
             }
         }
