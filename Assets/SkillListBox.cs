@@ -10,9 +10,10 @@ public class SkillListBox : MonoBehaviour
     Text mana;
     Image icon;
 
-
-    internal void Init(SkillInfo skillInfo)
+    public SkillInfo skillInfo;
+    internal void Init(SkillInfo _skillInfo)
     {
+        skillInfo = _skillInfo;
         skillName = transform.Find("SkillName").GetComponent<Text>();
         mana = transform.Find("Mana").GetComponent<Text>();
         icon = transform.Find("Icon").GetComponent<Image>();

@@ -19,7 +19,30 @@ public class InventoryItemInfo
     public int id;
     public int count;
 
+    [NonSerialized]
+    public QuickSlotType quickSlotType;
+
     public ItemInfo ItemInfo => ItemDB.GetItemInfo(id);
+    public SkillInfo SkillInfo => ItemDB.GetSkillInfo(id);
+}
+
+
+public enum QuickSlotType
+{
+    Item,
+    Skill,
+}
+[System.Serializable]
+public class QuickSlotItemInfo
+{
+    public QuickSlotType type;
+    public int id;
+
+    public QuickSlotItemInfo(QuickSlotType _type, int _id)
+    {
+        type = _type;
+        id = _id;
+    }
 }
 
 [System.Serializable]
@@ -27,7 +50,7 @@ public class UserItemData
 {
     public int lastUID;
     public List<InventoryItemInfo> item = new List<InventoryItemInfo>();
-    public List<int> quickItemUIDs = new List<int>();
+    public List<QuickSlotItemInfo> quickItemUIDs = new List<QuickSlotItemInfo>();
     public List<int> equipItemUIDs = new List<int>();
 }
 
@@ -49,17 +72,35 @@ public class AccountData : ISerializationCallbackReceiver
 }
 
 [System.Serializable]
-public class UserSKillInfo
+public class UserSKillInfo : ISerializationCallbackReceiver
 {
     public int id;
     public int level;
     public SkillInfo SkillInfo => ItemDB.GetSkillInfo(id);
+
+    public void OnAfterDeserialize()
+    {
+        level = Math.Max(1, level);
+    }
+
+    public void OnBeforeSerialize()    {    }
+
+    public InventoryItemInfo GetInventoryItemInfo()
+    {
+        InventoryItemInfo inventoryItemInfo = new InventoryItemInfo();
+        inventoryItemInfo.quickSlotType = QuickSlotType.Skill;
+        inventoryItemInfo.id = inventoryItemInfo.uid = id;
+
+        return inventoryItemInfo;
+    }
 }
 
 [System.Serializable]
 public class SkillData
 {
-    public List<UserSKillInfo> skills = new List<UserSKillInfo>();
+    public int skillPoint;
+    public List<UserSKillInfo> skills;
+    public List<int> deck = new List<int>(Enumerable.Repeat(0, 8));
 }
 
 
@@ -68,8 +109,8 @@ public class UserData : Singleton<UserData>
     public PlayerPrefsData<UserQuestData> questData;
     public PlayerPrefsData<UserItemData> itemData;
     public PlayerPrefsData<AccountData> accountData;
+    public PlayerPrefsData<SkillData> skillData;
     internal Action<int, int> onChangedGold;
-    public PlayerPrefsData<AccountData> skillData;
 
     //내가 구입한 아이템.
 
@@ -78,10 +119,21 @@ public class UserData : Singleton<UserData>
         questData = new PlayerPrefsData<UserQuestData>("UserQuestData");
         itemData = new PlayerPrefsData<UserItemData>("UserItemData");
         accountData = new PlayerPrefsData<AccountData>("AccountData");
-        if (itemData.data.quickItemUIDs.Count == 0)
-            itemData.data.quickItemUIDs.AddRange(new int[10]);
+        skillData = new PlayerPrefsData<SkillData>("SkillData");
+
         if (itemData.data.equipItemUIDs.Count == 0)
+        {
             itemData.data.equipItemUIDs.AddRange(new int[8]);
+
+            itemData.data.quickItemUIDs.AddRange(
+                Enumerable.Repeat(new QuickSlotItemInfo(QuickSlotType.Item, 0), 10));
+        }
+        
+        if(skillData.data.skills == null)
+        {
+            skillData.data.skillPoint = 5 + accountData.data.level;
+            skillData.data.skills = new List<UserSKillInfo>();
+        }
 
 
         onChangedGold?.Invoke(0, accountData.data.gold);
@@ -97,6 +149,7 @@ public class UserData : Singleton<UserData>
         questData.SaveData();
         itemData.SaveData();
         accountData.SaveData();
+        skillData.SaveData();
     }
 
     internal string ProcessBuy(ItemInfo item, int count)

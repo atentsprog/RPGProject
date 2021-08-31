@@ -18,12 +18,11 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     public Text number;
     public void OnDrop(PointerEventData eventData)
     {
-        //print(eventData);
         QuickItemUseBox fromQuickItemUseBox = eventData.pointerDrag.GetComponent<QuickItemUseBox>();
         if (fromQuickItemUseBox != null)
         {
             // 스왑 바꾸자. 
-            // 기존에 있던거랑 fromQuickItemUseBox랑 정보를 바꾸자.
+            // 기존에 있던거랑 fromQuickItemUseBox랑 정보를 바꾸자. -> 스킬 박스는 바꿀 수 없다.
             var thisInventoryItemInfo = itembox.inventoryItemInfo;
             var fromInventoryItemInfo = fromQuickItemUseBox.itembox.inventoryItemInfo;
             // 기존(this)걸 바꾸자.
@@ -35,22 +34,37 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
             SetIconAndSaveQuickSlotData(thisInventoryItemInfo
                 , thisInventoryItemInfo != null ? thisInventoryItemInfo.uid : 0
                 , fromQuickItemUseBox.itembox, fromQuickItemUseBox.index);
+
+            return;
         }
-        else
-        {
-            ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
-            int itemUid = fromItemBox.inventoryItemInfo.uid;
-            // 기존에 같은 uid가 들어가 있었으면 해제하자.
-            QuickSlotUI.Instance.ClearSlot(itemUid);
-            SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);
-        }
+
+        // 인벤 박스에서 드래그
+        ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
+        int itemUid = fromItemBox.inventoryItemInfo.uid;
+        // 기존에 같은 uid가 들어가 있었으면 해제하자.
+        QuickSlotUI.Instance.ClearSlot(itemUid);
+        SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);
+
+        ////스킬 덱에서 드래그.
+        //SkillDeckBox skillDeckBox = eventData.pointerDrag.GetComponent<SkillDeckBox>();
+        //if (skillDeckBox != null)
+        //{
+        //    //ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
+        //    //int itemUid = fromItemBox.inventoryItemInfo.uid;
+        //    // 기존에 같은 uid가 들어가 있었으면 해제하자.
+        //    QuickSlotUI.Instance.ClearSlot(QuickSlotType.Skill, skillDeckBox.userSKillInfo.id);
+        //    SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);
+
+        //    return;
+        //}
+
     }
 
     private void SetIconAndSaveQuickSlotData(InventoryItemInfo setInventoryItemInfo, int saveItemUid
         , ItemBox itembox, int index)
     {
         itembox.Init(setInventoryItemInfo);
-        UserData.Instance.itemData.data.quickItemUIDs[index] = saveItemUid;
+        UserData.Instance.itemData.data.quickItemUIDs[index] = new QuickSlotItemInfo(setInventoryItemInfo.quickSlotType, saveItemUid);
     }
 
     public int index;
@@ -112,8 +126,9 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
             .SetUpdate(true);
 
         // 소비 아이템인경우 수량을 줄이자.
-        // 소비 아이템이냐?
-        bool isConsumable = itembox.inventoryItemInfo.ItemInfo.itemType == ItemType.Consume; 
+        // 소비 아이템이냐?        
+        bool isConsumable = itembox.inventoryItemInfo.quickSlotType == QuickSlotType.Item
+            && itembox.inventoryItemInfo.ItemInfo.itemType == ItemType.Consume; 
         if(isConsumable)
         {
             UserData.Instance.RemoveItem(itembox.inventoryItemInfo, 1);

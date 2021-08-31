@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class QuickSlotUI : Singleton<QuickSlotUI>
@@ -29,33 +30,35 @@ public class QuickSlotUI : Singleton<QuickSlotUI>
         for (int i = 0; i < keyBinding.Length; i++)
         {
             var newButton = Instantiate(baseBox, baseBox.transform.parent);
-            int itemUID = UserData.Instance.itemData.data.quickItemUIDs[i];
-            InventoryItemInfo inventoryItemInfo = UserData.Instance.GetItem(itemUID);
+            var item = UserData.Instance.itemData.data.quickItemUIDs[i];
+
+            InventoryItemInfo inventoryItemInfo;
+            if (item.type == QuickSlotType.Skill)
+            {
+                var userSkillData = UserData.Instance.skillData.data.skills.Where(x => x.id == item.id).FirstOrDefault();
+                inventoryItemInfo = userSkillData.GetInventoryItemInfo();
+            }
+            else
+            {
+                int itemUID = item.id;
+                inventoryItemInfo = UserData.Instance.GetItem(itemUID);
+            }
             newButton.Init(i, inventoryItemInfo, keyBinding[i]);
             quickSlots.Add(newButton);
         }
         baseBox.gameObject.SetActive(false);
     }
-    internal void ClearSlot(int itemUid)
+    internal void ClearSlot(int itemUidOrID)
     {
-        //quickSlots.Find(x => x.itembox.inventoryItemInfo != null && x.itembox.inventoryItemInfo.uid == itemUid)
-        //    ?.itembox.Init(null);
-        var list = quickSlots.FindAll(x => 
-            x.itembox.inventoryItemInfo != null 
-            && x.itembox.inventoryItemInfo.uid == itemUid);
+        var list = quickSlots.FindAll(x =>
+            x.itembox.inventoryItemInfo != null
+            && x.itembox.inventoryItemInfo.uid == itemUidOrID);
 
         foreach (var item in list)
         {
             item.itembox.Init(null);
-            UserData.Instance.itemData.data.quickItemUIDs[item.index] = 0;
+            UserData.Instance.itemData.data.quickItemUIDs[item.index].id = 0;
         }
-
-
-        // 위에 코드랑 동일한 결과.
-        //quickSlots.FindAll(x =>
-        //    x.itembox.inventoryItemInfo != null
-        //    && x.itembox.inventoryItemInfo.uid == itemUid)
-        //    .ForEach(x => x.itembox.Init(null));
     }
 
     internal void UpdateItemInfo(InventoryItemInfo existItem)

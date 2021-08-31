@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseUI<T> : Singleton<T> where T : MonoBehaviour
 {
@@ -52,6 +53,9 @@ public class SkillUI : BaseUI<SkillUI>
 
     List<SkillDeckBox> skillDeckBoxes = new List<SkillDeckBox>(8);
     List<SkillListBox> skillListBoxes = new List<SkillListBox>();
+    Text description;
+    Button button;
+
     bool isCompleteLink = false;
     private void LinkComponent()
     {
@@ -61,7 +65,31 @@ public class SkillUI : BaseUI<SkillUI>
         InitDeck();
         InitList();
 
+        SetDeckCard();
+
+        description = transform.Find("Down/Bg/Description").GetComponent<Text>();
+        button = transform.Find("Down/Bg/Button").GetComponent<Button>();
+        button.onClick.AddListener(OnClick);
+
         isCompleteLink = true;
+    }
+
+    private void SetDeckCard()
+    {
+        for (int i = 0; i < skillDeckBoxes.Count; i++)
+        {
+            var item = skillDeckBoxes[i];
+            int skillID = UserData.Instance.skillData.data.deck[i];
+            
+            SkillInfo skillInfo = ItemDB.GetSkillInfo(skillID);
+            item.SetSkillInfo(skillInfo);
+        }
+    }
+
+    private void OnClick()
+    {
+        print("가이드 텍스트 클릭함" + onClickCB);
+        onClickCB.Invoke();
     }
 
     private void InitList()
@@ -89,10 +117,21 @@ public class SkillUI : BaseUI<SkillUI>
             //1 : 4 + level = 5;
             DeckStateType deckState = 4 + level > i ? DeckStateType.Enable : DeckStateType.Disable;
             var newItem = Instantiate(deckBase, deckBase.transform.parent);
-            newItem.Init(deckState);
+            newItem.Init(i, deckState);
             skillDeckBoxes.Add(newItem);
         }
         deckBase.gameObject.SetActive(false);
+    }
+
+    Action onClickCB;
+    internal void SetGuideText(string str, Action _onClickCB = null)
+    {
+        onClickCB = _onClickCB;
+
+        description.DOKill();
+        description.text = "";
+        description.DOText(str, str.VisibleTextLength() / 20).SetUpdate(true);
+        button.gameObject.SetActive(_onClickCB != null);
     }
 }
 

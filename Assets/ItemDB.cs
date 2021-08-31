@@ -78,6 +78,8 @@ public class SkillInfo
     [TextArea]
     public string description;
     public string icon;
+    public int maxLevel;
+
     public Sprite Sprite => Resources.Load<Sprite>($"Icons/{icon}");
 }
 
@@ -126,12 +128,19 @@ public class ItemDB : Singleton<ItemDB>
     Dictionary<int, DestinationInfo> destinationMap;
     Dictionary<int, SkillInfo> skillMap;
 
+    [ContextMenu("최소값 설정")]
+    void InitMaxLevel()
+    {
+        skills.ForEach(x => x.maxLevel = Math.Max(5, x.maxLevel));
+    }
+
     private void Awake()
     {
         itemMap = items.ToDictionary(x => x.id);
         monsterMap = monsters.ToDictionary(x => x.id);
         destinationMap = destinations.ToDictionary(x => x.id);
         questMap = quests.ToDictionary(x => x.id);
+        skillMap = skills.ToDictionary(x => x.id);
     }
 
     internal List<ItemInfo> GetItems(ItemType itemType)
@@ -181,6 +190,9 @@ public class ItemDB : Singleton<ItemDB>
 
     internal static SkillInfo GetSkillInfo(int id)
     {
+        if (id == 0)
+            return null;
+
         if (Instance.skillMap.TryGetValue(id, out SkillInfo result) == false)
             Debug.LogError($"Skill ID {id}가 없습니다");
         return result;

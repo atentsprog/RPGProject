@@ -35,9 +35,21 @@ public class ItemBox : MonoBehaviour
         if (item != null)
         {
             icon.enabled = true;
-            icon.sprite = item.ItemInfo.Sprite;
+            if (item.quickSlotType == QuickSlotType.Item)
+            {
+                icon.transform.localScale = Vector3.one;
+                icon.sprite = item.ItemInfo.Sprite;
+                count.text = item.count.ToString();
+            }
+            else
+            {
+                //스케일 0.3으로 하자.
+                icon.sprite = item.SkillInfo.Sprite;
+                icon.transform.localScale = Vector3.one * 0.3f;
+                count.text = string.Empty;
+            }
+
             icon.SetNativeSize();
-            count.text = item.count.ToString();
         }
         else
         {

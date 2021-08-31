@@ -76,8 +76,8 @@ MonoBehaviour:
     maxStackCount: 0
   - name: "\uCD08\uBCF4 \uC0AC\uB0E5\uAFBC\uC758 \uAC80"
     id: 1001
-    description: "\uD0C0\uC774\uC5B4\uBCF4\uB2E4 \uC0AC\uB2E4 \uCD08\uBCF4\uC6A9
-      \uAC80"
+    description: "\uD0C0\uC774\uC5B4\uBCF4\uB2E4 \uC2F8\uB2E4! \uCD08\uBCF4\uC6A9
+      \uAC80!"
     iconName: Sword1
     sellPrice: 50
     buyPrice: 100
@@ -111,7 +111,7 @@ MonoBehaviour:
     buyPrice: 40
     registShop: 1
     itemType: 4
-    maxStackCount: 100
+    maxStackCount: 5
   - name: "\uC911\uD3EC\uC158"
     id: 4002
     description: 
@@ -125,5 +125,66 @@ MonoBehaviour:
   - name: "\uC2AC\uB77C\uC784"
     id: 1
   destinations:
-  - id: 1
-    name: "\uCD0C\uC7A5\uC9D1"
+  - name: "\uCD0C\uC7A5\uC9D1"
+    id: 1
+  skills:
+  - name: "\uC5F0\uC0AC1"
+    id: 1
+    mana: 1
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_1
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC2"
+    id: 2
+    mana: 2
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_2
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC3"
+    id: 3
+    mana: 3
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_3
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC4"
+    id: 4
+    mana: 4
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_4
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC"
+    id: 5
+    mana: 5
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_5
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC"
+    id: 6
+    mana: 5
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_6
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC5"
+    id: 7
+    mana: 5
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_7
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC6"
+    id: 8
+    mana: 5
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_8
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC7"
+    id: 9
+    mana: 5
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_9
+    maxLevel: 5
+  - name: "\uC5F0\uC0AC8"
+    id: 10
+    mana: 5
+    description: "\uD654\uC0B4 4\uBC1C\uC774 \uB3D9\uC2DC\uC5D0 \uB098\uAC11\uB2C8\uB2E4"
+    icon: Skill_10
+    maxLevel: 5
