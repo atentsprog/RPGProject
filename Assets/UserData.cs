@@ -23,12 +23,22 @@ public class InventoryItemInfo
 }
 
 [System.Serializable]
-public class UserItemData
+public class UserItemData : ISerializationCallbackReceiver
 {
     public int lastUID;
     public List<InventoryItemInfo> item = new List<InventoryItemInfo>();
     public List<int> quickItemUIDs = new List<int>();
     public List<int> equipItemUIDs = new List<int>();
+
+    public void OnAfterDeserialize()
+    {
+        if (quickItemUIDs.Count == 0)
+            quickItemUIDs.AddRange(new int[10]);
+        if (equipItemUIDs.Count == 0)
+            equipItemUIDs.AddRange(new int[8]);
+    }
+
+    public void OnBeforeSerialize()    {    }
 }
 
 [System.Serializable]
@@ -45,7 +55,7 @@ public class AccountData : ISerializationCallbackReceiver
         level = Math.Max(1, level);
     }
 
-    public void OnBeforeSerialize() {    }
+    public void OnBeforeSerialize()    {    }
 }
 
 [System.Serializable]
@@ -78,11 +88,6 @@ public class UserData : Singleton<UserData>
         questData = new PlayerPrefsData<UserQuestData>("UserQuestData");
         itemData = new PlayerPrefsData<UserItemData>("UserItemData");
         accountData = new PlayerPrefsData<AccountData>("AccountData");
-        if (itemData.data.quickItemUIDs.Count == 0)
-            itemData.data.quickItemUIDs.AddRange(new int[10]);
-        if (itemData.data.equipItemUIDs.Count == 0)
-            itemData.data.equipItemUIDs.AddRange(new int[8]);
-
 
         onChangedGold?.Invoke(0, accountData.data.gold);
     }
