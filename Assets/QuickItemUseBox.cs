@@ -124,7 +124,10 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
 
         // 소비 아이템인경우 수량을 줄이자.
         // 소비 아이템이냐?
-        bool isConsumable = itembox.inventoryItemInfo.ItemInfo.itemType == ItemType.Consume; 
+        bool isConsumable =
+            itembox.inventoryItemInfo.type == QuickSlotType.Item &&
+            itembox.inventoryItemInfo.ItemInfo.itemType == ItemType.Consume; 
+
         if(isConsumable)
         {
             UserData.Instance.RemoveItem(itembox.inventoryItemInfo, 1);
