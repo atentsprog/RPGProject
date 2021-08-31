@@ -9,7 +9,12 @@ public class SignalIndicator : MonoBehaviour
     public LayerMask indicatorLayer;
     private void Awake()
     {
-        terrainCollider = Terrain.activeTerrain.GetComponent<Collider>();
+        if (terrainCollider == null)
+        {
+            var activeTerrain = Terrain.activeTerrain;
+            if(activeTerrain != null)
+                terrainCollider = activeTerrain.GetComponent<Collider>();
+        }
     }
     void Update()
     {
