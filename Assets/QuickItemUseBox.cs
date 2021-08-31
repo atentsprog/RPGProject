@@ -60,7 +60,7 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     {
         itembox.Init(setInventoryItemInfo);
         var quickSlotInfo = UserData.Instance.itemData.data.quickItemUIDs[index];
-        quickSlotInfo.type = setInventoryItemInfo.type;
+        quickSlotInfo.type = setInventoryItemInfo != null ? setInventoryItemInfo.type : QuickSlotType.Item;
         quickSlotInfo.uidOrId = saveItemUid;
     }
 
@@ -80,11 +80,13 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
 
     private void OnClick()
     {
-        //print(number.text);
+        if (StageManager.GameState == GameStateType.Menu)
+            return;
+
         if (itembox.inventoryItemInfo == null)
             return;
 
-        if (endTime > Time.realtimeSinceStartup)
+        if (endTime > Time.time)
             return;
 
         StartCoroutine(StartCoolTimeCo());
@@ -104,11 +106,11 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
     private IEnumerator StartCoolTimeCo()
     {
         float coolTimeSeconds = 3; 
-        endTime = Time.realtimeSinceStartup + coolTimeSeconds;
+        endTime = Time.time + coolTimeSeconds;
 
-        while (endTime > Time.realtimeSinceStartup)
+        while (endTime > Time.time)
         {
-            float remainTime = endTime - Time.realtimeSinceStartup;
+            float remainTime = endTime - Time.time;
             //remainTimeText1.text = ((int)(remainTime + 1)).ToString();
             //remainTimeText2.text = (remainTime + 1).ToString("0.0");
             coolTimeText.text = remainTime.ToString("0.0");
@@ -119,8 +121,7 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         coolTimeText.text = "";
         coolTimeFilled.fillAmount = 0;
 
-        transform.DOPunchScale(Vector3.one * 0.15f, 0.5f)
-            .SetUpdate(true);
+        transform.DOPunchScale(Vector3.one * 0.15f, 0.5f);
 
         // 소비 아이템인경우 수량을 줄이자.
         // 소비 아이템이냐?
