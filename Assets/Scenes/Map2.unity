@@ -11133,6 +11133,7 @@ GameObject:
   - component: {fileID: 1157632635}
   - component: {fileID: 1157632637}
   - component: {fileID: 1157632636}
+  - component: {fileID: 1157632638}
   m_Layer: 0
   m_Name: node-018F2F81 (1)
   m_TagString: Untagged
@@ -11203,6 +11204,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157632634}
   m_Mesh: {fileID: -3717096821908058771, guid: 53ce512de5d8d0a44891f5a17d2e0486, type: 3}
+--- !u!114 &1157632638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157632634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631824d2fe625c248a5319dbcfdd4049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: {x: 0, y: 0.1}
 --- !u!1 &1168067172
 GameObject:
   m_ObjectHideFlags: 0
