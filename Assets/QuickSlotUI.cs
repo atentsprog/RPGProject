@@ -36,12 +36,13 @@ public class QuickSlotUI : Singleton<QuickSlotUI>
         }
         baseBox.gameObject.SetActive(false);
     }
-    internal void ClearSlot(int itemUid)
+    internal void ClearSlot(QuickSlotType type, int itemUid)
     {
         //quickSlots.Find(x => x.itembox.inventoryItemInfo != null && x.itembox.inventoryItemInfo.uid == itemUid)
         //    ?.itembox.Init(null);
-        var list = quickSlots.FindAll(x => 
-            x.itembox.inventoryItemInfo != null 
+        var list = quickSlots.FindAll(x =>
+            x.itembox.inventoryItemInfo != null
+            && x.itembox.inventoryItemInfo.type == type
             && x.itembox.inventoryItemInfo.uid == itemUid);
 
         foreach (var item in list)

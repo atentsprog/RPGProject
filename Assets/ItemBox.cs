@@ -35,9 +35,18 @@ public class ItemBox : MonoBehaviour
         if (item != null)
         {
             icon.enabled = true;
-            icon.sprite = item.ItemInfo.Sprite;
-            icon.SetNativeSize();
-            count.text = item.count.ToString();
+            if (item.type == QuickSlotType.Item)
+            {
+                icon.sprite = item.ItemInfo.Sprite;
+                icon.SetNativeSize();
+                count.text = item.count.ToString();
+            }
+            else
+            {
+                icon.sprite = item.SkillInfo.Sprite;
+                icon.SetNativeSize();
+                count.text = "";
+            }
         }
         else
         {

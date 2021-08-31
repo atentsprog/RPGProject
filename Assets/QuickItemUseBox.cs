@@ -35,15 +35,24 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
             SetIconAndSaveQuickSlotData(thisInventoryItemInfo
                 , thisInventoryItemInfo != null ? thisInventoryItemInfo.uid : 0
                 , fromQuickItemUseBox.itembox, fromQuickItemUseBox.index);
+
+            return;
         }
-        else
+
+        SkillDeckBox skillDeckBox = eventData.pointerDrag.GetComponent<SkillDeckBox>();
+        if (skillDeckBox != null)
         {
-            ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
-            int itemUid = fromItemBox.inventoryItemInfo.uid;
-            // 기존에 같은 uid가 들어가 있었으면 해제하자.
-            QuickSlotUI.Instance.ClearSlot(itemUid);
-            SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);
+            InventoryItemInfo inventoryItemInfo = skillDeckBox.skillInfo.GetInventoryItemInfo();
+            QuickSlotUI.Instance.ClearSlot(QuickSlotType.Skill, inventoryItemInfo.id);
+            //SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);
+            return;
         }
+
+        ItemBox fromItemBox = eventData.pointerDrag.GetComponent<ItemBox>();
+        int itemUid = fromItemBox.inventoryItemInfo.uid;
+        // 기존에 같은 uid가 들어가 있었으면 해제하자.
+        QuickSlotUI.Instance.ClearSlot(QuickSlotType.Item, itemUid);
+        SetIconAndSaveQuickSlotData(fromItemBox.inventoryItemInfo, itemUid, itembox, index);       
     }
 
     private void SetIconAndSaveQuickSlotData(InventoryItemInfo setInventoryItemInfo, int saveItemUid

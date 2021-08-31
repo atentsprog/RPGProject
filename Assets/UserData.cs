@@ -19,7 +19,12 @@ public class InventoryItemInfo
     public int id;
     public int count;
 
+    [NonSerialized]
+    public QuickSlotType type;
+
     public ItemInfo ItemInfo => ItemDB.GetItemInfo(id);
+
+    public SkillInfo SkillInfo => ItemDB.GetSkillInfo(id);
 }
 
 [System.Serializable]
@@ -79,6 +84,11 @@ public class SkillData : ISerializationCallbackReceiver
             deckIDs.AddRange(new int[8]);
     }
     public void OnBeforeSerialize() { }
+}
+public enum QuickSlotType
+{
+    Item,
+    Skill,
 }
 
 
@@ -190,7 +200,7 @@ public class UserData : Singleton<UserData>
         AddGold(totalGold);
 
         // 퀵슬롯 UI에서 삭제.
-        QuickSlotUI.Instance.ClearSlot(item.uid);
+        QuickSlotUI.Instance.ClearSlot(QuickSlotType.Item, item.uid);
         // <- 이로직 실행해도 껐다 켜면 저장안되어 있음
         // ClearSlot 실행시 퀵슬롯 정보 저장하게 수정해야함
 
