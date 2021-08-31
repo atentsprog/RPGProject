@@ -132,6 +132,7 @@ public class ItemDB : Singleton<ItemDB>
         monsterMap = monsters.ToDictionary(x => x.id);
         destinationMap = destinations.ToDictionary(x => x.id);
         questMap = quests.ToDictionary(x => x.id);
+        skillMap = skills.ToDictionary(x => x.id);
     }
 
     internal List<ItemInfo> GetItems(ItemType itemType)

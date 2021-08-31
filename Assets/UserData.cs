@@ -75,7 +75,8 @@ public class SkillData : ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
-        deckIDs.AddRange(new int[8]);
+        if(deckIDs.Count == 0)
+            deckIDs.AddRange(new int[8]);
     }
     public void OnBeforeSerialize() { }
 }

@@ -18,8 +18,17 @@ public class SkillListBox : MonoBehaviour
         mana = transform.Find("Mana").GetComponent<Text>();
         icon = transform.Find("Icon").GetComponent<Image>();
 
-        skillName.text = skillInfo.name;
-        mana.text = skillInfo.mana.ToString();
-        icon.sprite = skillInfo.Sprite;
+        if (skillInfo != null)
+        {
+            skillName.text = skillInfo.name;
+            mana.text = skillInfo.mana.ToString();
+            icon.sprite = skillInfo.Sprite;
+        }
+        else
+        {
+            skillName.text = string.Empty;
+            mana.text = string.Empty;
+            icon.sprite = null;
+        }
     }
 }

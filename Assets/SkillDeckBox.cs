@@ -25,19 +25,29 @@ public class SkillDeckBox : MonoBehaviour, IDropHandler
         UserData.Instance.skillData.data.deckIDs[index] = skillInfo.id;
         SetUI(skillInfo);
     }
-    private void SetUI(SkillInfo skillInfo)
+    public void SetUI(SkillInfo skillInfo)
     {
-        icon.sprite = skillInfo.Sprite;
-        skillName.text = skillInfo.name;
-
-        UserSKillInfo userSKillInfo = UserData.Instance.skillData
-            .data.skills.Find(x => x.id == skillInfo.id);
-        if (userSKillInfo != null)
-            level.text = $"Lv{userSKillInfo.level}";
+        if (skillInfo != null)
+        {
+            icon.sprite = skillInfo.Sprite;
+            skillName.text = skillInfo.name;
+            UserSKillInfo userSKillInfo = UserData.Instance.skillData
+                .data.skills.Find(x => x.id == skillInfo.id);
+            if (userSKillInfo != null)
+                level.text = $"Lv{userSKillInfo.level}";
+            else
+                level.text = "미획득";
+            bgImage.sprite = normalSprite;
+            SetActiveUi(true);
+        }
         else
-            level.text = "미획득";
-        bgImage.sprite = normalSprite;
-        SetActiveUi(true);
+        {
+            icon.sprite = null;
+            skillName.text = string.Empty;
+            SetActiveUi(false);
+            bgImage.sprite = deckState == DeckStateType.Enable ?
+                enableSprite : disableSprite;
+        }
     }
     private void SetActiveUi(bool state)
     {
@@ -56,5 +66,10 @@ public class SkillDeckBox : MonoBehaviour, IDropHandler
          deckState = _deckState;
         bgImage.sprite = deckState == DeckStateType.Enable ?
             enableSprite : disableSprite;
+    }
+
+    internal void SetCardInfo(SkillInfo skillInfo)
+    {
+        throw new NotImplementedException();
     }
 }
