@@ -27,18 +27,26 @@ public class InventoryItemInfo
     public SkillInfo SkillInfo => ItemDB.GetSkillInfo(id);
 }
 
+
+[System.Serializable]
+public class QuckSlotInfo
+{
+    public QuickSlotType type;
+    public int uidOrId;
+}
+
 [System.Serializable]
 public class UserItemData : ISerializationCallbackReceiver
 {
     public int lastUID;
     public List<InventoryItemInfo> item = new List<InventoryItemInfo>();
-    public List<int> quickItemUIDs = new List<int>();
+    public List<QuckSlotInfo> quickItemUIDs = new List<QuckSlotInfo>();
     public List<int> equipItemUIDs = new List<int>();
 
     public void OnAfterDeserialize()
     {
         if (quickItemUIDs.Count == 0)
-            quickItemUIDs.AddRange(new int[10]);
+            quickItemUIDs.AddRange(new QuckSlotInfo[10]);
         if (equipItemUIDs.Count == 0)
             equipItemUIDs.AddRange(new int[8]);
     }

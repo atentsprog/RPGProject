@@ -59,7 +59,9 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         , ItemBox itembox, int index)
     {
         itembox.Init(setInventoryItemInfo);
-        UserData.Instance.itemData.data.quickItemUIDs[index] = saveItemUid;
+        var quickSlotInfo = UserData.Instance.itemData.data.quickItemUIDs[index];
+        quickSlotInfo.type = setInventoryItemInfo.type;
+        quickSlotInfo.uidOrId = saveItemUid;
     }
 
     public int index;

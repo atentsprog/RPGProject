@@ -8875,6 +8875,7 @@ GameObject:
   - component: {fileID: 1024623808}
   - component: {fileID: 1024623809}
   - component: {fileID: 1024623810}
+  - component: {fileID: 1024623811}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -8934,6 +8935,20 @@ MonoBehaviour:
     mana: 0
     description: 
     icon: 
+--- !u!114 &1024623811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024623807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e06f0ea99f104b468efd4f2b53db390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragOnSurfaces: 1
+  icon: {fileID: 62316833}
 --- !u!1 &1030295833
 GameObject:
   m_ObjectHideFlags: 0
@@ -15573,7 +15588,27 @@ MonoBehaviour:
     data:
       lastUID: 0
       item: []
-      quickItemUIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      quickItemUIDs:
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
+      - type: 0
+        uidOrId: 0
       equipItemUIDs: 0000000000000000000000000000000000000000000000000000000000000000
     useDebug: 0
   accountData:
