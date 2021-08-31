@@ -79,7 +79,7 @@ public class UserData : Singleton<UserData>
     public PlayerPrefsData<UserItemData> itemData;
     public PlayerPrefsData<AccountData> accountData;
     internal Action<int, int> onChangedGold;
-    public PlayerPrefsData<AccountData> skillData;
+    public PlayerPrefsData<SkillData> skillData;
 
     //내가 구입한 아이템.
 
