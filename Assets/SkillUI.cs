@@ -47,6 +47,9 @@ public class SkillUI : BaseUI<SkillUI>
     {
         base.ShowUI();
         LinkComponent();
+
+        RestoreDeckInfo();
+
         print("skillUI showUI");
     }
 
@@ -60,8 +63,6 @@ public class SkillUI : BaseUI<SkillUI>
 
         InitDeck();
         InitList();
-
-        RestoreDeckInfo();
 
         isCompleteLink = true;
     }
