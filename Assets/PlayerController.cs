@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour
     InputAction shootAction;
     InputAction aimAction;
 
-    private CharacterController controller;
+    private MyCharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     [SerializeField] float playerSpeed = 5.0f;
@@ -24,10 +25,12 @@ public class PlayerController : MonoBehaviour
     Transform cameraTransform;
     Animator animator;
     ProjectileParabolaDrawer projectileParabolaDrawer;
+    NavMeshAgent agent;
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
-        controller = GetComponent<CharacterController>();
+        agent = GetComponent<NavMeshAgent>();
+        controller = GetComponent<MyCharacterController>();
         animator = GetComponentInChildren<Animator>();
         projectileParabolaDrawer = GetComponentInChildren<ProjectileParabolaDrawer>();
         jumpAction = playerInput.actions["Jump"];
@@ -95,6 +98,8 @@ public class PlayerController : MonoBehaviour
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
+            agent.updatePosition = true;
+            agent.nextPosition = transform.position;
         }
 
         var input = moveAction.ReadValue<Vector2>();
@@ -108,9 +113,11 @@ public class PlayerController : MonoBehaviour
         if (jumpAction.triggered && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            agent.updatePosition = false;
         }
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        if(groundedPlayer == false)
+            playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
         // 회전.

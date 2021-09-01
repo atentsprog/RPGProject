@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SignalIndicator : MonoBehaviour
 {
-    Collider terrainCollider;
+    public Collider terrainCollider;
     public GameObject indicatePrefab;
     public LayerMask indicatorLayer;
     private void Awake()
