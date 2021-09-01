@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-
+using System;
 
 public class EditorOptionConfig : EditorWindow
 {
@@ -18,7 +18,7 @@ public class EditorOptionConfig : EditorWindow
         mPos = GUILayout.BeginScrollView(mPos);
         if(GUILayout.Button("테스트 버튼"))
         {
-            Debug.Log("테스트 버튼 누름");
+            SetNormalTextures();
         }
 
         for (OptionType i = OptionType.StartIndex + 1; i < OptionType.LastIndex; i++)
@@ -38,5 +38,25 @@ public class EditorOptionConfig : EditorWindow
             GUILayout.EndHorizontal();
         }
         GUILayout.EndScrollView();
+    }
+
+    private void SetNormalTextures()
+    {
+        // 선택한거 한개만 대상으로 해보자.
+        foreach (var item in Selection.objects)
+        {
+            Material mat = (Material)item;
+            if (mat == null)
+                continue;
+            SetNormalTexture(mat);
+        }
+
+        void SetNormalTexture(Material mat)
+        {
+            string mainPath = AssetDatabase.GetAssetPath(mat.mainTexture);
+            string normalPath = mainPath.Replace(".png", "_n.png");
+            Texture normalTexture = AssetDatabase.LoadAssetAtPath<Texture>(normalPath);
+            mat.SetTexture("_DetailNormalMap", normalTexture);
+        }
     }
 }
