@@ -78,6 +78,7 @@ public class SkillInfo
     [TextArea]
     public string description;
     public string icon;
+    public string arrowPrefabName;
     public Sprite Sprite => Resources.Load<Sprite>($"Icons/{icon}");
 
     internal InventoryItemInfo GetInventoryItemInfo()

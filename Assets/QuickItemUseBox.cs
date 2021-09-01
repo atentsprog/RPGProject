@@ -89,8 +89,23 @@ public class QuickItemUseBox : MonoBehaviour, IDropHandler
         if (endTime > Time.time)
             return;
 
+        UseSlot();
+
         StartCoroutine(StartCoolTimeCo());
     }
+
+    private void UseSlot()
+    {
+        switch (itembox.inventoryItemInfo.type)
+        {
+            case QuickSlotType.Item:
+                break;
+            case QuickSlotType.Skill:
+                PlayerController.Instance.UseSkill(itembox.inventoryItemInfo.SkillInfo);
+                break;
+        }
+    }
+
 
     internal void LinkComponent()
     {

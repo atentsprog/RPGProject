@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     public string parameterAttack = "StartFire";
     public string parameterSpeed = "Speed";
@@ -60,7 +60,13 @@ public class PlayerController : MonoBehaviour
 
         animator.SetTrigger(parameterAttack);
 
-        GameObject bullet = Instantiate(bulletPrefab, barrelTransform.transform.position
+        GameObject projectile = bulletPrefab;
+        if (nextSkillProjectile != null)
+        {
+            projectile = nextSkillProjectile;
+            nextSkillProjectile = null;
+        }
+        GameObject bullet = Instantiate(projectile, barrelTransform.transform.position
             , Quaternion.LookRotation(cameraTransform.forward), bulletParent);
 
         var bulletController = bullet.GetComponent<IProjectile>();
@@ -128,5 +134,17 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat(parameterSpeed, move.sqrMagnitude);
         animator.SetBool(parameterIsMoving, move.sqrMagnitude > 0);
     }
+
+    public GameObject nextSkillProjectile;
+
+    internal void UseSkill(SkillInfo skillInfo)
+    {
+        if (string.IsNullOrEmpty(skillInfo.arrowPrefabName) == false)
+        {
+            //skillInfo.arrowPrefabName 다음번 화살은 이것을 사용하자. 
+            nextSkillProjectile = Resources.Load<GameObject>(skillInfo.arrowPrefabName);
+        }
+    }
+
     public float rotationSpeed = 5;
 }
