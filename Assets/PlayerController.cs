@@ -102,8 +102,17 @@ public class PlayerController : MonoBehaviour
             agent.nextPosition = transform.position;
         }
 
-        var input = moveAction.ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
+        //New InputSystem에서 버그가 있다 해결될때까지 옛날 인풋 시스템 사용
+        // https://forum.unity.com/threads/input-freezes-for-several-seconds-shortly-after-repeatedly-entering-play-mode.838333/page-2#post-7447079
+        //var input = moveAction.ReadValue<Vector2>();
+        //Vector3 move = new Vector3(input.x, 0, input.y);
+
+        Vector3 move = Vector3.zero;
+        if (Input.GetKey(KeyCode.A)) move.x = -1;
+        if (Input.GetKey(KeyCode.D)) move.x = 1;
+        if (Input.GetKey(KeyCode.W)) move.z = 1;
+        if (Input.GetKey(KeyCode.S)) move.z = -1;
+
         move = move.x * cameraTransform.right + move.z * cameraTransform.forward;
         move.y = 0;
         controller.Move(move * Time.deltaTime * playerSpeed);
