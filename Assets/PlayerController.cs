@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour
         //aimAction.canceled += (InputAction.CallbackContext obj) => { projectileParabolaDrawer.gameObject.SetActive(false); }; 
     }
 
+    private void OnDestroy()
+    {
+        shootAction.performed -= ShootAction_performed;
+    }
+
 
     public GameObject bulletPrefab;
     public GameObject barrelTransform;

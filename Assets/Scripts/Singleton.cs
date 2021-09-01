@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Inherit from this base class to create a singleton.
@@ -43,6 +44,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                         Debug.LogError($"{typeof(T)} 싱글턴 클래스 없음.");
                     }
                 }
+                SceneManager.sceneLoaded += OnSceneLoaded;
                 return m_Instance;
             }
 
@@ -67,6 +69,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
+    private static void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        m_ShuttingDown = false;
+    }
 
     private void OnApplicationQuit()
     {
