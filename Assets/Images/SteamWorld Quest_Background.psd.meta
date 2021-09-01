@@ -84,6 +84,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -370,6 +371,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SteamWorld Quest_Background_3: 1753307464076201454
+      SteamWorld Quest_Background_6: -7083369893726874745
+      SteamWorld Quest_Background_1: 7932211472555619714
+      SteamWorld Quest_Background_8: 6899556962864611457
+      SteamWorld Quest_Background_5: -3438968435472828924
+      SteamWorld Quest_Background_0: -1615775712763458837
+      SteamWorld Quest_Background_2: -4260984005840455271
+      SteamWorld Quest_Background_7: 970773866299866495
+      SteamWorld Quest_Background_9: 3594850254552630806
+      SteamWorld Quest_Background_4: 4895987247851803655
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

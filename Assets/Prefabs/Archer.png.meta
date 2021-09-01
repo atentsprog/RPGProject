@@ -24,6 +24,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -919,6 +920,46 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BookBg: 6057280695788522511
+      Shop Menu_3: -3847620074475782247
+      Shop Menu_9: -4558292246274002493
+      Shop Menu_6: -5402117844763105139
+      Shop Menu_22: -2384149027186335694
+      Shop Menu_18: 925223871103303320
+      Shop Menu_10: -6470008732761099118
+      Shop Menu_11: 1299357997528910079
+      Shop Menu_35: 1092868175405300851
+      Shop Menu_13: 8988583059043552466
+      Shop Menu_4: 8937141692564467211
+      Shop Menu_30: 6632591730490079602
+      Shop Menu_17: 9095182161379880896
+      Shop Menu_26: 6223249571912996386
+      Shop Menu_31: 6132339259668369436
+      Shop Menu_34: -5135714626808929711
+      Shop Menu_27: -719200276917080252
+      Paper: -5892905514276721259
+      BookCorver: -3499373818004586423
+      Shop Menu_32: 8345540493730103229
+      Shop Menu_8: -6251651786312254087
+      Shop Menu_36: 6082797914560797249
+      Shop Menu_16: 8004187915979079126
+      Shop Menu_33: 2237115195189438933
+      Shop Menu_14: -5192000402904338104
+      Shop Menu_23: 5017225801505770217
+      Shop Menu_5: 4634412839865799342
+      Shop Menu_15: -5736275472111269838
+      Shop Menu_21: 8713990910068473018
+      Shop Menu_29: -1673459329280626893
+      Shop Menu_7: 6499894055953810873
+      Shop Menu_38: 6255696391773579585
+      Shop Menu_28: -3639219233272230746
+      Shop Menu_19: 4588963652516982225
+      Shop Menu_12: 4492025587038663234
+      Shop Menu_20: 2615564151821840656
+      Shop Menu_25: 2345368400320878982
+      Shop Menu_24: 6641315891549364289
+      Shop Menu_37: 7932968867158176648
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

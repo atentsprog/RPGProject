@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -340,6 +341,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SteamWorld_Quest_TextBox_2: -3933034854320694364
+      SteamWorld_Quest_TextBox_0: -9201727952884710385
+      SteamWorld_Quest_TextBox_9: -5211447182150329739
+      SteamWorld_Quest_TextBox_3: -6833221407562007171
+      SteamWorld_Quest_TextBox_1: 2255748362627972938
+      SteamWorld_Quest_TextBox_4: -6410451039948266940
+      SteamWorld_Quest_TextBox_6: 7655674425741048191
+      SteamWorld_Quest_TextBox_7: -2596838678129969498
+      SteamWorld_Quest_TextBox_5: -2485790476609485916
+      SteamWorld_Quest_TextBox_8: 1895682107098326196
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
