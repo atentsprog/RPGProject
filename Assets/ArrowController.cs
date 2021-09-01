@@ -46,12 +46,7 @@ public class ArrowController : MonoBehaviour, IProjectile
         float degree = -currentAngle * Mathf.Rad2Deg;
         transform.Rotate(degree, 0, degree);
         rigidbody.velocity = rigidbody.transform.forward * force;
-
-        rigidbody.AddTorque(Random.Range(0, torque.x),
-            Random.Range(0, torque.y),
-            Random.Range(0, torque.z));
     }
-    public Vector3 torque = new Vector3(0, 1, 0);
 
     private void Update()
     {
@@ -61,8 +56,10 @@ public class ArrowController : MonoBehaviour, IProjectile
             return;
         }
 
-        if(rigidbody.velocity != Vector3.zero)
+        if (rigidbody.velocity != Vector3.zero)
+        {
             transform.forward = rigidbody.velocity;
+        }
 
 
         if (Vector3.Distance(transform.position, target) < 0.01f)
