@@ -41,8 +41,9 @@ public class TimeController : MonoBehaviour
             else
             {
                 Time.timeScale = 1;
-                foreach (var item in cinemachineVirtualCameras)
-                    item.gameObject.SetActive(true);
+                if(cinemachineVirtualCameras != null)
+                    foreach (var item in cinemachineVirtualCameras)
+                        item.gameObject.SetActive(true);
             }
         }
 
