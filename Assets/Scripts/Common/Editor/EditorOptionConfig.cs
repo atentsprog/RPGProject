@@ -32,7 +32,7 @@ public class EditorOptionConfig : EditorWindow
         string normalTexPath = mainTexPath.Replace(".png", "_n.png");
         Texture normalTexture = AssetDatabase.LoadAssetAtPath<Texture>(normalTexPath);
         mat.SetTexture("_BumpMap", normalTexture);
-        //mat.SetFloat()
+        mat.SetFloat("_BumpScale", 0.3f);
     }
 
     [MenuItem("Tools/Option")]
