@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 882840335844980256}
   - component: {fileID: 3219465378505156193}
   - component: {fileID: 9053055111913864348}
+  - component: {fileID: 1820305988}
   m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
@@ -122,6 +123,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyDelay: 4
   duration: 1
+--- !u!114 &1820305988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753734539183472492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46fda0f82bd6e84e87a505e18c2e91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {x: 0.1, y: 0.1, z: 0.1}
+  randomTransitionTime: 0.1
 --- !u!1 &2645871875192122505
 GameObject:
   m_ObjectHideFlags: 0
@@ -9791,6 +9806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2941947066901942810}
+  - component: {fileID: 8327432442184978653}
   m_Layer: 7
   m_Name: FireArrow_Decal
   m_TagString: Untagged
@@ -9817,6 +9833,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8327432442184978653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745113636049049783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95737d8fd37c2204abca9dbb93c56a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 6
+  OnEnableLog: 0
+  OnDisableLog: 0
+  OnDestroyLog: 0
+  StopOnLog: 0
 --- !u!1 &5901766159288084172
 GameObject:
   m_ObjectHideFlags: 0
