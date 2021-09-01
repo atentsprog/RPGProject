@@ -26976,6 +26976,42 @@ PrefabInstance:
       propertyPath: skills.Array.data[0].arrowPrefabName
       value: FireArcher_Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[1].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[2].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[3].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[4].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[5].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[6].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[7].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[8].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711354313046990344, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
+      propertyPath: skills.Array.data[9].arrowPrefabName
+      value: FireArcher_Arrow
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7ff1bcdbe445b4cb9e75d23f633616, type: 3}
 --- !u!222 &6578612567182722361
