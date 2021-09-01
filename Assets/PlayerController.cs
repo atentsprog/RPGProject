@@ -66,6 +66,9 @@ public class PlayerController : MonoBehaviour
         if (StageManager.GameState != GameStateType.Play)
             return;
 
+        if (Time.timeScale == 0)
+            return;
+
         animator.SetTrigger(parameterAttack);
 
         GameObject bullet = Instantiate(bulletPrefab, barrelTransform.transform.position
