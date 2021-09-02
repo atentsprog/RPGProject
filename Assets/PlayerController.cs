@@ -45,6 +45,10 @@ public class PlayerController : Singleton<PlayerController>
         //아래처럼도 작성가능하지만 사용하지 않는 파라미터 굳이 적을 필요 없으니깐 위에서처럼 짧게 표현
         //aimAction.canceled += (InputAction.CallbackContext obj) => { projectileParabolaDrawer.gameObject.SetActive(false); }; 
     }
+    private void OnDestroy()
+    {
+        shootAction.performed -= ShootAction_performed;
+    }
 
 
     public GameObject bulletPrefab;

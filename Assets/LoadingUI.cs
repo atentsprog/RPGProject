@@ -23,6 +23,7 @@ public class LoadingUI : Singleton<LoadingUI>
         while(result.isDone == false)
         {
             percent.text = Mathf.RoundToInt(result.progress * 100) + "%";
+            print(percent.text);
             progressBar.fillAmount = result.progress;
             yield return null;
         }
