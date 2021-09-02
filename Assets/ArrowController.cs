@@ -46,7 +46,9 @@ public class ArrowController : MonoBehaviour, IProjectile
         float degree = -currentAngle * Mathf.Rad2Deg;
         transform.Rotate(degree, 0, degree);
         rigidbody.velocity = rigidbody.transform.forward * force;
+        rotateZ = Random.Range(-40, 40);
     }
+    float rotateZ;
 
     private void Update()
     {
@@ -59,6 +61,10 @@ public class ArrowController : MonoBehaviour, IProjectile
         if (rigidbody.velocity != Vector3.zero)
         {
             transform.forward = rigidbody.velocity;
+
+            var rotate = transform.rotation.eulerAngles;
+            rotate.z = rotateZ;
+            transform.rotation = Quaternion.Euler(rotate);
         }
 
 
