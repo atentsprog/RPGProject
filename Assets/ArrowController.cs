@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,9 +47,17 @@ public class ArrowController : MonoBehaviour, IProjectile
         float degree = -currentAngle * Mathf.Rad2Deg;
         transform.Rotate(degree, 0, degree);
         rigidbody.velocity = rigidbody.transform.forward * force;
-        rotateZ = Random.Range(-40, 40);
+        //rotateZ = Random.Range(-40, 40);
+        torqueRotate = transform.rotation.eulerAngles;
+        torqueRotate.z = Random.Range(0, 360);
+        DOTween.To(() => torqueRotate.z, value => torqueRotate.z = value
+                    , 360
+                    , Random.Range(0.1f, 1) // 회전하는 스피드, 0.1일땐 빨리 회전하는 화살, 1일땐 느리게 회전하는 화살
+                    )
+                    .SetLoops(-1, LoopType.Incremental)
+                    .SetLink(gameObject);
     }
-    float rotateZ;
+    Vector3 torqueRotate;
 
     private void Update()
     {
@@ -61,10 +70,9 @@ public class ArrowController : MonoBehaviour, IProjectile
         if (rigidbody.velocity != Vector3.zero)
         {
             transform.forward = rigidbody.velocity;
-
-            var rotate = transform.rotation.eulerAngles;
-            rotate.z = rotateZ;
-            transform.rotation = Quaternion.Euler(rotate);
+            var rotation = transform.rotation.eulerAngles;
+            rotation.z = torqueRotate.z;
+            transform.rotation = Quaternion.Euler(rotation);
         }
 
 
