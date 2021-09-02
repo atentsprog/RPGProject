@@ -1,0 +1,2993 @@
+fileFormatVersion: 2
+guid: eb26d8bef48da3c41beb712c631859d2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LoadBg
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1691
+        width: 1924
+        height: 1084
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9cbe302acf542a4789d0a67d9d2c17b
+      internalID: 591705607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_1
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 1699
+        width: 326
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a67e5fefbfc3bc42a249c024cdd3697
+      internalID: 481585297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_2
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1785
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b2dce9eefba0948a93cbe8f63bbf46
+      internalID: -679947047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_3
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 1696
+        width: 362
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82064cdc58e7e25439b0aadead652548
+      internalID: 827752488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_4
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 1691
+        width: 316
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934151c5693221643bf2e2508d953f9e
+      internalID: 1865635532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_5
+      rect:
+        serializedVersion: 2
+        x: 2977
+        y: 1692
+        width: 1236
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f67e90348f6d54ebd3fc31bf983652
+      internalID: 1685455148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_6
+      rect:
+        serializedVersion: 2
+        x: 2265
+        y: 1765
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52b92e21872f1b46a40b3dc68de9643
+      internalID: 1311246502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_7
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 1762
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3c5a4cd3ea1a84bb24d6ff7aa025a8
+      internalID: -68245329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_8
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 1697
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63208aee96a51454fb1fbd9d1c0f7a38
+      internalID: -1171460859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_9
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 1692
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e24c26b19f5d749aeebf21e86500ed
+      internalID: 1363364025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_10
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 1691
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c02275634e752a4c9147babe8a97fc5
+      internalID: 2040206961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_11
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1691
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b799a3640cff5d4bb89e14ea5545c15
+      internalID: -1763704591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_12
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 1048
+        width: 1232
+        height: 636
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb2c6ca57a037a45b32ffede524638f
+      internalID: 234839961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_13
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 1048
+        width: 1113
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50384182a11eddb4f9333212efafda5a
+      internalID: -898475010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_14
+      rect:
+        serializedVersion: 2
+        x: 3960
+        y: 1487
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0336a101a089345a92694326599258
+      internalID: -50432405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_15
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1337
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7df59ca84018c64f99e1be163be79fc
+      internalID: -981657575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_16
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 1335
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2905d3fbaeba1844b19b4b33181c8e0
+      internalID: -2145414427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_17
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 1324
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e8a32599c289b4c9104942b1750ca7
+      internalID: 385145186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_18
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 1303
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bec359aee9ea804abc7b6934e4a7fab
+      internalID: -920331908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_19
+      rect:
+        serializedVersion: 2
+        x: 2653
+        y: 1048
+        width: 199
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0dcf6ce809d98428160b97fd227e25
+      internalID: 1380364579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1048
+        width: 208
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77faf9486d613364083711f5fb0a8214
+      internalID: 1082376282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_21
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1048
+        width: 319
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb966fcd19cb3841be2628bc86396c0
+      internalID: 1149988366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_22
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 1272
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0eba89db930e6e40b69668afec9a159
+      internalID: 996597661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_23
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 1294
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a50e27218fc4b48935bb48e2a9a347
+      internalID: 393638950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_24
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 1120
+        width: 121
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85782d8f313eed74194cef9d9d83b635
+      internalID: -88012609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_25
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 1296
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c924b4707ad0340b10a06811f5b425
+      internalID: 1750726605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_26
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 1272
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9da28334400914897f3011aa1f9462
+      internalID: -2121994190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_27
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1267
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12651f3b2e7473d4f9837c52329fc36e
+      internalID: 350131663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_28
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 1278
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a820173254c6e38438b390d569babcd0
+      internalID: -989859026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_29
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 1238
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89c2af4fa6988c4bb16c0fb49e570ef
+      internalID: -2025654257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_30
+      rect:
+        serializedVersion: 2
+        x: 1993
+        y: 1262
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e06ffeb9850544d8c8aa4e7cd55143
+      internalID: -1274574399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_31
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 1263
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2abd96c97789944183deca6275e0d6c
+      internalID: 1680561544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_32
+      rect:
+        serializedVersion: 2
+        x: 2001
+        y: 1248
+        width: 25
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2bbbbbcfa4d17408757e43b0b9b7ee
+      internalID: -623895921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_33
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 1232
+        width: 64
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd7f8bca10efc84ebc6cc9aea1e1b7a
+      internalID: 1821582251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_34
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 1243
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f197c030cb4c9024995539cefffb477f
+      internalID: -984131763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_35
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 1220
+        width: 37
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8011b6d870d69240aca3fcd0489c48d
+      internalID: -168536802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_36
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1227
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4940c8c94df8fdc49b922899a7320f8a
+      internalID: 1584086639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_37
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 1230
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a523a9f3360437f4297ca6bb9ea6bdd4
+      internalID: 1325219594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_38
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 1154
+        width: 49
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c85f8fefc779f24fa9b207c4ec16eb9
+      internalID: 36583563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_39
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 1211
+        width: 55
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fdadfd1ce571846b7551c18d1e9fe9
+      internalID: 679683731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_40
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 1048
+        width: 530
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0d53df571f32f4f95252422fb16935
+      internalID: 1754135163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_41
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1202
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2f54daa06f1fc4da4aa111213ed94e
+      internalID: 1854691704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_42
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 1204
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c188240d2e95a246802c029e9c4da1d
+      internalID: 2010615018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_43
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 1192
+        width: 33
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7448a74aed65a0243aa5fce29341edf2
+      internalID: -1282301053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_44
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 1199
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109c904670f2ef849bac808b21a7599f
+      internalID: 1879065837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_45
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 1150
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad67e504f7b2bf44b86f85a256ec6ae
+      internalID: -443539563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_46
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 1119
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ae05a987a704848a94b1ad0f8c710f
+      internalID: 533646774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_47
+      rect:
+        serializedVersion: 2
+        x: 1995
+        y: 1166
+        width: 41
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca7ca94788385c458493ca5b17da055
+      internalID: 1597383861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_48
+      rect:
+        serializedVersion: 2
+        x: 1814
+        y: 1084
+        width: 71
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d67438f7f91f6a4b98fa11f60a6ac6f
+      internalID: -507259507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_49
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 1139
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18cf875db42f4684eac24b05d1f33b02
+      internalID: -1738780483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_50
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 1144
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e675fe35207c8e540a191137da18e1af
+      internalID: 1180351609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_51
+      rect:
+        serializedVersion: 2
+        x: 1996
+        y: 1136
+        width: 64
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7f4ad241433294eb741f206d97c56d
+      internalID: -788307643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_52
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 1108
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77e7170edb2f20449071889086de423
+      internalID: -300094205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_53
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 1131
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e343872c6b0bd0747bb32a6841e6bf97
+      internalID: -730509265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_54
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 1123
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef390800c6b04a4da13a253e0de7c1f
+      internalID: 1824823066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_55
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 1127
+        width: 32
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d586ca7910c600e409827ba613a75c25
+      internalID: -1619008615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_56
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1072
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2462f9008e70c07488ff71dfacadd6e8
+      internalID: -280971440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_57
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 1091
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be20fd935712234dbdf30a781179a6f
+      internalID: 1305704055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_58
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 1076
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6bd9850d8673d4591e1e963b81b4ab
+      internalID: -2108509485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_59
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1072
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3461f4521f1b5342b779e6455942e34
+      internalID: -644894991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_60
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 1096
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee283dcd61cbeb84a9823d7427b8ce7b
+      internalID: -139952480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_61
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 1091
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f6c0a45300bfc42abef427b294eb88
+      internalID: 324142325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_62
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 1071
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d1b9d0899d6844a938456c595a50fd
+      internalID: -986925420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_63
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 1072
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a01145a4685b04688730f0129a15f8
+      internalID: 1414628491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_64
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 1048
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80749819a42ac1c489fe00b31de089f2
+      internalID: -2078013333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_65
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 1060
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b27599fa63bbb541a9541c715ae8e17
+      internalID: 1143648924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_66
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 394
+        width: 449
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e29f45a0596ea4faed38ab4f09a957
+      internalID: 1328891017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_67
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 392
+        width: 365
+        height: 348
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e130911b305b04dbb69d574dae3cab
+      internalID: -1258102223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_68
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 406
+        width: 213
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbc6d6a020521245be9135785a457ee
+      internalID: 1687728719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_69
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 393
+        width: 336
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c95f94d83bf1c4399b5709e907f205
+      internalID: -1048225379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_70
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 391
+        width: 1273
+        height: 653
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c494e18d9d05bb499dd6eaa43425403
+      internalID: 616508511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_71
+      rect:
+        serializedVersion: 2
+        x: 2755
+        y: 637
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f5a4fd2c40dcc4892382f0c26ee5fe
+      internalID: -653260025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_72
+      rect:
+        serializedVersion: 2
+        x: 2764
+        y: 394
+        width: 297
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2bb00740c48ff2468d3d6610e0b8893
+      internalID: -515019230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_73
+      rect:
+        serializedVersion: 2
+        x: 3064
+        y: 391
+        width: 801
+        height: 457
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc10be1bae1d544b869336fb4078967
+      internalID: 1317573529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_74
+      rect:
+        serializedVersion: 2
+        x: 3889
+        y: 393
+        width: 436
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68567bbed12bdc54f9d7d0848c01bb26
+      internalID: -736976832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_75
+      rect:
+        serializedVersion: 2
+        x: 4312
+        y: 634
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733be0aa590b2a04bbbbe855ea69754a
+      internalID: -1479594505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_76
+      rect:
+        serializedVersion: 2
+        x: 4320
+        y: 593
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe254481092b45144a43c4d527aaad6a
+      internalID: -1572185883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_77
+      rect:
+        serializedVersion: 2
+        x: 4330
+        y: 621
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc4e3d815002d049924143d5c9b6fbd
+      internalID: 883031396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_78
+      rect:
+        serializedVersion: 2
+        x: 4331
+        y: 613
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4689b85ca6933444281d14ed70a34b2a
+      internalID: 909377427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_79
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 596
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36610b4adbeb51348b82baa234f0a75d
+      internalID: -981291135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_80
+      rect:
+        serializedVersion: 2
+        x: 3891
+        y: 586
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b98dec5480b83e47943235d34c4e8c3
+      internalID: 676296009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_81
+      rect:
+        serializedVersion: 2
+        x: 4334
+        y: 604
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1096493848e907c448dd0a9cfeec1e9f
+      internalID: -246728238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_82
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 523
+        width: 66
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b39ef800273d7944aef267404c50ac4
+      internalID: 2118480100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_83
+      rect:
+        serializedVersion: 2
+        x: 4320
+        y: 568
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7da54c1979d4744852095304193e51
+      internalID: -1066532931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_84
+      rect:
+        serializedVersion: 2
+        x: 4331
+        y: 561
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f81f205020ccf45a00b281bb61ffbb
+      internalID: 1637980195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_85
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 495
+        width: 71
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ea2068ca24a9e4d86ef278da9085dd
+      internalID: 1595708056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_86
+      rect:
+        serializedVersion: 2
+        x: 3868
+        y: 552
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c6d113ead937d4b9ceb9380f2e0687
+      internalID: -1513398462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_87
+      rect:
+        serializedVersion: 2
+        x: 4319
+        y: 553
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0802ff7ec7a7444870627dc98d8eaa
+      internalID: -1491862320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_88
+      rect:
+        serializedVersion: 2
+        x: 4328
+        y: 541
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37834fe5c749ea945aa18dabe196803e
+      internalID: -418852708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_89
+      rect:
+        serializedVersion: 2
+        x: 4324
+        y: 511
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f289dde1d0e5c8f41afa2b58d92b7cf5
+      internalID: -1921425066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_90
+      rect:
+        serializedVersion: 2
+        x: 4324
+        y: 520
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73607bc2f9f3c34d925de4a05e6d047
+      internalID: -1931691814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_91
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 483
+        width: 48
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04319d7800d1c2b4cb673fefc6ad90a2
+      internalID: 2131801248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_92
+      rect:
+        serializedVersion: 2
+        x: 4342
+        y: 510
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a8fc4e80883364e829b0bc111be66e
+      internalID: -1294374417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_93
+      rect:
+        serializedVersion: 2
+        x: 4328
+        y: 503
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f712f957f40064e408e9c1c838cd0d89
+      internalID: 1668654111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_94
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 392
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7449d57e4fcaad48bdb10c57fa0f914
+      internalID: -572632010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_95
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 391
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa061f1b28ee75a4c9a511aac19d0086
+      internalID: -1128227039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_96
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 359
+        width: 118
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fedfefee301af9489e2a6a83b36cf5f
+      internalID: 41357643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_97
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 364
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18761a89df4089644bfaa74eaea527ba
+      internalID: 1927870046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_98
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 364
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9aa3f6e328a484dbb8bb99060f9c6e
+      internalID: 1581391907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_99
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 364
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7564bd32ff59e584b9e0c3d57c9313ee
+      internalID: 1083869524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_100
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 364
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3504439c5c89d6e48ae014ef52815a99
+      internalID: -2005361185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_101
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 364
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0dd8ea531208324f864d78fa2c81773
+      internalID: 1042095872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_102
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 266
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5beac097e558859498db521f034e15a7
+      internalID: -1320646382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_103
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 256
+        width: 78
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835cd7d7f3ea3ee4ca9fb0071374832b
+      internalID: -1912245478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_104
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 132
+        width: 622
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2cc59ac9951384dbe7d89203d77f04
+      internalID: -225791225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_105
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 244
+        width: 78
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe9c5ce0ca40c14d8351d7be14d9558
+      internalID: 1516639131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_106
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 221
+        width: 65
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26cc4151089ac324ebda219c9f1d7067
+      internalID: 1990623973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_107
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 245
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb84085c191149d47a90ac545e991038
+      internalID: -1635187943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_108
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 245
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b9f0576d6c9ce45afde44b614bfa66
+      internalID: -363372994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_109
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 244
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5bf288c54ba11488292caea60bb220
+      internalID: -1803784315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_110
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 79
+        width: 247
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822c4b2b00387144d9b960736c12d112
+      internalID: 1452313143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_111
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 219
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5412331149c0318448ecb25fdd32099a
+      internalID: 810609612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_112
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 216
+        width: 28
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0490b27a6f075b42823dcc881f45307
+      internalID: -1018515533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_113
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 208
+        width: 76
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796009ad3a24d97419cb8bb9154ce7ac
+      internalID: -327821324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_114
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 7
+        width: 361
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b7b5469afd71048bb648b1e96fec04
+      internalID: 1049027495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_115
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 131
+        width: 45
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7723244e7b5b0eb43a3963098901a482
+      internalID: -1448517893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_116
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 107
+        width: 105
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8abd424423a8645bba0adbe7f2c23b
+      internalID: -312537348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_117
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 128
+        width: 33
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02dd0555d1f52c4d8d8ece3746c3184
+      internalID: -1013077968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_118
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 126
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c40752b34f14934283ec433e3be5207
+      internalID: -838087694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_119
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 3
+        width: 299
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0bf1eac24e50c45a6d70fef1853c35
+      internalID: -786434593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_120
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 108
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb48d5aa2a3fb59479fdc938ac2a05e5
+      internalID: 1890505229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_121
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 104
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c9fa90e73df5941a23972d3833a14a
+      internalID: -2129216103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_122
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 111
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257ce15d5dab5a84d9848dd9b151cbd3
+      internalID: 2078305549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_123
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c3a57595536144c95f3435c49714bd
+      internalID: -1509940923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_124
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 96
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b4f352bc562284f860fc63ce1c2df2
+      internalID: 1631975957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_125
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 67
+        width: 51
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f12e4cfcd973f4aa03d4051069bca5
+      internalID: 1392066512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_126
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 56
+        width: 57
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2203ccc657990a948b0722dbc400e805
+      internalID: -851065933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_127
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 82
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ee5d0c8146d2a4da8a073fe367e450
+      internalID: 1219262741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_128
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 43
+        width: 19
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd4a28ce7927de49b5c940a95b2e9f3
+      internalID: 1008457138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_129
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 34
+        width: 23
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2e25d055ecb1c44ae4871e9b9a42e0
+      internalID: -1587894205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter Transitions_130
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 3
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34cf1f541c49184db3f565072a0e505
+      internalID: -1574127603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 510fa0ccd4f5aa54baab6a59d994d3f1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Chapter Transitions_21: 1149988366
+      Chapter Transitions_6: 1311246502
+      Chapter Transitions_76: -1572185883
+      Chapter Transitions_57: 1305704055
+      Chapter Transitions_68: 1687728719
+      Chapter Transitions_123: -1509940923
+      Chapter Transitions_34: -984131763
+      Chapter Transitions_10: 2040206961
+      Chapter Transitions_87: -1491862320
+      Chapter Transitions_44: 1879065837
+      Chapter Transitions_95: -1128227039
+      Chapter Transitions_113: -327821324
+      Chapter Transitions_125: 1392066512
+      Chapter Transitions_101: 1042095872
+      Chapter Transitions_79: -981291135
+      Chapter Transitions_120: 1890505229
+      Chapter Transitions_53: -730509265
+      Chapter Transitions_104: -225791225
+      Chapter Transitions_114: 1049027495
+      Chapter Transitions_28: -989859026
+      Chapter Transitions_51: -788307643
+      Chapter Transitions_14: -50432405
+      Chapter Transitions_116: -312537348
+      Chapter Transitions_94: -572632010
+      Chapter Transitions_26: -2121994190
+      Chapter Transitions_119: -786434593
+      Chapter Transitions_126: -851065933
+      Chapter Transitions_71: -653260025
+      Chapter Transitions_108: -363372994
+      Chapter Transitions_103: -1912245478
+      Chapter Transitions_40: 1754135163
+      Chapter Transitions_22: 996597661
+      Chapter Transitions_3: 827752488
+      Chapter Transitions_62: -986925420
+      Chapter Transitions_74: -736976832
+      Chapter Transitions_122: 2078305549
+      Chapter Transitions_33: 1821582251
+      Chapter Transitions_12: 234839961
+      Chapter Transitions_32: -623895921
+      Chapter Transitions_80: 676296009
+      Chapter Transitions_18: -920331908
+      Chapter Transitions_65: 1143648924
+      Chapter Transitions_19: 1380364579
+      Chapter Transitions_38: 36583563
+      Chapter Transitions_55: -1619008615
+      Chapter Transitions_110: 1452313143
+      Chapter Transitions_48: -507259507
+      Chapter Transitions_82: 2118480100
+      Chapter Transitions_66: 1328891017
+      Chapter Transitions_45: -443539563
+      Chapter Transitions_17: 385145186
+      Chapter Transitions_1: 481585297
+      Chapter Transitions_11: -1763704591
+      Chapter Transitions_54: 1824823066
+      Chapter Transitions_9: 1363364025
+      Chapter Transitions_13: -898475010
+      Chapter Transitions_67: -1258102223
+      Chapter Transitions_50: 1180351609
+      Chapter Transitions_109: -1803784315
+      Chapter Transitions_93: 1668654111
+      Chapter Transitions_63: 1414628491
+      Chapter Transitions_4: 1865635532
+      Chapter Transitions_124: 1631975957
+      Chapter Transitions_118: -838087694
+      Chapter Transitions_88: -418852708
+      Chapter Transitions_15: -981657575
+      Chapter Transitions_77: 883031396
+      Chapter Transitions_121: -2129216103
+      LoadBg: 591705607
+      Chapter Transitions_16: -2145414427
+      Chapter Transitions_69: -1048225379
+      Chapter Transitions_60: -139952480
+      Chapter Transitions_2: -679947047
+      Chapter Transitions_127: 1219262741
+      Chapter Transitions_89: -1921425066
+      Chapter Transitions_41: 1854691704
+      Chapter Transitions_129: -1587894205
+      Chapter Transitions_25: 1750726605
+      Chapter Transitions_5: 1685455148
+      Chapter Transitions_84: 1637980195
+      Chapter Transitions_106: 1990623973
+      Chapter Transitions_100: -2005361185
+      Chapter Transitions_90: -1931691814
+      Chapter Transitions_29: -2025654257
+      Chapter Transitions_49: -1738780483
+      Chapter Transitions_42: 2010615018
+      Chapter Transitions_98: 1581391907
+      Chapter Transitions_112: -1018515533
+      Chapter Transitions_81: -246728238
+      Chapter Transitions_7: -68245329
+      Chapter Transitions_61: 324142325
+      Chapter Transitions_78: 909377427
+      Chapter Transitions_97: 1927870046
+      Chapter Transitions_58: -2108509485
+      Chapter Transitions_130: -1574127603
+      Chapter Transitions_43: -1282301053
+      Chapter Transitions_39: 679683731
+      Chapter Transitions_86: -1513398462
+      Chapter Transitions_64: -2078013333
+      Chapter Transitions_31: 1680561544
+      Chapter Transitions_46: 533646774
+      Chapter Transitions_105: 1516639131
+      Chapter Transitions_102: -1320646382
+      Chapter Transitions_72: -515019230
+      Chapter Transitions_91: 2131801248
+      Chapter Transitions_37: 1325219594
+      Chapter Transitions_56: -280971440
+      Chapter Transitions_59: -644894991
+      Chapter Transitions_85: 1595708056
+      Chapter Transitions_35: -168536802
+      Chapter Transitions_73: 1317573529
+      Chapter Transitions_8: -1171460859
+      Chapter Transitions_107: -1635187943
+      Chapter Transitions_47: 1597383861
+      Chapter Transitions_96: 41357643
+      Chapter Transitions_52: -300094205
+      Chapter Transitions_23: 393638950
+      Chapter Transitions_75: -1479594505
+      Chapter Transitions_83: -1066532931
+      Chapter Transitions_117: -1013077968
+      Chapter Transitions_20: 1082376282
+      Chapter Transitions_36: 1584086639
+      Chapter Transitions_99: 1083869524
+      Chapter Transitions_131: 1159963031
+      Chapter Transitions_128: 1008457138
+      Chapter Transitions_30: -1274574399
+      Chapter Transitions_111: 810609612
+      Chapter Transitions_70: 616508511
+      Chapter Transitions_115: -1448517893
+      Chapter Transitions_92: -1294374417
+      Chapter Transitions_27: 350131663
+      Chapter Transitions_24: -88012609
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
