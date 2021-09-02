@@ -54,7 +54,7 @@ public class RawImageAnimation : MonoBehaviour
                 for (int x = 0; x < xCount; x++)
                 {
                     rect.x = x * width;
-                    print($"rect : {rect}");
+                    //print($"rect : {rect}");
                     rawImage.uvRect = rect;
                     yield return new WaitForSeconds(waitSecond);
                 }
