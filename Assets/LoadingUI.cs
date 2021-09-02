@@ -20,11 +20,16 @@ public class LoadingUI : Singleton<LoadingUI>
     {
         Image progressBar = transform.Find("ProgressBar").GetComponent<Image>();
         Text percent = transform.Find("Percent").GetComponent<Text>();
+        float fakeProgress = 0;
         while(result.isDone == false)
         {
-            percent.text = Mathf.RoundToInt(result.progress * 100) + "%";
-            print(percent.text);
-            progressBar.fillAmount = result.progress;
+            fakeProgress += 0.1f;
+            float realProgress = result.progress;
+            float showProgress = fakeProgress < 0.9f ? fakeProgress : realProgress;
+
+            percent.text = Mathf.RoundToInt(showProgress * 100) + "%";
+            print($"{showProgress}, {realProgress}, {fakeProgress}");
+            progressBar.fillAmount = showProgress;
             yield return null;
         }
 
