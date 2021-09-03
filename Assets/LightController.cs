@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour
 {
-    public float minScale = 0.5f;
-    public float maxScale = 1.5f;
+    public float minScale = 0.8f;
+    public float maxScale = 1.2f;
     public float duration = 0.5f;
     IEnumerator Start()
     {

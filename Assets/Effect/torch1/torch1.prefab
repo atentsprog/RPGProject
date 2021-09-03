@@ -19411,8 +19411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e82881e6395e54409dba03940a55a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.5
-  maxScale: 1.5
+  minScale: 0.8
+  maxScale: 1.2
   duration: 0.5
 --- !u!1001 &1347765400864991912
 PrefabInstance:
