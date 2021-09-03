@@ -38,11 +38,15 @@ public class CharacterTextBoxUI : Singleton<CharacterTextBoxUI>
         portrait.SetNativeSize();
         //portrait.sprite =(Sprite)Resources.Load("NPC/" + portraitSpriteName, typeof(Sprite));
 
-        CloseUI().SetDelay(visibleTime);
+        CloseUI()?.SetDelay(visibleTime);
     }
 
     internal Tweener CloseUI()
     {
+        if (gameObject.activeInHierarchy == false)
+            return null;
+
+
         return canvasGroup.DOFade(0, 0.5f)
             .SetUpdate(true)
             .OnComplete(() => gameObject.SetActive(false));
