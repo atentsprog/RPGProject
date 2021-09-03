@@ -26,7 +26,7 @@ public abstract class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player") == false)
             return;
-        print(other);
+        //print(other);
 
         if (IsUseableMenu() == false)
             return;

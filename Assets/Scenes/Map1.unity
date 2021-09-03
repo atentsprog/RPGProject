@@ -3447,6 +3447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299011994}
   - component: {fileID: 299011995}
+  - component: {fileID: 299011996}
   m_Layer: 5
   m_Name: LoadingUI
   m_TagString: Untagged
@@ -3492,6 +3493,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b01c8cf029d5c44bebe2d341117291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &299011996
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299011993}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &332208367
 GameObject:
   m_ObjectHideFlags: 0
