@@ -12,12 +12,14 @@ public class MapPortal : MonoBehaviour
         if (other.CompareTag("Player") == false)
             return;
 
+
+        //맵 로딩 UI표시.
+        LoadingUI.Instance.ShowUI();
+
         // 맵 로드 비동기로 하자
         var result = SceneManager.LoadSceneAsync(sceneName);
 
-
-        //맵 로딩 UI표시.
-        //프로그레스바 표시.
-        LoadingUI.Instance.ShowUI(result);
+        // 프로그레스 설정.
+        LoadingUI.Instance.SetProgress(result);
     }
 }

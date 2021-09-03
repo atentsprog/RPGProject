@@ -11,9 +11,12 @@ public class LoadingUI : Singleton<LoadingUI>
     {
         DontDestroyOnLoad(transform.root);
     }
-    internal void ShowUI(AsyncOperation result)
+    internal void ShowUI()
     {
         gameObject.SetActive(true);
+    }
+    internal void SetProgress(AsyncOperation result)
+    {
         StartCoroutine(ShowUICo(result));
     }
     private IEnumerator ShowUICo(AsyncOperation result)
@@ -21,7 +24,9 @@ public class LoadingUI : Singleton<LoadingUI>
         Image progressBar = transform.Find("ProgressBar").GetComponent<Image>();
         Text percent = transform.Find("Percent").GetComponent<Text>();
         float fakeProgress = 0;
-        while(result.isDone == false)
+        //var originalPriority = Application.backgroundLoadingPriority;
+        //Application.backgroundLoadingPriority = ThreadPriority.Low;
+        while (result.isDone == false)
         {
             fakeProgress += 0.1f;
             float realProgress = result.progress;
@@ -32,6 +37,7 @@ public class LoadingUI : Singleton<LoadingUI>
             progressBar.fillAmount = showProgress;
             yield return null;
         }
+        //Application.backgroundLoadingPriority = originalPriority;
 
         percent.text = "100%";
         progressBar.fillAmount = 1;
