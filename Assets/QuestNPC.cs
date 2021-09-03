@@ -14,6 +14,8 @@ public abstract class NPC : MonoBehaviour
     public string npcSpriteName = "NPC1";
 
     private void Awake() => showUIKey.performed += QuestAcceptKey_performed;
+    private void OnDestroy() => showUIKey.performed -= QuestAcceptKey_performed;
+
     private void QuestAcceptKey_performed(InputAction.CallbackContext obj)
     {
         print("UI표시 하자.");

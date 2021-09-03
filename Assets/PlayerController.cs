@@ -37,13 +37,30 @@ public class PlayerController : Singleton<PlayerController>
         shootAction.performed += ShootAction_performed;
 
         projectileParabolaDrawer.gameObject.SetActive(false);
-        aimAction.performed += _ => projectileParabolaDrawer.gameObject.SetActive(true); // 궤적 보이게 하기
-        aimAction.canceled += _ => projectileParabolaDrawer.gameObject.SetActive(false); // 궤적 감추
+        aimAction.performed += AimAction_performed;
+        aimAction.canceled += AimAction_canceled;
 
         projectileParabolaDrawer.Speed = bulletPrefab.GetComponent<IProjectile>().Speed;
 
         //아래처럼도 작성가능하지만 사용하지 않는 파라미터 굳이 적을 필요 없으니깐 위에서처럼 짧게 표현
         //aimAction.canceled += (InputAction.CallbackContext obj) => { projectileParabolaDrawer.gameObject.SetActive(false); }; 
+    }
+
+    private void AimAction_canceled(InputAction.CallbackContext obj)
+    {
+        projectileParabolaDrawer.gameObject.SetActive(false);// 궤적 감추
+    }
+
+    private void AimAction_performed(InputAction.CallbackContext obj)
+    {
+        projectileParabolaDrawer.gameObject.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        shootAction.performed -= ShootAction_performed;
+        aimAction.performed -= AimAction_performed;
+        aimAction.canceled -= AimAction_canceled;
     }
 
 
