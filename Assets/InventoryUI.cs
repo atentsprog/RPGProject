@@ -46,7 +46,7 @@ public class InventoryUI : Singleton<InventoryUI>
 
     ItemBox baseBox;
     private void ShowItemCategory(ItemType itemType)
-    {
+    { 
         gameObject.SetActive(true);
 
         // 리스트를 표시하자.
