@@ -30,6 +30,9 @@ public class QuickSlotUI : Singleton<QuickSlotUI>
         {
             var newButton = Instantiate(baseBox, baseBox.transform.parent);
             var quickSlotInfo = UserData.Instance.itemData.data.quickItemUIDs[i];
+            if (quickSlotInfo == null)
+                continue;
+
             InventoryItemInfo inventoryItemInfo = null;
             if (quickSlotInfo.uidOrId > 0)
             {
